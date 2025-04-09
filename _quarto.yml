@@ -10,6 +10,7 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - contributing.qmd
       - about.qmd
     tools:
       - icon: github
