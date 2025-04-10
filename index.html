@@ -283,6 +283,7 @@ div.csl-indent {
 <section id="measurement-capabilities-and-sensor-characteristics" class="level3">
 <h3 class="anchored" data-anchor-id="measurement-capabilities-and-sensor-characteristics">Measurement capabilities and sensor characteristics</h3>
 <p>Spectral/photometric/α-opic metrics, sampling rate, uncertainty, cosine response, range, etc. <span class="citation" data-cites="Spitschan2022DigitHealth">(<a href="#ref-Spitschan2022DigitHealth" role="doc-biblioref">Spitschan et al. 2022</a>)</span></p>
+<p>Spectral sensitivity functions <span class="citation" data-cites="CIE2018CIES026 Lucas2014TrendsNeurosci">(<a href="#ref-CIE2018CIES026" role="doc-biblioref">CIE 2018</a>; <a href="#ref-Lucas2014TrendsNeurosci" role="doc-biblioref">Lucas et al. 2014</a>)</span></p>
 <p><span class="citation" data-cites="vanDuijnhoven2025BuildEnviron">(<a href="#ref-vanDuijnhoven2025BuildEnviron" role="doc-biblioref">van Duijnhoven et al. 2025</a>)</span></p>
 </section>
 <section id="advanced-and-additional-modalities" class="level3">
@@ -487,11 +488,11 @@ div.csl-indent {
 </section>
 <section id="metadata" class="level3">
 <h3 class="anchored" data-anchor-id="metadata">Metadata</h3>
-<p>Standardized documentation. <span class="citation" data-cites="Spitschan2024BMCDigitHealth">(<a href="#ref-Spitschan2024BMCDigitHealth" role="doc-biblioref">Spitschan et al. 2024</a>)</span></p>
+<p>Metadata is data about data. Standardized documentation. <span class="citation" data-cites="Spitschan2024BMCDigitHealth">(<a href="#ref-Spitschan2024BMCDigitHealth" role="doc-biblioref">Spitschan et al. 2024</a>)</span></p>
 </section>
 <section id="privacy-aspects" class="level3">
 <h3 class="anchored" data-anchor-id="privacy-aspects">Privacy aspects</h3>
-<p>For any biomedical data collection, privacy principles relevant to the local jurisdictions need to be upheld (e.g.&nbsp;HIPAA, GDPR, …). Careful consideration needs to be placed on which aspects of data contain personally identifiable information. At present, it is not necessarily clear whether visual experience and light exposure, or time courses thereof, constitute personally identifiable information. More research needs to be done to understand the identifiability of people from their visual experience data.</p>
+<p>For any biomedical data collection, privacy principles relevant to the local jurisdictions need to be upheld (e.g.&nbsp;<a href="https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html">HIPAA</a>, <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng">GDPR</a>, …). Careful consideration needs to be placed on which aspects of data contain personally identifiable information. At present, it is not necessarily clear whether visual experience and light exposure, or time courses thereof, constitute personally identifiable information. More research needs to be done to understand the identifiability of people from their visual experience data.</p>
 </section>
 <section id="locale-consistency" class="level3">
 <h3 class="anchored" data-anchor-id="locale-consistency">Locale consistency</h3>
@@ -538,12 +539,12 @@ div.csl-indent {
 </section>
 <section id="special-properties-of-light-and-visual-experience-data" class="level3">
 <h3 class="anchored" data-anchor-id="special-properties-of-light-and-visual-experience-data">Special properties of light and visual experience data</h3>
-<p>Light exposure data spans a wide dynamic range, mirroring the differences in possible environmental exposures from the scotopic to the photopic range of light levels. This means that data are usually considered in a log10-transformed fashion.</p>
+<p>Light exposure data spans a wide dynamic range, mirroring the differences in possible environmental exposures from the scotopic to the photopic range of light levels. This means that data are usually considered in a log<sub>10</sub>-transformed fashion.</p>
 <p>An additional statistical property of 24-hour light exposure data is that it is heavily zero-inflated, due to the lack of light at night, or light below the measurement threshold of the device.</p>
 </section>
 <section id="implementation" class="level3">
 <h3 class="anchored" data-anchor-id="implementation">Implementation</h3>
-<p>It is recommended that analysis of visual experience data is implemented using programmatic tools, such as R, Python or MATLAB. <a href="https://tscnlab.github.io/LightLogR/">LightLogR</a> <span class="citation" data-cites="Zauner2025JOpenSourceSoftw">(<a href="#ref-Zauner2025JOpenSourceSoftw" role="doc-biblioref">Zauner, Hartmeyer, and Spitschan 2025</a>)</span> offers a powerful <a href="https://github.com/tscnlab/LightLogR/">open-source tool</a> available on <a href="https://cloud.r-project.org/web/packages/LightLogR/index.html">CRAN</a> for the analysis of light exposure and visual experience data.</p>
+<p>It is recommended that analysis of visual experience data is implemented using programmatic tools, such as <a href="https://www.r-project.org/">R</a>, <a href="https://www.python.org/">Python</a> or <a href="https://de.mathworks.com/products/matlab.html">MATLAB</a>. <a href="https://tscnlab.github.io/LightLogR/">LightLogR</a> <span class="citation" data-cites="Zauner2025JOpenSourceSoftw">(<a href="#ref-Zauner2025JOpenSourceSoftw" role="doc-biblioref">Zauner, Hartmeyer, and Spitschan 2025</a>)</span> offers a powerful <a href="https://github.com/tscnlab/LightLogR/">open-source tool</a> available on <a href="https://cloud.r-project.org/web/packages/LightLogR/index.html">CRAN</a> for the analysis of light exposure and visual experience data.</p>
 </section>
 </section>
 <section id="reporting-data" class="level2">
@@ -596,7 +597,8 @@ div.csl-indent {
 <li>The researcher community can benefit from the availability of existing and citable code</li>
 </ul>
 <p>Code can be shared as static files attached to the supplementary material of a published article, or on a repository, such as <a href="https://github.com/">GitHub</a> or <a href="https://bitbucket.org/">Bitbucket</a>. For GitHub, <a href="https://zenodo.org/">Zenodo</a> offers an integration module such that when creating a release on GitHub, Zenodo creates a DOI, making the code citable.</p>
-<p>Importantly, when sharing code, it is necessary to select a license under which the code is available. Common licenses include the MIT License, which is permissive with respect to commercial use, and the GPL License, which is more restricted. <a href="https://choosealicense.com/">Choose a License</a> can help making an informed decisions about software licenses.</p>
+<p>Importantly, when sharing code, it is necessary to select a license under which the code is available. Common licenses include the <a href="https://opensource.org/license/mit">MIT License</a>, which is permissive with respect to commercial use, and the <a href="https://opensource.org/license/gpl-3-0">GPL License</a>, which is more restricted. <a href="https://choosealicense.com/">Choose a License</a> can help making an informed decisions about software licenses.</p>
+<p>Code reproducibility can be ensured through independent validation through <a href="https://codecheck.org/">CODECHECK</a> <span class="citation" data-cites="Nust2021F1000Research">(<a href="#ref-Nust2021F1000Research" role="doc-biblioref">Nust and Eglen 2021</a>)</span>.</p>
 </section>
 <section id="data-sharing" class="level3">
 <h3 class="anchored" data-anchor-id="data-sharing">Data sharing</h3>
@@ -605,7 +607,7 @@ div.csl-indent {
 </section>
 <section id="materials-sharing" class="level3">
 <h3 class="anchored" data-anchor-id="materials-sharing">Materials sharing</h3>
-<p>To ensure the reproducibility of research studies, it is recommended to share the materials used throughout the study, including any instruction sheets given to the participant, survey questions used, as well as debriefing documents. For any digital materials, such as forms served on a survey platform (such as REDCap), it is recommended, that the materials are provided in a format ingestible/importable by the platform</p>
+<p>To ensure the reproducibility of research studies, it is recommended to share the materials used throughout the study, including any instruction sheets given to the participant, survey questions used, as well as debriefing documents. For any digital materials, such as forms served on a survey platform (such as <a href="https://project-redcap.org/">REDCap</a>), it is recommended, that the materials are provided in a format ingestible/importable by the platform</p>
 </section>
 <section id="fair-data" class="level3">
 <h3 class="anchored" data-anchor-id="fair-data">FAIR data</h3>
@@ -627,6 +629,9 @@ Blume, C., C. Garbazza, and M. Spitschan. 2019. <span>“Effects of Light on Hum
 </div>
 <div id="ref-Brown2022PLoSBiol" class="csl-entry" role="listitem">
 Brown, T. M., G. C. Brainard, C. Cajochen, C. A. Czeisler, J. P. Hanifin, S. W. Lockley, R. J. Lucas, et al. 2022. <span>“Recommendations for Daytime, Evening, and Nighttime Indoor Light Exposure to Best Support Physiology, Sleep, and Wakefulness in Healthy Adults.”</span> Journal Article. <em>PLoS Biol</em> 20 (3): e3001571. <a href="https://doi.org/10.1371/journal.pbio.3001571">https://doi.org/10.1371/journal.pbio.3001571</a>.
+</div>
+<div id="ref-CIE2018CIES026" class="csl-entry" role="listitem">
+CIE. 2018. <span>“CIE s 026/e:2018: CIE System for Metrology of Optical Radiation for ipRGC-Influenced Responses to Light.”</span> Standard. CIE Central Bureau. <a href="https://doi.org/10.25039/S026.2018">https://doi.org/10.25039/S026.2018</a>.
 </div>
 <div id="ref-Cole1995JBiolRhythms" class="csl-entry" role="listitem">
 Cole, R. J., D. F. Kripke, J. Wisbey, W. J. Mason, W. Gruen, P. J. Hauri, and S. Juarez. 1995. <span>“Seasonal Variation in Human Illumination Exposure at Two Different Latitudes.”</span> Journal Article. <em>J Biol Rhythms</em> 10 (4): 324–34. <a href="https://doi.org/10.1177/074873049501000406">https://doi.org/10.1177/074873049501000406</a>.
@@ -652,11 +657,17 @@ Guidolin, C., S. Aerts, G. K. Agbeshie, K. O. Akuffo, S. N. Aydin, D. Baeza-Moya
 <div id="ref-Hartmeyer2023LightResTechnol" class="csl-entry" role="listitem">
 Hartmeyer, S. L., and M. Andersen. 2023. <span>“Towards a Framework for Light-Dosimetry Studies: Quantification Metrics.”</span> Journal Article. <em>Lighting Research &amp; Technology</em> 56 (4): 337–65. <a href="https://doi.org/10.1177/14771535231170500">https://doi.org/10.1177/14771535231170500</a>.
 </div>
+<div id="ref-Lucas2014TrendsNeurosci" class="csl-entry" role="listitem">
+Lucas, R. J., S. N. Peirson, D. M. Berson, T. M. Brown, H. M. Cooper, C. A. Czeisler, M. G. Figueiro, et al. 2014. <span>“Measuring and Using Light in the Melanopsin Age.”</span> Journal Article. <em>Trends Neurosci</em> 37 (1): 1–9. <a href="https://doi.org/10.1016/j.tins.2013.10.004">https://doi.org/10.1016/j.tins.2013.10.004</a>.
+</div>
 <div id="ref-Markvart2015Leukos" class="csl-entry" role="listitem">
 Markvart, Jakob, Åse Marie Hansen, and Jens Christoffersen. 2015. <span>“Comparison and Correction of the Light Sensor Output from 48 Wearable Light Exposure Devices by Using a Side-by-Side Field Calibration Method.”</span> Journal Article. <em>Leukos</em> 11 (3): 155–71. <a href="https://doi.org/10.1080/15502724.2015.1020948">https://doi.org/10.1080/15502724.2015.1020948</a>.
 </div>
 <div id="ref-Mohamed2021OptExpress" class="csl-entry" role="listitem">
 Mohamed, A., V. Kalavally, S. W. Cain, A. J. K. Phillips, E. M. McGlashan, and C. P. Tan. 2021. <span>“Wearable Light Spectral Sensor Optimized for Measuring Daily Alpha-Opic Light Exposure.”</span> Journal Article. <em>Opt Express</em> 29 (17): 27612–27. <a href="https://doi.org/10.1364/OE.431373">https://doi.org/10.1364/OE.431373</a>.
+</div>
+<div id="ref-Nust2021F1000Research" class="csl-entry" role="listitem">
+Nust, D., and S. J. Eglen. 2021. <span>“CODECHECK: An Open Science Initiative for the Independent Execution of Computations Underlying Research Articles During Peer Review to Improve Reproducibility.”</span> Journal Article. <em>F1000Res</em> 10: 253. <a href="https://doi.org/10.12688/f1000research.51738.2">https://doi.org/10.12688/f1000research.51738.2</a>.
 </div>
 <div id="ref-Okudaira1983AmJPhysiol" class="csl-entry" role="listitem">
 Okudaira, N., D. F. Kripke, and J. B. Webster. 1983. <span>“Naturalistic Studies of Human Light Exposure.”</span> Journal Article. <em>Am J Physiol</em> 245 (4): R613–5. <a href="https://doi.org/10.1152/ajpregu.1983.245.4.R613">https://doi.org/10.1152/ajpregu.1983.245.4.R613</a>.
