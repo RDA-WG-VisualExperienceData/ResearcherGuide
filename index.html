@@ -178,7 +178,7 @@ div.csl-indent {
   </ul></li>
   <li><a href="#designing-the-study" id="toc-designing-the-study" class="nav-link" data-scroll-target="#designing-the-study">Designing the Study</a>
   <ul class="collapse">
-  <li><a href="#clarity-on-research-question" id="toc-clarity-on-research-question" class="nav-link" data-scroll-target="#clarity-on-research-question">Clarity on research question</a></li>
+  <li><a href="#clarity-on-the-research-question-and-pre-registration" id="toc-clarity-on-the-research-question-and-pre-registration" class="nav-link" data-scroll-target="#clarity-on-the-research-question-and-pre-registration">Clarity on the research question and pre-registration</a></li>
   <li><a href="#participant-burden-vs.-fidelity" id="toc-participant-burden-vs.-fidelity" class="nav-link" data-scroll-target="#participant-burden-vs.-fidelity">Participant burden vs.&nbsp;fidelity</a></li>
   <li><a href="#measurement-capabilities-matched-to-use-case" id="toc-measurement-capabilities-matched-to-use-case" class="nav-link" data-scroll-target="#measurement-capabilities-matched-to-use-case">Measurement capabilities matched to use case</a></li>
   <li><a href="#measurement-length-and-time-intervals" id="toc-measurement-length-and-time-intervals" class="nav-link" data-scroll-target="#measurement-length-and-time-intervals">Measurement length and time intervals</a></li>
@@ -288,15 +288,15 @@ div.csl-indent {
 </section>
 <section id="manufacturer-calibration" class="level3">
 <h3 class="anchored" data-anchor-id="manufacturer-calibration">Manufacturer calibration</h3>
-<p>Devices designed to measure light exposure and other aspects of the optical environment should come with information from the manufacturer on the calibration procedures used to ensure high-quality measurements. Sometimes, information for one exemplary device is included in a spec sheet or datasheet. It is worth consulting with the manufacturer on any calibrations they perform, and specifically clarify whether device-level information is available.</p>
-<p>The manufacturer may also recommend recalibrations of the devices at regular intervals. It is worth understanding the rationale for any such recalibrations (in particular if they come at a cost), and also any recalibrations that can be done by researchers themselves.</p>
+<p>Devices designed to measure light exposure and other aspects of the optical environment should come with information from the manufacturer on the calibration procedures used to ensure high-quality measurements. Sometimes, information for one exemplary device is included in a spec sheet or datasheet. It is worth consulting with the manufacturer on any calibrations they perform and specifically clarifying whether device-level information is available.</p>
+<p>The manufacturer may also recommend recalibrations of the devices at regular intervals. It is worth understanding the rationale for any such recalibrations (in particular if they come at a cost), as well as any recalibrations that researchers themselves can do.</p>
 </section>
 <section id="size-form-and-design" class="level3">
 <h3 class="anchored" data-anchor-id="size-form-and-design">Size, form, and design</h3>
-<p>The size, form and design of a wearable light logger is particular important for the specific contexts in which it will be used. Devices that are too heavy, bulky or impractically shaped will likely not be of particular use in field studies on light exposure. The most common form factors are devices that are <strong>wrist-worn</strong>, <strong>lanyard-worn</strong>, attached with a <strong>clip</strong>, or attached to <strong>spectacle frames</strong>.</p>
+<p>The size, form and design of a wearable light logger are particularly important for the specific contexts in which it will be used. Devices that are too heavy, bulky or impractically shaped will likely not be of particular use in field studies on light exposure. The most common form factors are devices that are <strong>wrist-worn</strong>, <strong>lanyard-worn</strong>, attached with a <strong>clip</strong>, or attached to <strong>spectacle frames</strong>.</p>
 <p>Different form factors are susceptible to different types of occlusions, so beyond participant comfort, a device’s dimensions and intended use case are also directly linked to data reliability. As of 2025, no specific device can be used all the time in all contexts and provide reliable information.</p>
 <p>Common problems include:</p>
-<p>–&nbsp;Wrist-worn devices are susceptible to being occluded by sleeves, particularly in settings or cold weather seasons.</p>
+<p>+&nbsp;Wrist-worn devices are susceptible to being occluded by sleeves, particularly in settings or cold weather seasons.</p>
 <ul>
 <li><p>Lanyard-worn and clip-worn devices are susceptible to being occluded by jackets or other outer garments.</p></li>
 <li><p>Devices attached to spectacle frames are impractical for long-term use in the real world.</p></li>
@@ -321,11 +321,29 @@ div.csl-indent {
 </section>
 <section id="interaction-with-the-device" class="level3">
 <h3 class="anchored" data-anchor-id="interaction-with-the-device">Interaction with the device</h3>
-<p>Some devices contain event buttons, which, when pressed, insert time-stamped information into the data log. This functionality can be very useful for determining wear/non-wear state and specific events taking place for the participant. It is worth noting that as they are a user interaction, it is not guaranteed that participants will do it consistently.</p>
+<p>Some devices contain event buttons, which, when pressed, insert time-stamped information into the data log. This functionality can be very useful for determining wear/non-wear state and specific events taking place for the participant. It is worth noting that as they are a user interaction, participants are not guaranteed to do it consistently.</p>
 </section>
 <section id="documentation" class="level3">
 <h3 class="anchored" data-anchor-id="documentation">Documentation</h3>
-<p>Quality of manufacturer documentation.</p>
+<p>The quality of manufacturer documentation can vary significantly, and it is important to consult the manufacturer on its completeness. This includes, at a minimum:</p>
+<ul>
+<li>Full description of sensor capabilities, including calibration information</li>
+<li>Environmental operating conditions (temperature, humidity, altitude, etc.)</li>
+<li>Expected lifespan and stability of sensor performance over time (e.g., sensor drift)</li>
+<li>Known hardware/software limitations (e.g., maximum sampling rate, data loss risks)</li>
+<li>Traceability of calibration (e.g., to national standards)</li>
+<li>Documentation of validation procedures (e.g., lab vs.&nbsp;field performance)</li>
+<li>Instructions for user-performed recalibration and required tools</li>
+<li>Information on error states or error modes that may be encountered during the data collection</li>
+<li>Description of any onboard data processing, compression, or classification algorithms</li>
+<li>Details on how timestamps are generated and synchronized (e.g., internal clock behavior, drift)</li>
+<li>Firmware versioning and changelog history, especially for devices under active development</li>
+<li>Clear explanation of file formats (CSV, JSON, binary, proprietary, etc.)</li>
+<li>Full description of all data available from the device</li>
+<li>Contact information for technical support</li>
+<li>Recommended positioning and usage instructions to ensure data validity</li>
+<li>Any relevant compliance certifications (e.g., CE, FCC, ISO)</li>
+</ul>
 </section>
 <section id="software-ecosystem" class="level3">
 <h3 class="anchored" data-anchor-id="software-ecosystem">Software ecosystem</h3>
@@ -357,9 +375,10 @@ div.csl-indent {
 </section>
 <section id="designing-the-study" class="level2">
 <h2 class="anchored" data-anchor-id="designing-the-study">Designing the Study</h2>
-<section id="clarity-on-research-question" class="level3">
-<h3 class="anchored" data-anchor-id="clarity-on-research-question">Clarity on research question</h3>
-<p>Research questions, hypotheses, procedures and methods need to be aligned. In the context of measuring visual experience and light exposure, measuring one day of light exposure to understand seasonal effects is inappropriate.</p>
+<section id="clarity-on-the-research-question-and-pre-registration" class="level3">
+<h3 class="anchored" data-anchor-id="clarity-on-the-research-question-and-pre-registration">Clarity on the research question and pre-registration</h3>
+<p>Research questions, hypotheses, procedures, and methods need to be aligned in a tight way. In measuring visual experience and light exposure, this alignment becomes particularly important due to the changing and context-dependent nature of light. Measuring a single day of light exposure to draw conclusions about seasonal effects is methodologically flawed, neglecting intra- and inter-day fluctuations in weather, behaviour and exposures. For more robust measurements, typically, longer measurements are needed and include data from weekdays and weekends. At the same time, coverage needs to be balanced with burden.</p>
+<p>It is important to clearly formulate the research questions, hypotheses, procedures, and methods before the data collection. An additional step is to write a pre-registration detailing the protocol and analysis plans.</p>
 </section>
 <section id="participant-burden-vs.-fidelity" class="level3">
 <h3 class="anchored" data-anchor-id="participant-burden-vs.-fidelity">Participant burden vs.&nbsp;fidelity</h3>
@@ -379,7 +398,7 @@ div.csl-indent {
 </section>
 <section id="behavioral-modification-through-wearing-location" class="level3">
 <h3 class="anchored" data-anchor-id="behavioral-modification-through-wearing-location">Behavioral modification through wearing location</h3>
-<p>How wear location may affect behavior.</p>
+<p>Different form factors and associated wearing locations could be susceptible to different</p>
 </section>
 </section>
 <section id="collecting-data" class="level2">
@@ -421,7 +440,7 @@ div.csl-indent {
 </section>
 <section id="privacy-aspects" class="level3">
 <h3 class="anchored" data-anchor-id="privacy-aspects">Privacy aspects</h3>
-<p>Anonymization, PII handling.</p>
+<p>For any biomedical data collection, privacy principles relevant to the local jurisdictions need to be upheld (e.g.&nbsp;HIPAA, GDPR, …). Careful consideration needs to be placed on which aspects of data contain personally identifiable information. At present, it is not necessarily clear whether visual experience and light exposure, or time courses thereof, constitute personally identifiable information. More research needs to be done to understand the identifiability of people from their visual experience data.</p>
 </section>
 <section id="locale-consistency" class="level3">
 <h3 class="anchored" data-anchor-id="locale-consistency">Locale consistency</h3>
@@ -482,15 +501,25 @@ div.csl-indent {
 <li>Wearing location</li>
 <li>Sampling interval</li>
 <li>Measured quantities</li>
-<li>Calibration information</li>
+<li>Calibration information on directional sensitivity, spectral sensitive, linearity and range properties</li>
 </ul></li>
 <li>Protocol-related properties
 <ul>
 <li>Wearing location</li>
 <li>Wearing duration</li>
-<li>Instructions given to the participant</li>
+<li>Instructions given to the participant for wear context and non-wear behaviour</li>
+<li>Criteria for inclusion/exclusion based on wear time and compliance</li>
+<li>Use of prompts/reminders to ensure compliance</li>
+</ul></li>
+<li>Analysis-related properties
+<ul>
+<li>Preprocessing of data, including outlier rejection, binning and smoothing</li>
+<li>Handling of partial or missing data</li>
+<li>Analysis routines and functions used</li>
+<li>Software and version used for analysis and open-source availability</li>
 </ul></li>
 </ul>
+<p>Future work may formalise these recommendations in the form of a consensus checklist.</p>
 </section>
 <section id="discussion-section" class="level3">
 <h3 class="anchored" data-anchor-id="discussion-section">Discussion section</h3>
@@ -507,6 +536,7 @@ div.csl-indent {
 <section id="data-sharing" class="level3">
 <h3 class="anchored" data-anchor-id="data-sharing">Data sharing</h3>
 <p>Ethical and practical aspects.</p>
+<p>It is recommended that when researchers submit their ethics approval request,</p>
 </section>
 <section id="materials-sharing" class="level3">
 <h3 class="anchored" data-anchor-id="materials-sharing">Materials sharing</h3>
