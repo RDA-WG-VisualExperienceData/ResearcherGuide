@@ -12,6 +12,8 @@ format:
 
 This site will shortly host the Research Data Alliance (RDA) Research Guide. The Research Guide is authored by the [Optical Radiation Exposure and Visual Experience Data Working Group](https://www.rd-alliance.org/groups/optical-radiation-exposure-and-visual-experience-data-wg/activity/). The site is built using [Quarto](https://quarto.org/docs/websites), a scientific and technical publishing system.
 
+DRAFT – NOT FOR DISTRIBUTION
+
 # Introduction
 
 Exposure to the optical environment, sometimes called visual experience, fundamentally affects human physiology and behaviour at multiple time scales. Two examples of such effects that have received significant attention come from different research domains, but can be understood through a common retinally-referenced framework. The first concerns the 'non-visual' effect of light on human circadian and neuroendocrine physiology: The light-dark cycle synchronises the biological clock, and exposure to light at night suppresses melatonin production [@Brown2022PLoSBiol; @Blume2019Somnologie]. The second concerns the potential effect of light exposure and visual experience on ocular development and specific myopia, in which time spent outdoors, and its associated visual experience, have been linked with ocular health outcomes [@DahlmannNoor2025GraefesArchClinExpOphthal].
