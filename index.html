@@ -151,7 +151,9 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#outline-of-the-researcher-guide" id="toc-outline-of-the-researcher-guide" class="nav-link active" data-scroll-target="#outline-of-the-researcher-guide">Outline of the Researcher Guide</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#scope" id="toc-scope" class="nav-link" data-scroll-target="#scope">Scope</a></li>
+  <li><a href="#researcher-guide" id="toc-researcher-guide" class="nav-link" data-scroll-target="#researcher-guide">Researcher Guide</a>
   <ul class="collapse">
   <li><a href="#selecting-devices" id="toc-selecting-devices" class="nav-link" data-scroll-target="#selecting-devices">Selecting Devices</a>
   <ul class="collapse">
@@ -177,7 +179,7 @@ div.csl-indent {
   </ul></li>
   <li><a href="#designing-the-study" id="toc-designing-the-study" class="nav-link" data-scroll-target="#designing-the-study">Designing the Study</a>
   <ul class="collapse">
-  <li><a href="#clarity-on-research-questions" id="toc-clarity-on-research-questions" class="nav-link" data-scroll-target="#clarity-on-research-questions">Clarity on research questions</a></li>
+  <li><a href="#clarity-on-research-question" id="toc-clarity-on-research-question" class="nav-link" data-scroll-target="#clarity-on-research-question">Clarity on research question</a></li>
   <li><a href="#participant-burden-vs.-fidelity" id="toc-participant-burden-vs.-fidelity" class="nav-link" data-scroll-target="#participant-burden-vs.-fidelity">Participant burden vs.&nbsp;fidelity</a></li>
   <li><a href="#measurement-capabilities-matched-to-use-case" id="toc-measurement-capabilities-matched-to-use-case" class="nav-link" data-scroll-target="#measurement-capabilities-matched-to-use-case">Measurement capabilities matched to use case</a></li>
   <li><a href="#measurement-length-and-time-intervals" id="toc-measurement-length-and-time-intervals" class="nav-link" data-scroll-target="#measurement-length-and-time-intervals">Measurement length and time intervals</a></li>
@@ -223,7 +225,7 @@ div.csl-indent {
   <li><a href="#code-sharing" id="toc-code-sharing" class="nav-link" data-scroll-target="#code-sharing">Code sharing</a></li>
   <li><a href="#data-sharing" id="toc-data-sharing" class="nav-link" data-scroll-target="#data-sharing">Data sharing</a></li>
   <li><a href="#materials-sharing" id="toc-materials-sharing" class="nav-link" data-scroll-target="#materials-sharing">Materials sharing</a></li>
-  <li><a href="#fair-storage" id="toc-fair-storage" class="nav-link" data-scroll-target="#fair-storage">FAIR storage</a></li>
+  <li><a href="#fair-data" id="toc-fair-data" class="nav-link" data-scroll-target="#fair-data">FAIR data</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -258,13 +260,24 @@ div.csl-indent {
 
 
 <p>This site will shortly host the Research Data Alliance (RDA) Research Guide. The Research Guide is authored by the <a href="https://www.rd-alliance.org/groups/optical-radiation-exposure-and-visual-experience-data-wg/activity/">Optical Radiation Exposure and Visual Experience Data Working Group</a>. The site is built using <a href="https://quarto.org/docs/websites">Quarto</a>, a scientific and technical publishing system.</p>
-<section id="outline-of-the-researcher-guide" class="level1">
-<h1>Outline of the Researcher Guide</h1>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Exposure to the optical environment, sometimes called visual experience, fundamentally affects human physiology and behaviour at multiple time scales. Two examples of such effects that have received significant attention come from different research domains, but can be understood through a common retinally-referenced framework. The first concerns the ‘non-visual’ effect of light on human circadian and neuroendocrine physiology: The light-dark cycle synchronises the biological clock, and exposure to light at night suppresses melatonin production. The second concerns the potential effect of light exposure and visual experience on ocular development and specific myopia, in which time spent outdoors, and its associated visual experience, have been linked with ocular health outcomes.</p>
+<p>In typical laboratory studies, light exposure can be fixed and held constant, or modulated parametrically. Such artificial exposures are very much unlike the real-world exposures to the optical environment that people received through the day. As people move in and between spaces (indoors and outdoors) and move their trunks, heads and eyes, the exposure to the optical environment varies significantly, and is modulated by behaviour. As a consequence, understanding real-world exposure to link to real-world impacts requires real-world measurements, faciliated by wearable devices.</p>
+<p>Starting in the 1980s, technology to measure exposure to the optical environment has been developed and matured, with miniaturized illuminance sensors now (2025) being very common in consumer smartwatches. In research, several device and device types are available, which differ in their functionality. To make informed decisions about the properties of specific devices requires a careful ascertainment of their properties, and the specific trade-offs they entail.</p>
+</section>
+<section id="scope" class="level1">
+<h1>Scope</h1>
+<p>The scope of this Researcher Guide is to provide a guide to the use of wearable devices measuring the optical environment. It is a living document, and can be updated.</p>
+</section>
+<section id="researcher-guide" class="level1">
+<h1>Researcher Guide</h1>
 <section id="selecting-devices" class="level2">
 <h2 class="anchored" data-anchor-id="selecting-devices">Selecting Devices</h2>
 <section id="measurement-capabilities-and-sensor-characteristics" class="level3">
 <h3 class="anchored" data-anchor-id="measurement-capabilities-and-sensor-characteristics">Measurement capabilities and sensor characteristics</h3>
 <p>Spectral/photometric/α-opic metrics, sampling rate, uncertainty, cosine response, range, etc. <span class="citation" data-cites="Spitschan2022DigitHealth">(<a href="#ref-Spitschan2022DigitHealth" role="doc-biblioref">Spitschan et al. 2022</a>)</span></p>
+<p><span class="citation" data-cites="vanDuijnhoven2025BuildEnviron">(<a href="#ref-vanDuijnhoven2025BuildEnviron" role="doc-biblioref">van Duijnhoven et al. 2025</a>)</span></p>
 </section>
 <section id="advanced-and-additional-modalities" class="level3">
 <h3 class="anchored" data-anchor-id="advanced-and-additional-modalities">Advanced and additional modalities</h3>
@@ -272,11 +285,15 @@ div.csl-indent {
 </section>
 <section id="manufacturer-calibration" class="level3">
 <h3 class="anchored" data-anchor-id="manufacturer-calibration">Manufacturer calibration</h3>
-<p>Factory calibration and recalibration procedures.</p>
+<p>Devices designed to measure light exposure and other aspects of the optical environment should come with information from the manufacturer on the calibration procedures used to ensure high-quality measurements. Sometimes, information for one exemplary device is included in a spec sheet or datasheet. It is worth consulting with the manufacturer on any calibrations they perform, and specifically clarify whether device-level information is available.</p>
+<p>The manufacturer may also recommend recalibrations of the devices at regular intervals. It is worth understanding the rationale for any such recalibrations (in particular if they come at a cost), and also any recalibrations that can be done by researchers themselves.</p>
 </section>
 <section id="size-form-and-design" class="level3">
 <h3 class="anchored" data-anchor-id="size-form-and-design">Size, form, and design</h3>
-<p>Dimensions, durability, occlusion susceptibility. <span class="citation" data-cites="vanDuijnhoven2025BuildEnviron">(<a href="#ref-vanDuijnhoven2025BuildEnviron" role="doc-biblioref">van Duijnhoven et al. 2025</a>)</span></p>
+<p>The size, form and design of a wearable light logger is particular important for the specific contexts in which it will be used. Devices that are too heavy, bulky or impractically shaped will likely not be of particular use in field studies on light exposure. The most common form factors are devices that are <strong>wrist-worn</strong>, <strong>lanyard-worn</strong>, attached with a <strong>clip</strong>, or attached to <strong>spectacle frames</strong>.</p>
+<p>Different form factors are susceptible to different types of occlusions, so beyond participant comfort, a device’s dimensions and intended use case are also directly linked to data reliability. As of 2025, no specific device can be used all the time in all contexts and provide reliable information.</p>
+<p>Common problems include:</p>
+<p>–&nbsp;Wrist-worn devices are susceptible to being occluded by sleeves, particularly in settings or cold weather seasons. - Lanyard-worn and clip-worn devices are susceptible to being occluded by jackets or other outer garments. - Devices attached to spectacle frames are impractical for long-term use in the real world.</p>
 </section>
 <section id="battery-capacity" class="level3">
 <h3 class="anchored" data-anchor-id="battery-capacity">Battery capacity</h3>
@@ -332,9 +349,9 @@ div.csl-indent {
 </section>
 <section id="designing-the-study" class="level2">
 <h2 class="anchored" data-anchor-id="designing-the-study">Designing the Study</h2>
-<section id="clarity-on-research-questions" class="level3">
-<h3 class="anchored" data-anchor-id="clarity-on-research-questions">Clarity on research questions</h3>
-<p>Matching questions with measurement goals.</p>
+<section id="clarity-on-research-question" class="level3">
+<h3 class="anchored" data-anchor-id="clarity-on-research-question">Clarity on research question</h3>
+<p>Research questions, hypotheses, procedures and methods need to be aligned. In the context of measuring visual experience and light exposure, measuring one day of light exposure to understand seasonal effects is inappropriate.</p>
 </section>
 <section id="participant-burden-vs.-fidelity" class="level3">
 <h3 class="anchored" data-anchor-id="participant-burden-vs.-fidelity">Participant burden vs.&nbsp;fidelity</h3>
@@ -471,8 +488,9 @@ div.csl-indent {
 <h3 class="anchored" data-anchor-id="materials-sharing">Materials sharing</h3>
 <p>Instruments like questionnaires.</p>
 </section>
-<section id="fair-storage" class="level3">
-<h3 class="anchored" data-anchor-id="fair-storage">FAIR storage</h3>
+<section id="fair-data" class="level3">
+<h3 class="anchored" data-anchor-id="fair-data">FAIR data</h3>
+<p>The FAIR principles state that data should be <strong>f</strong>indable, <strong>a</strong>ccessible, <strong>i</strong>nteroperable and <strong>r</strong>eusable.</p>
 <p>Guidance on repositories and principles.</p>
 
 
