@@ -324,7 +324,7 @@ It is recommended that the Discussion section discloses various limitations aris
 ### Metadata documentation
 Thorough sharing practices.
 
-### Code sharing
+### Sharing code
 
 The code used to analyse the data is not just a byproduct of the research process, but a result by itself. There are several reasons to make code available under an open source license:
 
@@ -337,14 +337,14 @@ Importantly, when sharing code, it is necessary to select a license under which 
 
 Code reproducibility can be ensured through independent validation through [CODECHECK](https://codecheck.org/) [@Nust2021F1000Research].
 
-### Data sharing
+### Sharing materials
+
+To ensure the reproducibility of research studies, it is recommended to share the materials used throughout the study, including any instruction sheets given to the participant, survey questions used, as well as debriefing documents. For any digital materials, such as forms served on a survey platform (such as [REDCap](https://project-redcap.org/)), it is recommended, that the materials are provided in a format ingestible/importable by the platform
+
+### Sharing data
 Ethical and practical aspects.
 
 It is recommended that when researchers submit their ethics approval request, they already include the provision of sharing data in anonymized form. It can be very difficult to impractical to share data after the fact or seek re-approval from the participants.
-
-### Materials sharing
-
-To ensure the reproducibility of research studies, it is recommended to share the materials used throughout the study, including any instruction sheets given to the participant, survey questions used, as well as debriefing documents. For any digital materials, such as forms served on a survey platform (such as [REDCap](https://project-redcap.org/)), it is recommended, that the materials are provided in a format ingestible/importable by the platform
 
 ### FAIR data
 
