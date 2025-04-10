@@ -21,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -130,8 +150,88 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#outline-of-the-research-guide" id="toc-outline-of-the-research-guide" class="nav-link active" data-scroll-target="#outline-of-the-research-guide">Outline of the Research Guide</a>
+  <ul class="collapse">
+  <li><a href="#selecting-devices" id="toc-selecting-devices" class="nav-link" data-scroll-target="#selecting-devices">Selecting Devices</a>
+  <ul class="collapse">
+  <li><a href="#measurement-capabilities-and-sensor-characteristics" id="toc-measurement-capabilities-and-sensor-characteristics" class="nav-link" data-scroll-target="#measurement-capabilities-and-sensor-characteristics">Measurement capabilities and sensor characteristics</a></li>
+  <li><a href="#advanced-and-additional-modalities" id="toc-advanced-and-additional-modalities" class="nav-link" data-scroll-target="#advanced-and-additional-modalities">Advanced and additional modalities</a></li>
+  <li><a href="#manufacturer-calibration" id="toc-manufacturer-calibration" class="nav-link" data-scroll-target="#manufacturer-calibration">Manufacturer calibration</a></li>
+  <li><a href="#size-form-and-design" id="toc-size-form-and-design" class="nav-link" data-scroll-target="#size-form-and-design">Size, form, and design</a></li>
+  <li><a href="#battery-capacity" id="toc-battery-capacity" class="nav-link" data-scroll-target="#battery-capacity">Battery capacity</a></li>
+  <li><a href="#data-storage" id="toc-data-storage" class="nav-link" data-scroll-target="#data-storage">Data storage</a></li>
+  <li><a href="#raw-data-format-and-ease-of-use" id="toc-raw-data-format-and-ease-of-use" class="nav-link" data-scroll-target="#raw-data-format-and-ease-of-use">Raw data format and ease of use</a></li>
+  <li><a href="#on-device-wear-and-occlusion-detection" id="toc-on-device-wear-and-occlusion-detection" class="nav-link" data-scroll-target="#on-device-wear-and-occlusion-detection">On-device wear and occlusion detection</a></li>
+  <li><a href="#interaction-with-the-device" id="toc-interaction-with-the-device" class="nav-link" data-scroll-target="#interaction-with-the-device">Interaction with the device</a></li>
+  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation">Documentation</a></li>
+  <li><a href="#software-ecosystem" id="toc-software-ecosystem" class="nav-link" data-scroll-target="#software-ecosystem">Software ecosystem</a></li>
+  </ul></li>
+  <li><a href="#validating-devices" id="toc-validating-devices" class="nav-link" data-scroll-target="#validating-devices">Validating Devices</a>
+  <ul class="collapse">
+  <li><a href="#standardized-validation-procedures" id="toc-standardized-validation-procedures" class="nav-link" data-scroll-target="#standardized-validation-procedures">Standardized validation procedures</a></li>
+  <li><a href="#cross-comparison-with-reference-measurements" id="toc-cross-comparison-with-reference-measurements" class="nav-link" data-scroll-target="#cross-comparison-with-reference-measurements">Cross-comparison with reference measurements</a></li>
+  <li><a href="#inter-device-variability-assessment" id="toc-inter-device-variability-assessment" class="nav-link" data-scroll-target="#inter-device-variability-assessment">Inter-device variability assessment</a></li>
+  <li><a href="#intra-device-reliability-assessment" id="toc-intra-device-reliability-assessment" class="nav-link" data-scroll-target="#intra-device-reliability-assessment">Intra-device reliability assessment</a></li>
+  <li><a href="#ease-of-calibration" id="toc-ease-of-calibration" class="nav-link" data-scroll-target="#ease-of-calibration">Ease of calibration</a></li>
+  </ul></li>
+  <li><a href="#designing-the-study" id="toc-designing-the-study" class="nav-link" data-scroll-target="#designing-the-study">Designing the Study</a>
+  <ul class="collapse">
+  <li><a href="#clarity-on-research-questions" id="toc-clarity-on-research-questions" class="nav-link" data-scroll-target="#clarity-on-research-questions">Clarity on research questions</a></li>
+  <li><a href="#participant-burden-vs.-fidelity" id="toc-participant-burden-vs.-fidelity" class="nav-link" data-scroll-target="#participant-burden-vs.-fidelity">Participant burden vs.&nbsp;fidelity</a></li>
+  <li><a href="#measurement-capabilities-matched-to-use-case" id="toc-measurement-capabilities-matched-to-use-case" class="nav-link" data-scroll-target="#measurement-capabilities-matched-to-use-case">Measurement capabilities matched to use case</a></li>
+  <li><a href="#measurement-length-and-time-intervals" id="toc-measurement-length-and-time-intervals" class="nav-link" data-scroll-target="#measurement-length-and-time-intervals">Measurement length and time intervals</a></li>
+  <li><a href="#inclusion-of-other-data" id="toc-inclusion-of-other-data" class="nav-link" data-scroll-target="#inclusion-of-other-data">Inclusion of other data</a></li>
+  <li><a href="#behavioral-modification-through-wearing-location" id="toc-behavioral-modification-through-wearing-location" class="nav-link" data-scroll-target="#behavioral-modification-through-wearing-location">Behavioral modification through wearing location</a></li>
+  </ul></li>
+  <li><a href="#collecting-data" id="toc-collecting-data" class="nav-link" data-scroll-target="#collecting-data">Collecting Data</a>
+  <ul class="collapse">
+  <li><a href="#briefing-of-participants" id="toc-briefing-of-participants" class="nav-link" data-scroll-target="#briefing-of-participants">Briefing of participants</a></li>
+  <li><a href="#recurrent-compliance-checks" id="toc-recurrent-compliance-checks" class="nav-link" data-scroll-target="#recurrent-compliance-checks">Recurrent compliance checks</a></li>
+  <li><a href="#device-settings" id="toc-device-settings" class="nav-link" data-scroll-target="#device-settings">Device settings</a></li>
+  </ul></li>
+  <li><a href="#storing-and-documenting-data" id="toc-storing-and-documenting-data" class="nav-link" data-scroll-target="#storing-and-documenting-data">Storing and Documenting Data</a>
+  <ul class="collapse">
+  <li><a href="#consistent-file-format" id="toc-consistent-file-format" class="nav-link" data-scroll-target="#consistent-file-format">Consistent file format</a></li>
+  <li><a href="#auxiliary-data" id="toc-auxiliary-data" class="nav-link" data-scroll-target="#auxiliary-data">Auxiliary data</a></li>
+  <li><a href="#standard-directory-structure" id="toc-standard-directory-structure" class="nav-link" data-scroll-target="#standard-directory-structure">Standard directory structure</a></li>
+  <li><a href="#documentation-of-anomalies" id="toc-documentation-of-anomalies" class="nav-link" data-scroll-target="#documentation-of-anomalies">Documentation of anomalies</a></li>
+  <li><a href="#metadata" id="toc-metadata" class="nav-link" data-scroll-target="#metadata">Metadata</a></li>
+  <li><a href="#privacy-aspects" id="toc-privacy-aspects" class="nav-link" data-scroll-target="#privacy-aspects">Privacy aspects</a></li>
+  <li><a href="#locale-consistency" id="toc-locale-consistency" class="nav-link" data-scroll-target="#locale-consistency">Locale consistency</a></li>
+  <li><a href="#recommended-conventions-for-datetime" id="toc-recommended-conventions-for-datetime" class="nav-link" data-scroll-target="#recommended-conventions-for-datetime">Recommended conventions for datetime</a></li>
+  </ul></li>
+  <li><a href="#maintaining-devices" id="toc-maintaining-devices" class="nav-link" data-scroll-target="#maintaining-devices">Maintaining Devices</a>
+  <ul class="collapse">
+  <li><a href="#cleaning" id="toc-cleaning" class="nav-link" data-scroll-target="#cleaning">Cleaning</a></li>
+  <li><a href="#monitoring-and-correcting-device-drift" id="toc-monitoring-and-correcting-device-drift" class="nav-link" data-scroll-target="#monitoring-and-correcting-device-drift">Monitoring and correcting device drift</a></li>
+  </ul></li>
+  <li><a href="#analysing-data" id="toc-analysing-data" class="nav-link" data-scroll-target="#analysing-data">Analysing Data</a>
+  <ul class="collapse">
+  <li><a href="#data-cleaning-and-preprocessing" id="toc-data-cleaning-and-preprocessing" class="nav-link" data-scroll-target="#data-cleaning-and-preprocessing">Data cleaning and preprocessing</a></li>
+  <li><a href="#exploration-and-exploratory-visualization" id="toc-exploration-and-exploratory-visualization" class="nav-link" data-scroll-target="#exploration-and-exploratory-visualization">Exploration and exploratory visualization</a></li>
+  <li><a href="#merging-data-streams" id="toc-merging-data-streams" class="nav-link" data-scroll-target="#merging-data-streams">Merging data streams</a></li>
+  <li><a href="#adding-context-to-the-time-series" id="toc-adding-context-to-the-time-series" class="nav-link" data-scroll-target="#adding-context-to-the-time-series">Adding context to the time series</a></li>
+  <li><a href="#metric-selection" id="toc-metric-selection" class="nav-link" data-scroll-target="#metric-selection">Metric selection</a></li>
+  <li><a href="#special-properties-of-light-and-visual-experience-data" id="toc-special-properties-of-light-and-visual-experience-data" class="nav-link" data-scroll-target="#special-properties-of-light-and-visual-experience-data">Special properties of light and visual experience data</a></li>
+  </ul></li>
+  <li><a href="#reporting-data" id="toc-reporting-data" class="nav-link" data-scroll-target="#reporting-data">Reporting Data</a>
+  <ul class="collapse">
+  <li><a href="#methods-section" id="toc-methods-section" class="nav-link" data-scroll-target="#methods-section">Methods section</a></li>
+  <li><a href="#discussion-section" id="toc-discussion-section" class="nav-link" data-scroll-target="#discussion-section">Discussion section</a></li>
+  <li><a href="#metadata-documentation" id="toc-metadata-documentation" class="nav-link" data-scroll-target="#metadata-documentation">Metadata documentation</a></li>
+  <li><a href="#code-sharing" id="toc-code-sharing" class="nav-link" data-scroll-target="#code-sharing">Code sharing</a></li>
+  <li><a href="#data-sharing" id="toc-data-sharing" class="nav-link" data-scroll-target="#data-sharing">Data sharing</a></li>
+  <li><a href="#materials-sharing" id="toc-materials-sharing" class="nav-link" data-scroll-target="#materials-sharing">Materials sharing</a></li>
+  <li><a href="#fair-storage" id="toc-fair-storage" class="nav-link" data-scroll-target="#fair-storage">FAIR storage</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -162,10 +262,243 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>This site will shortly host the Research Data Alliance (RDA) Research Guide. The Research Guide is authored by the <a href="https://www.rd-alliance.org/groups/optical-radiation-exposure-and-visual-experience-data-wg/activity/">Optical Radiation Exposure and Visual Experience Data Working Group</a>. The site is built using <a href="https://quarto.org/docs/websites">Quarto</a>, a scientific and technical publishing system.</p>
+<section id="outline-of-the-research-guide" class="level1">
+<h1>Outline of the Research Guide</h1>
+<section id="selecting-devices" class="level2">
+<h2 class="anchored" data-anchor-id="selecting-devices">Selecting Devices</h2>
+<section id="measurement-capabilities-and-sensor-characteristics" class="level3">
+<h3 class="anchored" data-anchor-id="measurement-capabilities-and-sensor-characteristics">Measurement capabilities and sensor characteristics</h3>
+<p>Spectral/photometric/α-opic metrics, sampling rate, uncertainty, cosine response, range, etc. <span class="citation" data-cites="Spitschan2022DigitHealth">(<a href="#ref-Spitschan2022DigitHealth" role="doc-biblioref">Spitschan et al. 2022</a>)</span></p>
+</section>
+<section id="advanced-and-additional-modalities" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-and-additional-modalities">Advanced and additional modalities</h3>
+<p>Spatial resolution, movement tracking, UV/IR detection.</p>
+</section>
+<section id="manufacturer-calibration" class="level3">
+<h3 class="anchored" data-anchor-id="manufacturer-calibration">Manufacturer calibration</h3>
+<p>Factory calibration and recalibration procedures.</p>
+</section>
+<section id="size-form-and-design" class="level3">
+<h3 class="anchored" data-anchor-id="size-form-and-design">Size, form, and design</h3>
+<p>Dimensions, durability, occlusion susceptibility. <span class="citation" data-cites="vanDuijnhoven2025BuildingAndEnvironment">(<a href="#ref-vanDuijnhoven2025BuildingAndEnvironment" role="doc-biblioref">Duijnhoven et al. 2025</a>)</span></p>
+</section>
+<section id="battery-capacity" class="level3">
+<h3 class="anchored" data-anchor-id="battery-capacity">Battery capacity</h3>
+<p>Battery life, charging cycles, power management.</p>
+</section>
+<section id="data-storage" class="level3">
+<h3 class="anchored" data-anchor-id="data-storage">Data storage</h3>
+<p>Storage capacity, retention, and privacy.</p>
+</section>
+<section id="raw-data-format-and-ease-of-use" class="level3">
+<h3 class="anchored" data-anchor-id="raw-data-format-and-ease-of-use">Raw data format and ease of use</h3>
+<p>Export formats, transfer speed, and syntactic structure.</p>
+</section>
+<section id="on-device-wear-and-occlusion-detection" class="level3">
+<h3 class="anchored" data-anchor-id="on-device-wear-and-occlusion-detection">On-device wear and occlusion detection</h3>
+<p>Automatic detection capabilities.</p>
+</section>
+<section id="interaction-with-the-device" class="level3">
+<h3 class="anchored" data-anchor-id="interaction-with-the-device">Interaction with the device</h3>
+<p>Event markers, user feedback, logging tools.</p>
+</section>
+<section id="documentation" class="level3">
+<h3 class="anchored" data-anchor-id="documentation">Documentation</h3>
+<p>Quality of manufacturer documentation.</p>
+</section>
+<section id="software-ecosystem" class="level3">
+<h3 class="anchored" data-anchor-id="software-ecosystem">Software ecosystem</h3>
+<p>Features for annotation, tagging, and version control. <span class="citation" data-cites="Zauner2025JOpenSourceSoftw">(<a href="#ref-Zauner2025JOpenSourceSoftw" role="doc-biblioref">Zauner, Hartmeyer, and Spitschan 2025</a>)</span></p>
+</section>
+</section>
+<section id="validating-devices" class="level2">
+<h2 class="anchored" data-anchor-id="validating-devices">Validating Devices</h2>
+<section id="standardized-validation-procedures" class="level3">
+<h3 class="anchored" data-anchor-id="standardized-validation-procedures">Standardized validation procedures</h3>
+<p>General principles and methodology.</p>
+</section>
+<section id="cross-comparison-with-reference-measurements" class="level3">
+<h3 class="anchored" data-anchor-id="cross-comparison-with-reference-measurements">Cross-comparison with reference measurements</h3>
+<p>Using standard light sources.</p>
+</section>
+<section id="inter-device-variability-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="inter-device-variability-assessment">Inter-device variability assessment</h3>
+<p>Comparing devices.</p>
+</section>
+<section id="intra-device-reliability-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="intra-device-reliability-assessment">Intra-device reliability assessment</h3>
+<p>Same-device repeatability.</p>
+</section>
+<section id="ease-of-calibration" class="level3">
+<h3 class="anchored" data-anchor-id="ease-of-calibration">Ease of calibration</h3>
+<p>Individual recalibration support.</p>
+</section>
+</section>
+<section id="designing-the-study" class="level2">
+<h2 class="anchored" data-anchor-id="designing-the-study">Designing the Study</h2>
+<section id="clarity-on-research-questions" class="level3">
+<h3 class="anchored" data-anchor-id="clarity-on-research-questions">Clarity on research questions</h3>
+<p>Matching questions with measurement goals.</p>
+</section>
+<section id="participant-burden-vs.-fidelity" class="level3">
+<h3 class="anchored" data-anchor-id="participant-burden-vs.-fidelity">Participant burden vs.&nbsp;fidelity</h3>
+<p>Balancing precision with practicality.</p>
+</section>
+<section id="measurement-capabilities-matched-to-use-case" class="level3">
+<h3 class="anchored" data-anchor-id="measurement-capabilities-matched-to-use-case">Measurement capabilities matched to use case</h3>
+<p>Light level dependence.</p>
+</section>
+<section id="measurement-length-and-time-intervals" class="level3">
+<h3 class="anchored" data-anchor-id="measurement-length-and-time-intervals">Measurement length and time intervals</h3>
+<p>Sampling strategy and battery considerations.</p>
+</section>
+<section id="inclusion-of-other-data" class="level3">
+<h3 class="anchored" data-anchor-id="inclusion-of-other-data">Inclusion of other data</h3>
+<p>Sleep, activity, and context. <span class="citation" data-cites="Guidolin2045BMCPublicHealth">(<a href="#ref-Guidolin2045BMCPublicHealth" role="doc-biblioref">Guidolin et al. 2024</a>)</span></p>
+</section>
+<section id="behavioral-modification-through-wearing-location" class="level3">
+<h3 class="anchored" data-anchor-id="behavioral-modification-through-wearing-location">Behavioral modification through wearing location</h3>
+<p>How wear location may affect behavior.</p>
+</section>
+</section>
+<section id="collecting-data" class="level2">
+<h2 class="anchored" data-anchor-id="collecting-data">Collecting Data</h2>
+<section id="briefing-of-participants" class="level3">
+<h3 class="anchored" data-anchor-id="briefing-of-participants">Briefing of participants</h3>
+<p>Instructions and precautions.</p>
+</section>
+<section id="recurrent-compliance-checks" class="level3">
+<h3 class="anchored" data-anchor-id="recurrent-compliance-checks">Recurrent compliance checks</h3>
+<p>Monitoring adherence.</p>
+</section>
+<section id="device-settings" class="level3">
+<h3 class="anchored" data-anchor-id="device-settings">Device settings</h3>
+<p>Logging configuration, time sync, DST handling.</p>
+</section>
+</section>
+<section id="storing-and-documenting-data" class="level2">
+<h2 class="anchored" data-anchor-id="storing-and-documenting-data">Storing and Documenting Data</h2>
+<section id="consistent-file-format" class="level3">
+<h3 class="anchored" data-anchor-id="consistent-file-format">Consistent file format</h3>
+<p>Non-proprietary standard formats.</p>
+</section>
+<section id="auxiliary-data" class="level3">
+<h3 class="anchored" data-anchor-id="auxiliary-data">Auxiliary data</h3>
+<p>Surveys, companion apps.</p>
+</section>
+<section id="standard-directory-structure" class="level3">
+<h3 class="anchored" data-anchor-id="standard-directory-structure">Standard directory structure</h3>
+<p>File organization.</p>
+</section>
+<section id="documentation-of-anomalies" class="level3">
+<h3 class="anchored" data-anchor-id="documentation-of-anomalies">Documentation of anomalies</h3>
+<p>Participant-reported issues.</p>
+</section>
+<section id="metadata" class="level3">
+<h3 class="anchored" data-anchor-id="metadata">Metadata</h3>
+<p>Standardized documentation. [Spitschan2024BMCDigitHealth]</p>
+</section>
+<section id="privacy-aspects" class="level3">
+<h3 class="anchored" data-anchor-id="privacy-aspects">Privacy aspects</h3>
+<p>Anonymization, PII handling.</p>
+</section>
+<section id="locale-consistency" class="level3">
+<h3 class="anchored" data-anchor-id="locale-consistency">Locale consistency</h3>
+<p>Date/time formats, decimal markers.</p>
+</section>
+<section id="recommended-conventions-for-datetime" class="level3">
+<h3 class="anchored" data-anchor-id="recommended-conventions-for-datetime">Recommended conventions for datetime</h3>
+<p>Best practices for timestamp handling.</p>
+</section>
+</section>
+<section id="maintaining-devices" class="level2">
+<h2 class="anchored" data-anchor-id="maintaining-devices">Maintaining Devices</h2>
+<section id="cleaning" class="level3">
+<h3 class="anchored" data-anchor-id="cleaning">Cleaning</h3>
+<p>Hygiene and maintenance.</p>
+</section>
+<section id="monitoring-and-correcting-device-drift" class="level3">
+<h3 class="anchored" data-anchor-id="monitoring-and-correcting-device-drift">Monitoring and correcting device drift</h3>
+<p>Detecting and recalibrating drift.</p>
+</section>
+</section>
+<section id="analysing-data" class="level2">
+<h2 class="anchored" data-anchor-id="analysing-data">Analysing Data</h2>
+<section id="data-cleaning-and-preprocessing" class="level3">
+<h3 class="anchored" data-anchor-id="data-cleaning-and-preprocessing">Data cleaning and preprocessing</h3>
+<p>Non-wear, missing data, aggregation.</p>
+</section>
+<section id="exploration-and-exploratory-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="exploration-and-exploratory-visualization">Exploration and exploratory visualization</h3>
+<p>Visual strategies for time series.</p>
+</section>
+<section id="merging-data-streams" class="level3">
+<h3 class="anchored" data-anchor-id="merging-data-streams">Merging data streams</h3>
+<p>Syncing sleep, activity, and light data.</p>
+</section>
+<section id="adding-context-to-the-time-series" class="level3">
+<h3 class="anchored" data-anchor-id="adding-context-to-the-time-series">Adding context to the time series</h3>
+<p>Chronotype, location data, etc.</p>
+</section>
+<section id="metric-selection" class="level3">
+<h3 class="anchored" data-anchor-id="metric-selection">Metric selection</h3>
+<p>Duration vs.&nbsp;intensity metrics.</p>
+</section>
+<section id="special-properties-of-light-and-visual-experience-data" class="level3">
+<h3 class="anchored" data-anchor-id="special-properties-of-light-and-visual-experience-data">Special properties of light and visual experience data</h3>
+<p>Zero inflation, dynamic range.</p>
+</section>
+</section>
+<section id="reporting-data" class="level2">
+<h2 class="anchored" data-anchor-id="reporting-data">Reporting Data</h2>
+<section id="methods-section" class="level3">
+<h3 class="anchored" data-anchor-id="methods-section">Methods section</h3>
+<p>Ensuring reproducibility.</p>
+</section>
+<section id="discussion-section" class="level3">
+<h3 class="anchored" data-anchor-id="discussion-section">Discussion section</h3>
+<p>Study design, device rationale.</p>
+</section>
+<section id="metadata-documentation" class="level3">
+<h3 class="anchored" data-anchor-id="metadata-documentation">Metadata documentation</h3>
+<p>Thorough sharing practices.</p>
+</section>
+<section id="code-sharing" class="level3">
+<h3 class="anchored" data-anchor-id="code-sharing">Code sharing</h3>
+<p>Preprocessing and analysis scripts. <span class="citation" data-cites="Zauner2025JOpenSourceSoftw">(<a href="#ref-Zauner2025JOpenSourceSoftw" role="doc-biblioref">Zauner, Hartmeyer, and Spitschan 2025</a>)</span></p>
+</section>
+<section id="data-sharing" class="level3">
+<h3 class="anchored" data-anchor-id="data-sharing">Data sharing</h3>
+<p>Ethical and practical aspects.</p>
+</section>
+<section id="materials-sharing" class="level3">
+<h3 class="anchored" data-anchor-id="materials-sharing">Materials sharing</h3>
+<p>Instruments like questionnaires.</p>
+</section>
+<section id="fair-storage" class="level3">
+<h3 class="anchored" data-anchor-id="fair-storage">FAIR storage</h3>
+<p>Guidance on repositories and principles.</p>
 
 
 
-</main> <!-- /main -->
+</section>
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-vanDuijnhoven2025BuildingAndEnvironment" class="csl-entry" role="listitem">
+Duijnhoven, J. van, S. L. Hartmeyer, A. Didikoglu, O. Stefani, K. W. Houser, V. Kalavally, and M. Spitschan. 2025. <span>“Measuring Light Exposure in Daily Life: A Review of Wearable Light Loggers.”</span> Journal Article. <em>BuildEnviron</em> 274. <a href="https://doi.org/10.1016/j.buildenv.2025.112771">https://doi.org/10.1016/j.buildenv.2025.112771</a>.
+</div>
+<div id="ref-Guidolin2045BMCPublicHealth" class="csl-entry" role="listitem">
+Guidolin, C., S. Aerts, G. K. Agbeshie, K. O. Akuffo, S. N. Aydin, D. Baeza-Moyano, J. Bolte, et al. 2024. <span>“Protocol for a Prospective, Multicentre, Cross-Sectional Cohort Study to Assess Personal Light Exposure.”</span> Journal Article. <em>BMC Public Health</em> 24 (1): 3285. <a href="https://doi.org/10.1186/s12889-024-20206-4">https://doi.org/10.1186/s12889-024-20206-4</a>.
+</div>
+<div id="ref-Spitschan2022DigitHealth" class="csl-entry" role="listitem">
+Spitschan, M., K. Smolders, B. Vandendriessche, B. Bent, J. P. Bakker, I. R. Rodriguez-Chavez, and C. Vetter. 2022. <span>“Verification, Analytical Validation and Clinical Validation (V3) of Wearable Dosimeters and Light Loggers.”</span> Journal Article. <em>Digit Health</em> 8: 20552076221144858. <a href="https://doi.org/10.1177/20552076221144858">https://doi.org/10.1177/20552076221144858</a>.
+</div>
+<div id="ref-Zauner2025JOpenSourceSoftw" class="csl-entry" role="listitem">
+Zauner, J., S. Hartmeyer, and M. Spitschan. 2025. <span>“LightLogR: Reproducible Analysis of Personal Light Exposure Data.”</span> Journal Article. <em>J Open Source Softw</em> 10 (107): 7601. <a href="https://doi.org/10.21105/joss.07601">https://doi.org/10.21105/joss.07601</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

@@ -14,6 +14,62 @@
     "text": "This site will shortly host the Research Data Alliance (RDA) Research Guide. The Research Guide is authored by the Optical Radiation Exposure and Visual Experience Data Working Group. The site is built using Quarto, a scientific and technical publishing system."
   },
   {
+    "objectID": "index.html#selecting-devices",
+    "href": "index.html#selecting-devices",
+    "title": "RDA Research Guide",
+    "section": "Selecting Devices",
+    "text": "Selecting Devices\n\nMeasurement capabilities and sensor characteristics\nSpectral/photometric/α-opic metrics, sampling rate, uncertainty, cosine response, range, etc. (Spitschan et al. 2022)\n\n\nAdvanced and additional modalities\nSpatial resolution, movement tracking, UV/IR detection.\n\n\nManufacturer calibration\nFactory calibration and recalibration procedures.\n\n\nSize, form, and design\nDimensions, durability, occlusion susceptibility. (Duijnhoven et al. 2025)\n\n\nBattery capacity\nBattery life, charging cycles, power management.\n\n\nData storage\nStorage capacity, retention, and privacy.\n\n\nRaw data format and ease of use\nExport formats, transfer speed, and syntactic structure.\n\n\nOn-device wear and occlusion detection\nAutomatic detection capabilities.\n\n\nInteraction with the device\nEvent markers, user feedback, logging tools.\n\n\nDocumentation\nQuality of manufacturer documentation.\n\n\nSoftware ecosystem\nFeatures for annotation, tagging, and version control. (Zauner, Hartmeyer, and Spitschan 2025)"
+  },
+  {
+    "objectID": "index.html#validating-devices",
+    "href": "index.html#validating-devices",
+    "title": "RDA Research Guide",
+    "section": "Validating Devices",
+    "text": "Validating Devices\n\nStandardized validation procedures\nGeneral principles and methodology.\n\n\nCross-comparison with reference measurements\nUsing standard light sources.\n\n\nInter-device variability assessment\nComparing devices.\n\n\nIntra-device reliability assessment\nSame-device repeatability.\n\n\nEase of calibration\nIndividual recalibration support."
+  },
+  {
+    "objectID": "index.html#designing-the-study",
+    "href": "index.html#designing-the-study",
+    "title": "RDA Research Guide",
+    "section": "Designing the Study",
+    "text": "Designing the Study\n\nClarity on research questions\nMatching questions with measurement goals.\n\n\nParticipant burden vs. fidelity\nBalancing precision with practicality.\n\n\nMeasurement capabilities matched to use case\nLight level dependence.\n\n\nMeasurement length and time intervals\nSampling strategy and battery considerations.\n\n\nInclusion of other data\nSleep, activity, and context. (Guidolin et al. 2024)\n\n\nBehavioral modification through wearing location\nHow wear location may affect behavior."
+  },
+  {
+    "objectID": "index.html#collecting-data",
+    "href": "index.html#collecting-data",
+    "title": "RDA Research Guide",
+    "section": "Collecting Data",
+    "text": "Collecting Data\n\nBriefing of participants\nInstructions and precautions.\n\n\nRecurrent compliance checks\nMonitoring adherence.\n\n\nDevice settings\nLogging configuration, time sync, DST handling."
+  },
+  {
+    "objectID": "index.html#storing-and-documenting-data",
+    "href": "index.html#storing-and-documenting-data",
+    "title": "RDA Research Guide",
+    "section": "Storing and Documenting Data",
+    "text": "Storing and Documenting Data\n\nConsistent file format\nNon-proprietary standard formats.\n\n\nAuxiliary data\nSurveys, companion apps.\n\n\nStandard directory structure\nFile organization.\n\n\nDocumentation of anomalies\nParticipant-reported issues.\n\n\nMetadata\nStandardized documentation. [Spitschan2024BMCDigitHealth]\n\n\nPrivacy aspects\nAnonymization, PII handling.\n\n\nLocale consistency\nDate/time formats, decimal markers.\n\n\nRecommended conventions for datetime\nBest practices for timestamp handling."
+  },
+  {
+    "objectID": "index.html#maintaining-devices",
+    "href": "index.html#maintaining-devices",
+    "title": "RDA Research Guide",
+    "section": "Maintaining Devices",
+    "text": "Maintaining Devices\n\nCleaning\nHygiene and maintenance.\n\n\nMonitoring and correcting device drift\nDetecting and recalibrating drift."
+  },
+  {
+    "objectID": "index.html#analysing-data",
+    "href": "index.html#analysing-data",
+    "title": "RDA Research Guide",
+    "section": "Analysing Data",
+    "text": "Analysing Data\n\nData cleaning and preprocessing\nNon-wear, missing data, aggregation.\n\n\nExploration and exploratory visualization\nVisual strategies for time series.\n\n\nMerging data streams\nSyncing sleep, activity, and light data.\n\n\nAdding context to the time series\nChronotype, location data, etc.\n\n\nMetric selection\nDuration vs. intensity metrics.\n\n\nSpecial properties of light and visual experience data\nZero inflation, dynamic range."
+  },
+  {
+    "objectID": "index.html#reporting-data",
+    "href": "index.html#reporting-data",
+    "title": "RDA Research Guide",
+    "section": "Reporting Data",
+    "text": "Reporting Data\n\nMethods section\nEnsuring reproducibility.\n\n\nDiscussion section\nStudy design, device rationale.\n\n\nMetadata documentation\nThorough sharing practices.\n\n\nCode sharing\nPreprocessing and analysis scripts. (Zauner, Hartmeyer, and Spitschan 2025)\n\n\nData sharing\nEthical and practical aspects.\n\n\nMaterials sharing\nInstruments like questionnaires.\n\n\nFAIR storage\nGuidance on repositories and principles."
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
