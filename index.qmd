@@ -191,7 +191,7 @@ File organization.
 Participant-reported issues.
 
 ### Metadata
-Standardized documentation. [Spitschan2024BMCDigitHealth]
+Standardized documentation. [@Spitschan2024BMCDigitHealth]
 
 ### Privacy aspects
 
