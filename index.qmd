@@ -225,7 +225,8 @@ For any biomedical data collection, privacy principles relevant to the local jur
 Date/time formats, decimal markers.
 
 ### Recommended conventions for datetime
-Best practices for timestamp handling.
+
+Best practices for timestamp handling. [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
 
 ## Maintaining devices
 
