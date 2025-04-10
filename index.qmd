@@ -45,7 +45,9 @@ Different form factors are susceptible to different types of occlusions, so beyo
 Common problems include:
 
 – Wrist-worn devices are susceptible to being occluded by sleeves, particularly in settings or cold weather seasons.
+
 - Lanyard-worn and clip-worn devices are susceptible to being occluded by jackets or other outer garments.
+
 - Devices attached to spectacle frames are impractical for long-term use in the real world.
 
 ### Battery capacity
@@ -57,11 +59,15 @@ Storage capacity, retention, and privacy.
 ### Raw data format and ease of use
 Export formats, transfer speed, and syntactic structure.
 
-### On-device wear and occlusion detection
-Automatic detection capabilities.
+### Wear/non-wear and occlusion detection
+
+Some devices may be able to detect whether they are being worn, either online, or after analysis using the manufacturer-provided software. For wrist-worn devices, this could be implemented through a capacitance sensor, or temperature sensor, or in conjunction with data from the IMU. Additionally, devices might be able to detect it is occluded.
+
+When wear detection is not available from the device-inherent capabilities, it is recommended that researchers investigate concise methods for estimating wear/non-wear state, e.g. through additional questionnaires or using a data-driven approach.
 
 ### Interaction with the device
-Event markers, user feedback, logging tools.
+
+Some devices contain event buttons, which, when pressed, insert time-stamped information into the data log. This functionality can be very useful for determining wear/non-wear state and specific events taking place for the participant. It is worth noting that as they are a user interaction, it is not guaranteed that participants will do it consistently.
 
 ### Documentation
 Quality of manufacturer documentation.
@@ -193,7 +199,8 @@ Ethical and practical aspects.
 
 To ensure the reproducibility of research studies, it is recommended to share the materials used throughout the study, including any instruction sheets given to the participant, survey questions used, as well as debriefing documents. For any digital materials, such as forms served on a survey platform (such as REDCap), it is recommended, that the materials are provided in a format ingestible/importable by the platform.
 
-
 ### FAIR data
 
 The FAIR principles state that data should be **f**indable, **a**ccessible, **i**nteroperable and **r**eusable, to make them easier to share and reusable. Several of the points raised in this Researcher Guide are driven to ensure that visual experience and optical radiation data are FAIR, including standard file formats and documentation. Importantly, FAIR data guarantees that the collected data are used sustainably, and available well beyond the specific published research articles.
+
+Data can be published as part of the supplementary material of journals. An alternative option is to add them as data packages to specific repositories, such as [Zenodo](https://zenodo.org/) or [FigShare](https://figshare.org/). 
