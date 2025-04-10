@@ -251,7 +251,12 @@ Following data collection, data are analysed.
 
 ### Data cleaning and preprocessing
 
-Due to non-wear at times of day at which specific activities occur (e.g., showering, contact sports, swimming, ...), light exposure data may be missing systematically. 
+Due to non-wear at times of day at which specific activities occur (e.g., showering, contact sports, swimming, ...), light exposure data may be missing systematically. Data may also be missing if the light exposure falls short of or exceeds the sensor range.
+
+The following sanity checks are recommended:
+
++ Visualisation of raw time series for the available sensors
++ Visualisation of histogram to identify distributions of data and outliers
 
 Non-wear, missing data, aggregation.
 
