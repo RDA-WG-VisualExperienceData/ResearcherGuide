@@ -6,21 +6,47 @@ bibliography: references.bib
 
 This site will shortly host the Research Data Alliance (RDA) Research Guide. The Research Guide is authored by the [Optical Radiation Exposure and Visual Experience Data Working Group](https://www.rd-alliance.org/groups/optical-radiation-exposure-and-visual-experience-data-wg/activity/). The site is built using [Quarto](https://quarto.org/docs/websites), a scientific and technical publishing system.
 
-# Outline of the Researcher Guide
+# Introduction
+
+Exposure to the optical environment, sometimes called visual experience, fundamentally affects human physiology and behaviour at multiple time scales. Two examples of such effects that have received significant attention come from different research domains, but can be understood through a common retinally-referenced framework. The first concerns the 'non-visual' effect of light on human circadian and neuroendocrine physiology: The light-dark cycle synchronises the biological clock, and exposure to light at night suppresses melatonin production. The second concerns the potential effect of light exposure and visual experience on ocular development and specific myopia, in which time spent outdoors, and its associated visual experience, have been linked with ocular health outcomes.
+
+In typical laboratory studies, light exposure can be fixed and held constant, or modulated parametrically. Such artificial exposures are very much unlike the real-world exposures to the optical environment that people received through the day. As people move in and between spaces (indoors and outdoors) and move their trunks, heads and eyes, the exposure to the optical environment varies significantly, and is modulated by behaviour. As a consequence, understanding real-world exposure to link to real-world impacts requires real-world measurements, faciliated by wearable devices.
+
+Starting in the 1980s, technology to measure exposure to the optical environment has been developed and matured, with miniaturized illuminance sensors now (2025) being very common in consumer smartwatches. In research, several device and device types are available, which differ in their functionality. To make informed decisions about the properties of specific devices requires a careful ascertainment of their properties, and the specific trade-offs they entail.
+
+# Scope
+
+The scope of this Researcher Guide is to provide a guide to the use of wearable devices measuring the optical environment. It is a living document, and can be updated.
+
+# Researcher Guide
 
 ## Selecting Devices
 
 ### Measurement capabilities and sensor characteristics
 Spectral/photometric/α-opic metrics, sampling rate, uncertainty, cosine response, range, etc. [@Spitschan2022DigitHealth]
 
+ [@vanDuijnhoven2025BuildEnviron]
+
 ### Advanced and additional modalities
 Spatial resolution, movement tracking, UV/IR detection.
 
 ### Manufacturer calibration
-Factory calibration and recalibration procedures.
+
+Devices designed to measure light exposure and other aspects of the optical environment should come with information from the manufacturer on the calibration procedures used to ensure high-quality measurements. Sometimes, information for one exemplary device is included in a spec sheet or datasheet. It is worth consulting with the manufacturer on any calibrations they perform, and specifically clarify whether device-level information is available.
+
+The manufacturer may also recommend recalibrations of the devices at regular intervals. It is worth understanding the rationale for any such recalibrations (in particular if they come at a cost), and also any recalibrations that can be done by researchers themselves.
 
 ### Size, form, and design
-Dimensions, durability, occlusion susceptibility. [@vanDuijnhoven2025BuildEnviron]
+
+The size, form and design of a wearable light logger is particular important for the specific contexts in which it will be used. Devices that are too heavy, bulky or impractically shaped will likely not be of particular use in field studies on light exposure. The most common form factors are devices that are **wrist-worn**, **lanyard-worn**, attached with a **clip**, or attached to **spectacle frames**.
+
+Different form factors are susceptible to different types of occlusions, so beyond participant comfort, a device's dimensions and intended use case are also directly linked to data reliability. As of 2025, no specific device can be used all the time in all contexts and provide reliable information.
+
+Common problems include:
+
+– Wrist-worn devices are susceptible to being occluded by sleeves, particularly in settings or cold weather seasons.
+- Lanyard-worn and clip-worn devices are susceptible to being occluded by jackets or other outer garments.
+- Devices attached to spectacle frames are impractical for long-term use in the real world.
 
 ### Battery capacity
 Battery life, charging cycles, power management.
@@ -62,8 +88,9 @@ Individual recalibration support.
 
 ## Designing the Study
 
-### Clarity on research questions
-Matching questions with measurement goals.
+### Clarity on research question
+
+Research questions, hypotheses, procedures and methods need to be aligned. In the context of measuring visual experience and light exposure, measuring one day of light exposure to understand seasonal effects is inappropriate.
 
 ### Participant burden vs. fidelity
 Balancing precision with practicality.
@@ -165,6 +192,9 @@ Ethical and practical aspects.
 ### Materials sharing
 Instruments like questionnaires.
 
-### FAIR storage
+### FAIR data
+
+The FAIR principles state that data should be **f**indable, **a**ccessible, **i**nteroperable and **r**eusable. 
+
 Guidance on repositories and principles.
 
