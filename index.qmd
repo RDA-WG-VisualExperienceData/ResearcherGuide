@@ -48,8 +48,9 @@ The size, form and design of a wearable light logger are particularly important 
 
 Different form factors are susceptible to different types of occlusions, so beyond participant comfort, a device's dimensions and intended use case are also directly linked to data reliability. As of 2025, no specific device can be used all the time in all contexts and provide reliable information.
 
-Common problems include:
+![Form factors and wearing locations](images/wearing_locations.png)
 
+Common problems include:
 
 + Wrist-worn devices are susceptible to being occluded by sleeves, particularly in settings or cold weather seasons.
 
