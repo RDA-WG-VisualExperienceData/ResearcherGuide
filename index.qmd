@@ -38,23 +38,23 @@ Spatial resolution, movement tracking, UV/IR detection.
 
 ### Manufacturer calibration
 
-Devices designed to measure light exposure and other aspects of the optical environment should come with information from the manufacturer on the calibration procedures used to ensure high-quality measurements. Sometimes, information for one exemplary device is included in a spec sheet or datasheet. It is worth consulting with the manufacturer on any calibrations they perform, and specifically clarify whether device-level information is available.
+Devices designed to measure light exposure and other aspects of the optical environment should come with information from the manufacturer on the calibration procedures used to ensure high-quality measurements. Sometimes, information for one exemplary device is included in a spec sheet or datasheet. It is worth consulting with the manufacturer on any calibrations they perform and specifically clarifying whether device-level information is available.
 
-The manufacturer may also recommend recalibrations of the devices at regular intervals. It is worth understanding the rationale for any such recalibrations (in particular if they come at a cost), and also any recalibrations that can be done by researchers themselves.
+The manufacturer may also recommend recalibrations of the devices at regular intervals. It is worth understanding the rationale for any such recalibrations (in particular if they come at a cost), as well as any recalibrations that researchers themselves can do.
 
 ### Size, form, and design
 
-The size, form and design of a wearable light logger is particular important for the specific contexts in which it will be used. Devices that are too heavy, bulky or impractically shaped will likely not be of particular use in field studies on light exposure. The most common form factors are devices that are **wrist-worn**, **lanyard-worn**, attached with a **clip**, or attached to **spectacle frames**.
+The size, form and design of a wearable light logger are particularly important for the specific contexts in which it will be used. Devices that are too heavy, bulky or impractically shaped will likely not be of particular use in field studies on light exposure. The most common form factors are devices that are **wrist-worn**, **lanyard-worn**, attached with a **clip**, or attached to **spectacle frames**.
 
 Different form factors are susceptible to different types of occlusions, so beyond participant comfort, a device's dimensions and intended use case are also directly linked to data reliability. As of 2025, no specific device can be used all the time in all contexts and provide reliable information.
 
 Common problems include:
 
-– Wrist-worn devices are susceptible to being occluded by sleeves, particularly in settings or cold weather seasons.
++ Wrist-worn devices are susceptible to being occluded by sleeves, particularly in settings or cold weather seasons.
 
-- Lanyard-worn and clip-worn devices are susceptible to being occluded by jackets or other outer garments.
++ Lanyard-worn and clip-worn devices are susceptible to being occluded by jackets or other outer garments.
 
-- Devices attached to spectacle frames are impractical for long-term use in the real world.
++ Devices attached to spectacle frames are impractical for long-term use in the real world.
 
 ### Battery capacity
 Battery life, charging cycles, power management.
@@ -73,10 +73,28 @@ When wear detection is not available from the device-inherent capabilities, it i
 
 ### Interaction with the device
 
-Some devices contain event buttons, which, when pressed, insert time-stamped information into the data log. This functionality can be very useful for determining wear/non-wear state and specific events taking place for the participant. It is worth noting that as they are a user interaction, it is not guaranteed that participants will do it consistently.
+Some devices contain event buttons, which, when pressed, insert time-stamped information into the data log. This functionality can be very useful for determining wear/non-wear state and specific events taking place for the participant. It is worth noting that as they are a user interaction, participants are not guaranteed to do it consistently.
 
 ### Documentation
-Quality of manufacturer documentation.
+
+The quality of manufacturer documentation can vary significantly, and it is important to consult the manufacturer on its completeness. This includes, at a minimum:
+
++ Full description of sensor capabilities, including calibration information
++ Environmental operating conditions (temperature, humidity, altitude, etc.)
++ Expected lifespan and stability of sensor performance over time (e.g., sensor drift)
++ Known hardware/software limitations (e.g., maximum sampling rate, data loss risks)
++ Traceability of calibration (e.g., to national standards)
++ Documentation of validation procedures (e.g., lab vs. field performance)
++ Instructions for user-performed recalibration and required tools
++ Information on error states or error modes that may be encountered during the data collection
++ Description of any onboard data processing, compression, or classification algorithms
++ Details on how timestamps are generated and synchronized (e.g., internal clock behavior, drift)
++ Firmware versioning and changelog history, especially for devices under active development
++ Clear explanation of file formats (CSV, JSON, binary, proprietary, etc.)
++ Full description of all data available from the device
++ Contact information for technical support
++ Recommended positioning and usage instructions to ensure data validity
++ Any relevant compliance certifications (e.g., CE, FCC, ISO)
 
 ### Software ecosystem
 Features for annotation, tagging, and version control. [@Zauner2025JOpenSourceSoftw]
@@ -100,9 +118,11 @@ Individual recalibration support.
 
 ## Designing the Study
 
-### Clarity on research question
+### Clarity on the research question and pre-registration
 
-Research questions, hypotheses, procedures and methods need to be aligned. In the context of measuring visual experience and light exposure, measuring one day of light exposure to understand seasonal effects is inappropriate.
+Research questions, hypotheses, procedures, and methods need to be aligned in a tight way.  In measuring visual experience and light exposure, this alignment becomes particularly important due to the changing and context-dependent nature of light. Measuring a single day of light exposure to draw conclusions about seasonal effects is methodologically flawed, neglecting intra- and inter-day fluctuations in weather, behaviour and exposures. For more robust measurements, typically, longer measurements are needed and include data from weekdays and weekends. At the same time, coverage needs to be balanced with burden.
+
+It is important to clearly formulate the research questions, hypotheses, procedures, and methods before the data collection. An additional step is to write a pre-registration detailing the protocol and analysis plans.
 
 ### Participant burden vs. fidelity
 Balancing precision with practicality.
@@ -117,7 +137,8 @@ Sampling strategy and battery considerations.
 Sleep, activity, and context. [@Guidolin2045BMCPublicHealth]
 
 ### Behavioral modification through wearing location
-How wear location may affect behavior.
+
+Different form factors and associated wearing locations could be susceptible to different 
 
 ## Collecting Data
 
@@ -148,7 +169,8 @@ Participant-reported issues.
 Standardized documentation. [Spitschan2024BMCDigitHealth]
 
 ### Privacy aspects
-Anonymization, PII handling.
+
+For any biomedical data collection, privacy principles relevant to the local jurisdictions need to be upheld (e.g. HIPAA, GDPR, ...). Careful consideration needs to be placed on which aspects of data contain personally identifiable information. At present, it is not necessarily clear whether visual experience and light exposure, or time courses thereof, constitute personally identifiable information. More research needs to be done to understand the identifiability of people from their visual experience data.
 
 ### Locale consistency
 Date/time formats, decimal markers.
@@ -195,11 +217,22 @@ For transparency and to ensure that others can replicate and reproduce the measu
 	+ Wearing location
 	+ Sampling interval
 	+ Measured quantities
-	+ Calibration information
+	+ Calibration information on directional sensitivity, spectral sensitive, linearity and range properties
+	
 * Protocol-related properties
 	+ Wearing location
 	+ Wearing duration
-	+ Instructions given to the participant
+	+ Instructions given to the participant for wear context and non-wear behaviour
+	+ Criteria for inclusion/exclusion based on wear time and compliance
+	+ Use of prompts/reminders to ensure compliance
+
+* Analysis-related properties
+	+ Preprocessing of data, including outlier rejection, binning and smoothing
+	+ Handling of partial or missing data
+	+ Analysis routines and functions used
+	+ Software and version used for analysis and open-source availability
+
+Future work may formalise these recommendations in the form of a consensus checklist.
 
 ### Discussion section
 Study design, device rationale.
@@ -212,6 +245,8 @@ Preprocessing and analysis scripts. [@Zauner2025JOpenSourceSoftw]
 
 ### Data sharing
 Ethical and practical aspects.
+
+It is recommended that when researchers submit their ethics approval request, 
 
 ### Materials sharing
 
