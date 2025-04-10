@@ -231,6 +231,10 @@ Duration vs. intensity metrics.
 ### Special properties of light and visual experience data
 Zero inflation, dynamic range.
 
+### Implementation
+
+It is recommended that analysis of visual experience data is implemented using programmatic tools, such as R, Python or MATLAB. [LightLogR](https://tscnlab.github.io/LightLogR/) [@Zauner2025JOpenSourceSoftw] offers a powerful [open-source tool](https://github.com/tscnlab/LightLogR/) available on [CRAN](https://cloud.r-project.org/web/packages/LightLogR/index.html) for the analysis of light exposure and visual experience data.
+
 ## Reporting Data
 
 ### Methods section
@@ -269,7 +273,15 @@ It is recommended that the Discussion section discloses various limitations aris
 Thorough sharing practices.
 
 ### Code sharing
-Preprocessing and analysis scripts. [@Zauner2025JOpenSourceSoftw]
+
+The code used to analyse the data is not just a byproduct of the research process, but a result by itself. There are several reasons to make code available under an open source license:
+
++ The work underlying the scientific results is shared sustainably for re-use and independent checking
++ The researcher community can benefit from the availability of existing and citable code
+
+Code can be shared as static files attached to the supplementary material of a published article, or on a repository, such as [GitHub](https://github.com/) or [Bitbucket](https://bitbucket.org/). For GitHub, [Zenodo](https://zenodo.org/) offers an integration module such that when creating a release on GitHub, Zenodo creates a DOI, making the code citable.
+
+Importantly, when sharing code, it is necessary to select a license under which the code is available. Common licenses include the MIT License, which is permissive with respect to commercial use, and the GPL License, which is more restricted. [Choose a License](https://choosealicense.com/) can help making an informed decisions about software licenses.
 
 ### Data sharing
 Ethical and practical aspects.
