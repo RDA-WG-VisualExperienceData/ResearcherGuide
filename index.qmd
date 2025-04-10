@@ -20,7 +20,7 @@ Spatial resolution, movement tracking, UV/IR detection.
 Factory calibration and recalibration procedures.
 
 ### Size, form, and design
-Dimensions, durability, occlusion susceptibility. [@vanDuijnhoven2025BuildingAndEnvironment]
+Dimensions, durability, occlusion susceptibility. [@vanDuijnhoven2025BuildEnviron]
 
 ### Battery capacity
 Battery life, charging cycles, power management.
