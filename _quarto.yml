@@ -3,23 +3,29 @@ project:
 
 website:
   title: "Research Guide"
+  site-url: https://rda-wg-visualexperiencedata.github.io/ResearcherGuide/
+  repo-url: https://github.com/RDA-WG-VisualExperienceData/ResearcherGuide
+  issue-url: https://github.com/RDA-WG-VisualExperienceData/ResearcherGuide/issues
+  repo-actions: [edit, issue]
+  page-navigation: true
+  bread-crumbs: true
   navbar:
     logo: images/RDA_Logotype_CMYK.png
     logo-href: https://www.rd-alliance.org/groups/optical-radiation-exposure-and-visual-experience-data-wg/activity/
     left:
       - href: index.qmd
         text: Home
-      - contributing.qmd
-      - about.qmd
-    tools:
+      - text: "About"
+        href: about.qmd
+      - text: "License"
+        href: license.md
+      - text: "Contributing"
+        href: contributing.qmd
+    right:
       - icon: github
-        menu:
-          - text: Repository
-            href: https://github.com/RDA-WG-VisualExperienceData/ResearcherGuide
-            target: _blank
-          - text: Report an Error
-            href: https://github.com/RDA-WG-VisualExperienceData/ResearcherGuide/issues
-            target: _blank
+        href: https://github.com/RDA-WG-VisualExperienceData/ResearcherGuide
+        aria-label: Quarto GitHub
+
 
 format:
   html:

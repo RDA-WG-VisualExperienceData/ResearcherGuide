@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://RDA-WG-VisualExperienceData.github.io/ResearcherGuide/about.html</loc>
+    <loc>https://rda-wg-visualexperiencedata.github.io/ResearcherGuide/about.html</loc>
     <lastmod>2025-04-09T09:46:06.784Z</lastmod>
   </url>
   <url>
-    <loc>https://RDA-WG-VisualExperienceData.github.io/ResearcherGuide/contributing.html</loc>
+    <loc>https://rda-wg-visualexperiencedata.github.io/ResearcherGuide/contributing.html</loc>
     <lastmod>2025-04-09T09:46:06.784Z</lastmod>
   </url>
   <url>
-    <loc>https://RDA-WG-VisualExperienceData.github.io/ResearcherGuide/index.html</loc>
-    <lastmod>2025-04-09T09:46:06.789Z</lastmod>
+    <loc>https://rda-wg-visualexperiencedata.github.io/ResearcherGuide/index.html</loc>
+    <lastmod>2025-04-10T07:58:06.454Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rda-wg-visualexperiencedata.github.io/ResearcherGuide/license.html</loc>
+    <lastmod>2025-04-10T08:25:16.111Z</lastmod>
   </url>
 </urlset>
