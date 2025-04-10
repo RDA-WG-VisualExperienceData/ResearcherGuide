@@ -188,7 +188,18 @@ Zero inflation, dynamic range.
 
 ### Methods section
 
-For transparency and to ensure that others can replicate and reproduce the measurement protocol and study, it is key to document 
+For transparency and to ensure that others can replicate and reproduce the measurement protocol and study, it is key to document various aspects related to the measurement of visual experience and light exposure. At a minimum, it is recommended to include text on the following points:
+
+* Device-related properties
+	+ Manufacturer, brand and make of wearable device used
+	+ Wearing location
+	+ Sampling interval
+	+ Measured quantities
+	+ Calibration information
+* Protocol-related properties
+	+ Wearing location
+	+ Wearing duration
+	+ Instructions given to the participant
 
 ### Discussion section
 Study design, device rationale.
