@@ -30,7 +30,7 @@ The scope of this Researcher Guide is to provide a guide to using wearable devic
 
 ## Selecting devices
 
-The first step in any project examining visual experience and light exposure is the choice of a device. This involves understanding the properties of different wearable devices, and several trade-offs. A recent survey found >50 wearable devices differing in form and function [@vanDuijnhoven2025BuildEnviron], indicating the need to make informed choices.
+The first step in any project examining visual experience and light exposure is the choice of a device. This involves understanding the properties of different wearable devices, and several trade-offs. A recent survey found >50 wearable devices differing in form and function [@vanDuijnhoven2025BuildEnviron; with previous overviews in @Honekopp2023ClinOphthalmol; @Danilenko2022AppliedSci], indicating the need to make informed choices.
 
 ### Measurement capabilities and sensor characteristics
 Spectral/photometric/α-opic metrics, sampling rate, uncertainty, cosine response, range, etc. [@Spitschan2022DigitHealth]
