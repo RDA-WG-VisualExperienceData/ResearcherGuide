@@ -1,6 +1,7 @@
 ---
 title: "RDA Research Guide"
 author: The Optical Radiation Exposure and Visual Experience Data Working Group
+bibliography: references.bib
 ---
 
 This site will shortly host the Research Data Alliance (RDA) Research Guide. The Research Guide is authored by the [Optical Radiation Exposure and Visual Experience Data Working Group](https://www.rd-alliance.org/groups/optical-radiation-exposure-and-visual-experience-data-wg/activity/). The site is built using [Quarto](https://quarto.org/docs/websites), a scientific and technical publishing system.
@@ -10,7 +11,7 @@ This site will shortly host the Research Data Alliance (RDA) Research Guide. The
 ## Selecting Devices
 
 ### Measurement capabilities and sensor characteristics
-Spectral/photometric/α-opic metrics, sampling rate, uncertainty, cosine response, range, etc.
+Spectral/photometric/α-opic metrics, sampling rate, uncertainty, cosine response, range, etc. [@Spitschan2022DigitHealth]
 
 ### Advanced and additional modalities
 Spatial resolution, movement tracking, UV/IR detection.
@@ -19,7 +20,7 @@ Spatial resolution, movement tracking, UV/IR detection.
 Factory calibration and recalibration procedures.
 
 ### Size, form, and design
-Dimensions, durability, occlusion susceptibility.
+Dimensions, durability, occlusion susceptibility. [@vanDuijnhoven2025BuildingAndEnvironment]
 
 ### Battery capacity
 Battery life, charging cycles, power management.
@@ -40,7 +41,7 @@ Event markers, user feedback, logging tools.
 Quality of manufacturer documentation.
 
 ### Software ecosystem
-Features for annotation, tagging, and version control.
+Features for annotation, tagging, and version control. [@Zauner2025JOpenSourceSoftw]
 
 ## Validating Devices
 
@@ -74,7 +75,7 @@ Light level dependence.
 Sampling strategy and battery considerations.
 
 ### Inclusion of other data
-Sleep, activity, and context.
+Sleep, activity, and context. [@Guidolin2045BMCPublicHealth]
 
 ### Behavioral modification through wearing location
 How wear location may affect behavior.
@@ -105,7 +106,7 @@ File organization.
 Participant-reported issues.
 
 ### Metadata
-Standardized documentation.
+Standardized documentation. [Spitschan2024BMCDigitHealth]
 
 ### Privacy aspects
 Anonymization, PII handling.
@@ -156,7 +157,7 @@ Study design, device rationale.
 Thorough sharing practices.
 
 ### Code sharing
-Preprocessing and analysis scripts.
+Preprocessing and analysis scripts. [@Zauner2025JOpenSourceSoftw]
 
 ### Data sharing
 Ethical and practical aspects.
