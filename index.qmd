@@ -62,6 +62,8 @@ Common problems include:
 
 + Devices attached to spectacle frames are impractical for long-term use in the real world.
 
+Previous studies [@Okudaira1983AmJPhysiol; @Jardim2011ChronobiolInt; @Aarts2017BuildEnviron; @Bhandari2021Sensors; @Wen2023BMJOpenOphthal; @Mohammadian2024IEEEInternetThingsJ] have shown that while wrist-worn measurements are correlated with chest or head measurements, they are not related by a simple relationship. This follows from the fact that the wrist and eyes point in different directions in different planes.
+
 ### Battery capacity
 Battery life, charging cycles, power management.
 
