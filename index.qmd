@@ -14,11 +14,11 @@ This site will shortly host the Research Data Alliance (RDA) Research Guide. The
 
 # Introduction
 
-Exposure to the optical environment, sometimes called visual experience, fundamentally affects human physiology and behaviour at multiple time scales. Two examples of such effects that have received significant attention come from different research domains, but can be understood through a common retinally-referenced framework. The first concerns the 'non-visual' effect of light on human circadian and neuroendocrine physiology: The light-dark cycle synchronises the biological clock, and exposure to light at night suppresses melatonin production. The second concerns the potential effect of light exposure and visual experience on ocular development and specific myopia, in which time spent outdoors, and its associated visual experience, have been linked with ocular health outcomes.
+Exposure to the optical environment, sometimes called visual experience, fundamentally affects human physiology and behaviour at multiple time scales. Two examples of such effects that have received significant attention come from different research domains, but can be understood through a common retinally-referenced framework. The first concerns the 'non-visual' effect of light on human circadian and neuroendocrine physiology: The light-dark cycle synchronises the biological clock, and exposure to light at night suppresses melatonin production [@Brown2022PLoSBiol; @Blume2019Somnologie]. The second concerns the potential effect of light exposure and visual experience on ocular development and specific myopia, in which time spent outdoors, and its associated visual experience, have been linked with ocular health outcomes [@DahlmannNoor2025GraefesArchClinExpOphthal].
 
-In typical laboratory studies, light exposure can be fixed and held constant, or modulated parametrically. Such artificial exposures are very much unlike the real-world exposures to the optical environment that people received through the day. As people move in and between spaces (indoors and outdoors) and move their trunks, heads and eyes, the exposure to the optical environment varies significantly, and is modulated by behaviour. As a consequence, understanding real-world exposure to link to real-world impacts requires real-world measurements, faciliated by wearable devices.
+In typical laboratory studies, light exposure can be fixed and held constant, or modulated parametrically. Such artificial exposures are very much unlike the real-world exposures to the optical environment that people received through the day. As people move in and between spaces (indoors and outdoors) and move their trunks, heads and eyes, the exposure to the optical environment varies significantly [@Webler2019CurrOpinBehavSci], and is modulated by behaviour [@Biller2024CommunPsychol]. As a consequence, understanding real-world exposure to link to real-world impacts requires real-world measurements, faciliated by wearable devices.
 
-Starting in the 1980s, technology to measure exposure to the optical environment has been developed and matured, with miniaturized illuminance sensors now (2025) being very common in consumer smartwatches. In research, several device and device types are available, which differ in their functionality. To make informed decisions about the properties of specific devices requires a careful ascertainment of their properties, and the specific trade-offs they entail.
+Starting in the 1980s [@Okudaira1983AmJPhysiol], technology to measure exposure to the optical environment has been developed and matured, with miniaturized illuminance sensors now (2025) being very common in consumer smartwatches. In research, several device and device types are available, which differ in their functionality, ranging from small pin-like devices measuring light exposure [@Mohamed2021OptExpress] to head-mounted multi-modal measurement devices capturing almost all relevant aspects of visual experience [@Gibaldi2024TranslVisSciTechnol]. To make informed decisions about the properties of specific devices requires a careful ascertainment of their properties, and the specific trade-offs they entail.
 
 # Scope
 
@@ -172,15 +172,19 @@ Additionally, if there are any known problems with the devices, these should be 
 
 ### Recurrent compliance checks
 
-In case there is online access to the data, such as through clouds, it is possible to 
+Throughout a measurement protocol, it could be helpful to implement regular checks to remind participants of key steps involved in the measurement, including charging. In case there is online access to the data, such as through clouds, it is possible to monitor light exposure instantaneously and remotely. This can bring several benefits, including the possibility of corrective action should a participant not comply to the study procedures.
 
 ### Device settings
 
-A time-stamped and versioned standard operating procedure (SOP) document can help ensuring reproducibility of device settings when there are multiple operators settings up devices for studies. A key component is to ensure the same parameters, but also other configuration flags being consistently used for logging.
+A time-stamped and versioned standard operating procedure (SOP) document can help ensure the reproducibility of device settings when there are multiple operators setting up devices for studies. A key component is to ensure the same parameters, but also other configuration flags being consistently used for logging.
 
 Logging configuration, time sync, DST handling.
 
 ## Storing and Documenting Data
+
+### Documentation principles
+
+A minimum approach includes the use of a README file that describes the data collected [@Zielinski2023ClocksSleep].
 
 ### Consistent file format
 Non-proprietary standard formats.
@@ -196,6 +200,8 @@ Participant-reported issues.
 
 ### Metadata
 Standardized documentation. [@Spitschan2024BMCDigitHealth]
+
+
 
 ### Privacy aspects
 
@@ -305,6 +311,6 @@ To ensure the reproducibility of research studies, it is recommended to share th
 
 ### FAIR data
 
-The FAIR principles state that data should be **f**indable, **a**ccessible, **i**nteroperable and **r**eusable, to make them easier to share and reusable. Several of the points raised in this Researcher Guide are driven to ensure that visual experience and optical radiation data are FAIR, including standard file formats and documentation. Importantly, FAIR data guarantees that the collected data are used sustainably, and available well beyond the specific published research articles.
+The FAIR principles state that data should be **f**indable, **a**ccessible, **i**nteroperable and **r**eusable, to make them easier to share [@Wilkinson2016SciData]. Several points raised in this Researcher Guide are driven to ensure that visual experience and optical radiation data are FAIR, including standard file formats and documentation. Importantly, FAIR data guarantees that the collected data are used sustainably, and available well beyond the specific published research articles.
 
 Data can be published as part of the supplementary material of journals. An alternative option is to add them as data packages to specific repositories, such as [Zenodo](https://zenodo.org/) or [FigShare](https://figshare.org/). 
