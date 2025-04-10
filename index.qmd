@@ -190,11 +190,10 @@ Preprocessing and analysis scripts. [@Zauner2025JOpenSourceSoftw]
 Ethical and practical aspects.
 
 ### Materials sharing
-Instruments like questionnaires.
+
+To ensure the reproducibility of research studies, it is recommended to share the materials used throughout the study, including any instruction sheets given to the participant, survey questions used, as well as debriefing documents. For any digital materials, such as forms served on a survey platform (such as REDCap), it is recommended, that the materials are provided in a format ingestible/importable by the platform.
+
 
 ### FAIR data
 
-The FAIR principles state that data should be **f**indable, **a**ccessible, **i**nteroperable and **r**eusable. 
-
-Guidance on repositories and principles.
-
+The FAIR principles state that data should be **f**indable, **a**ccessible, **i**nteroperable and **r**eusable, to make them easier to share and reusable. Several of the points raised in this Researcher Guide are driven to ensure that visual experience and optical radiation data are FAIR, including standard file formats and documentation. Importantly, FAIR data guarantees that the collected data are used sustainably, and available well beyond the specific published research articles.
