@@ -1,9 +1,170 @@
 ---
 title: "RDA Research Guide"
 author: The Optical Radiation Exposure and Visual Experience Data Working Group
+bibliography: references.bib
 ---
 
 This site will shortly host the Research Data Alliance (RDA) Research Guide. The Research Guide is authored by the [Optical Radiation Exposure and Visual Experience Data Working Group](https://www.rd-alliance.org/groups/optical-radiation-exposure-and-visual-experience-data-wg/activity/). The site is built using [Quarto](https://quarto.org/docs/websites), a scientific and technical publishing system.
 
+# Outline of the Research Guide
 
+## Selecting Devices
+
+### Measurement capabilities and sensor characteristics
+Spectral/photometric/α-opic metrics, sampling rate, uncertainty, cosine response, range, etc. [@Spitschan2022DigitHealth]
+
+### Advanced and additional modalities
+Spatial resolution, movement tracking, UV/IR detection.
+
+### Manufacturer calibration
+Factory calibration and recalibration procedures.
+
+### Size, form, and design
+Dimensions, durability, occlusion susceptibility. [@vanDuijnhoven2025BuildingAndEnvironment]
+
+### Battery capacity
+Battery life, charging cycles, power management.
+
+### Data storage
+Storage capacity, retention, and privacy.
+
+### Raw data format and ease of use
+Export formats, transfer speed, and syntactic structure.
+
+### On-device wear and occlusion detection
+Automatic detection capabilities.
+
+### Interaction with the device
+Event markers, user feedback, logging tools.
+
+### Documentation
+Quality of manufacturer documentation.
+
+### Software ecosystem
+Features for annotation, tagging, and version control. [@Zauner2025JOpenSourceSoftw]
+
+## Validating Devices
+
+### Standardized validation procedures
+General principles and methodology.
+
+### Cross-comparison with reference measurements
+Using standard light sources.
+
+### Inter-device variability assessment
+Comparing devices.
+
+### Intra-device reliability assessment
+Same-device repeatability.
+
+### Ease of calibration
+Individual recalibration support.
+
+## Designing the Study
+
+### Clarity on research questions
+Matching questions with measurement goals.
+
+### Participant burden vs. fidelity
+Balancing precision with practicality.
+
+### Measurement capabilities matched to use case
+Light level dependence.
+
+### Measurement length and time intervals
+Sampling strategy and battery considerations.
+
+### Inclusion of other data
+Sleep, activity, and context. [@Guidolin2045BMCPublicHealth]
+
+### Behavioral modification through wearing location
+How wear location may affect behavior.
+
+## Collecting Data
+
+### Briefing of participants
+Instructions and precautions.
+
+### Recurrent compliance checks
+Monitoring adherence.
+
+### Device settings
+Logging configuration, time sync, DST handling.
+
+## Storing and Documenting Data
+
+### Consistent file format
+Non-proprietary standard formats.
+
+### Auxiliary data
+Surveys, companion apps.
+
+### Standard directory structure
+File organization.
+
+### Documentation of anomalies
+Participant-reported issues.
+
+### Metadata
+Standardized documentation. [Spitschan2024BMCDigitHealth]
+
+### Privacy aspects
+Anonymization, PII handling.
+
+### Locale consistency
+Date/time formats, decimal markers.
+
+### Recommended conventions for datetime
+Best practices for timestamp handling.
+
+## Maintaining Devices
+
+### Cleaning
+Hygiene and maintenance.
+
+### Monitoring and correcting device drift
+Detecting and recalibrating drift.
+
+## Analysing Data
+
+### Data cleaning and preprocessing
+Non-wear, missing data, aggregation.
+
+### Exploration and exploratory visualization
+Visual strategies for time series.
+
+### Merging data streams
+Syncing sleep, activity, and light data.
+
+### Adding context to the time series
+Chronotype, location data, etc.
+
+### Metric selection
+Duration vs. intensity metrics.
+
+### Special properties of light and visual experience data
+Zero inflation, dynamic range.
+
+## Reporting Data
+
+### Methods section
+Ensuring reproducibility.
+
+### Discussion section
+Study design, device rationale.
+
+### Metadata documentation
+Thorough sharing practices.
+
+### Code sharing
+Preprocessing and analysis scripts. [@Zauner2025JOpenSourceSoftw]
+
+### Data sharing
+Ethical and practical aspects.
+
+### Materials sharing
+Instruments like questionnaires.
+
+### FAIR storage
+Guidance on repositories and principles.
 
