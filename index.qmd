@@ -49,7 +49,6 @@ The size, form and design of a wearable light logger are particularly important 
 Different form factors are susceptible to different types of occlusions, so beyond participant comfort, a device's dimensions and intended use case are also directly linked to data reliability. As of 2025, no specific device can be used all the time in all contexts and provide reliable information.
 
 Common problems include:
-
 + Wrist-worn devices are susceptible to being occluded by sleeves, particularly in settings or cold weather seasons.
 
 + Lanyard-worn and clip-worn devices are susceptible to being occluded by jackets or other outer garments.
@@ -132,7 +131,7 @@ Individual recalibration support.
 
 ### Clarity on the research question and pre-registration
 
-The research question, hypotheses, procedures, and methods need to be aligned in a tight way.  In measuring visual experience and light exposure, this alignment becomes particularly important due to the changing and context-dependent nature of light. Measuring a single day of light exposure to draw conclusions about seasonal effects is methodologically flawed, neglecting intra- and inter-day fluctuations in weather, behaviour and exposures. For more robust measurements, typically, longer measurements are needed and include data from weekdays and weekends. Additionally, different work schedules [@Daugaard2019AnnWorkExpoHealth; @Price2021AnnWorkExpoHealth] and seasons at specific latitudes [@Cole1995JBiolRhythms; @Graw2000JAffectDisord; @Thorne2009ChronobiolInt; @Ulaganathan2018ActaOphthalmol; @Dunster2022JPinealRes] can lead to significant differences in exposure. At the same time, coverage needs to be balanced with participant burden.
+The research question, hypotheses, procedures, and methods need to be aligned in a tight way. In measuring visual experience and light exposure, this alignment becomes particularly important due to the changing and context-dependent nature of light. Measuring a single day of light exposure to draw conclusions about seasonal effects is methodologically flawed, neglecting intra- and inter-day fluctuations in weather, behaviour and exposures. For more robust measurements, typically, longer measurements are needed and include data from weekdays and weekends. Additionally, different work schedules [@Daugaard2019AnnWorkExpoHealth; @Price2021AnnWorkExpoHealth] and seasons at specific latitudes [@Cole1995JBiolRhythms; @Graw2000JAffectDisord; @Thorne2009ChronobiolInt; @Ulaganathan2018ActaOphthalmol; @Dunster2022JPinealRes] can lead to significant differences in exposure. At the same time, coverage needs to be balanced with participant burden.
 
 It is important to clearly formulate the research question, hypotheses, procedures, and methods before the data collection. An additional step is to write a pre-registration detailing the protocol and analysis plans.
 
