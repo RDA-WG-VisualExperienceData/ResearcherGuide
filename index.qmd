@@ -225,7 +225,7 @@ Metadata is data about data. Standardized documentation. [@Spitschan2024BMCDigit
 
 ### Privacy aspects
 
-For any biomedical data collection, privacy principles relevant to the local jurisdictions need to be upheld (e.g. [HIPAA](https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html), [GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng), ...). Careful consideration needs to be placed on which aspects of data contain personally identifiable information. At present, it is not necessarily clear whether visual experience and light exposure, or time courses thereof, constitute personally identifiable information. More research needs to be done to understand the identifiability of people from their visual experience data.
+For any biomedical data collection, privacy principles relevant to the local jurisdictions need to be upheld (e.g. [HIPAA](https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html), [GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng), ...). Careful consideration needs to be placed on which aspects of data contain personally identifiable information. It is not clear whether visual experience and light exposure, or time courses thereof, constitute personally identifiable information. More research needs to be done to understand the identifiability of people from their visual experience data.
 
 ### Locale consistency
 Date/time formats, decimal markers.
@@ -250,6 +250,9 @@ Detecting and recalibrating drift.
 Following data collection, data are analysed.
 
 ### Data cleaning and preprocessing
+
+Due to non-wear at times of day at which specific activities occur (e.g., showering, contact sports, swimming, ...), light exposure data may be missing systematically. 
+
 Non-wear, missing data, aggregation.
 
 ### Exploration and exploratory visualization
