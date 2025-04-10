@@ -163,9 +163,9 @@ Sampling strategy and battery considerations.
 ### Inclusion of other data
 Sleep, activity, and context. [@Guidolin2045BMCPublicHealth]
 
-### Behavioral modification through wearing location
+### Participant reactivity and inadvertant behavioral modification
 
-Different form factors and associated wearing locations could be susceptible to different ways that participants behave. For example, wearing a device attached to spectacle frames may not be very suitable for public environments, workplace, or specific recreational contexts. Consequently, participants may change their behaviour in response to the visibility, intrusiveness, or comfort of the device, leading to reactivity—i.e., modifications in naturalistic behaviour due to awareness of being monitored.
+Different form factors and associated wearing locations could be susceptible to different ways that participants behave, a phenomenon similar to reactivity, in measurement leads to changes in the people being measured [@French2010BrJHealthPsychol]. For example, wearing a device attached to spectacle frames may not be very suitable for public environments, workplace, or specific recreational contexts. Consequently, participants may change their behaviour in response to the visibility, intrusiveness, or comfort of the device, leading to reactivity—i.e., modifications in naturalistic behaviour due to awareness of being monitored.
 
 Such behavioural adaptations can include reduced social interaction, altered outdoor time, or avoidance of certain activities (e.g., sports, commuting via bicycle). These changes may introduce systematic biases in the collected data, particularly if the device form factor is not well tolerated across all settings or participants.
 
