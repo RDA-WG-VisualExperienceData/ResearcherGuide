@@ -22,7 +22,7 @@ Starting in the 1980s, technology to measure exposure to the optical environment
 
 # Scope
 
-The scope of this Researcher Guide is to provide a guide to the use of wearable devices measuring the optical environment. It is a living document, and can be updated.
+The scope of this Researcher Guide is to provide a guide to using wearable devices measuring the optical environment. It is a living document and can be updated.
 
 # Researcher Guide
 
@@ -150,16 +150,25 @@ Sleep, activity, and context. [@Guidolin2045BMCPublicHealth]
 
 ### Behavioral modification through wearing location
 
-Different form factors and associated wearing locations could be susceptible to different ways that participants behave. For example, wearing a device attached to spectacle frames may not be very suitable for public environments, workplace, or specific recreational contexts. As a consequence, participants may change their behaviour in response to the visibility, intrusiveness, or comfort of the device, leading to reactivity—i.e., modifications in naturalistic behaviour due to awareness of being monitored.
+Different form factors and associated wearing locations could be susceptible to different ways that participants behave. For example, wearing a device attached to spectacle frames may not be very suitable for public environments, workplace, or specific recreational contexts. Consequently, participants may change their behaviour in response to the visibility, intrusiveness, or comfort of the device, leading to reactivity—i.e., modifications in naturalistic behaviour due to awareness of being monitored.
 
-Such behavioural adaptations can include reduced social interaction, altered time spent outdoors, or avoidance of certain activities (e.g., sports, commuting via bicycle). These changes may introduce systematic biases in the collected data, particularly if the device form factor is not well tolerated across all settings or participants.
+Such behavioural adaptations can include reduced social interaction, altered outdoor time, or avoidance of certain activities (e.g., sports, commuting via bicycle). These changes may introduce systematic biases in the collected data, particularly if the device form factor is not well tolerated across all settings or participants.
 
-To probe for any such biases, it maye be 
+To probe for such biases, it may be advisable to include a questionnaire or single open-ended question after data collection asking whether they perceived any changes in their behaviour due to wearing the devices.
 
 ## Collecting Data
 
 ### Briefing of participants
-Instructions and precautions.
+
+Participants should receive clear instructions on
+
++ wearing the device, including suitable contexts and situations (related to the durability and IP rating of the device)
++ handling the device when they take it off, including logging it
++ charging the device regularly (if necessary)
+
+To ensure that participants understand the instructions clearly, it is recommended that a short comprehension check be included after the briefing. This can be done by asking participants to repeat key instructions in their own words or having participants demonstrate how to wear, remove, and charge the device correctly. A printed or digital instruction sheet can be supplied for reference.
+
+Additionally, if there are any known problems with the devices, these should be communicated to the participants.
 
 ### Recurrent compliance checks
 Monitoring adherence.
@@ -254,7 +263,7 @@ Future work may formalise these recommendations in the form of a consensus check
 
 ### Discussion section
 
-It is recommended that the Discussion section discloses various limitations arising from the choice of devices or protocols, such as the inability to measure visual experience in the near-corneal plane using wrist-worn devices. Additionally, for 
+It is recommended that the Discussion section discloses various limitations arising from the choice of devices or protocols, such as the inability to measure visual experience in the near-corneal plane using wrist-worn devices. Additionally, the rationale for device selection, protocol design and analysis choices should be explained.
 
 ### Metadata documentation
 Thorough sharing practices.
