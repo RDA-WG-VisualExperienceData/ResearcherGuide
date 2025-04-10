@@ -79,22 +79,33 @@ Some devices contain event buttons, which, when pressed, insert time-stamped inf
 
 The quality of manufacturer documentation can vary significantly, and it is important to consult the manufacturer on its completeness. This includes, at a minimum:
 
-+ Full description of sensor capabilities, including calibration information
-+ Environmental operating conditions (temperature, humidity, altitude, etc.)
-+ Expected lifespan and stability of sensor performance over time (e.g., sensor drift)
-+ Known hardware/software limitations (e.g., maximum sampling rate, data loss risks)
-+ Traceability of calibration (e.g., to national standards)
-+ Documentation of validation procedures (e.g., lab vs. field performance)
-+ Instructions for user-performed recalibration and required tools
-+ Information on error states or error modes that may be encountered during the data collection
-+ Description of any onboard data processing, compression, or classification algorithms
-+ Details on how timestamps are generated and synchronized (e.g., internal clock behavior, drift)
-+ Firmware versioning and changelog history, especially for devices under active development
-+ Clear explanation of file formats (CSV, JSON, binary, proprietary, etc.)
-+ Full description of all data available from the device
-+ Contact information for technical support
-+ Recommended positioning and usage instructions to ensure data validity
-+ Any relevant compliance certifications (e.g., CE, FCC, ISO)
+* **Sensor capabilities and calibration**
+  + Full description of sensor capabilities, including calibration information  
+  + Traceability of calibration (e.g., to national standards)  
+  + Documentation of validation procedures (e.g., lab vs. field performance)  
+  + Instructions for user-performed recalibration and required tools  
+  + Expected lifespan and stability of sensor performance over time (e.g., sensor drift)  
+
++ **Environmental and operational conditions**
+  + Environmental operating conditions (e.g., temperature, humidity, altitude)  
+  + Known hardware/software limitations (e.g., maximum sampling rate, data loss risks)  
+  + Information on error states or error modes that may be encountered during data collection  
+
++ **Device behaviour and data processing**
+  + Description of any onboard data processing, compression, or classification algorithms  
+  + Details on how timestamps are generated and synchronized (e.g., internal clock behavior, drift)  
+  + Firmware versioning and changelog history, especially for devices under active development  
+
++ **Data structure and output**
+  + Full description of all data available from the device  
+  + Clear explanation of file formats (CSV, JSON, binary, proprietary, etc.)  
+
++ **Usage and deployment guidance**
+  + Recommended positioning and usage instructions to ensure data validity  
+
++ **Regulatory and support information**
+  + Any relevant compliance certifications (e.g., CE, FCC, ISO)  
+  + Contact information for technical support 
 
 ### Software ecosystem
 Features for annotation, tagging, and version control. [@Zauner2025JOpenSourceSoftw]
@@ -142,6 +153,8 @@ Sleep, activity, and context. [@Guidolin2045BMCPublicHealth]
 Different form factors and associated wearing locations could be susceptible to different ways that participants behave. For example, wearing a device attached to spectacle frames may not be very suitable for public environments, workplace, or specific recreational contexts. As a consequence, participants may change their behaviour in response to the visibility, intrusiveness, or comfort of the device, leading to reactivity—i.e., modifications in naturalistic behaviour due to awareness of being monitored.
 
 Such behavioural adaptations can include reduced social interaction, altered time spent outdoors, or avoidance of certain activities (e.g., sports, commuting via bicycle). These changes may introduce systematic biases in the collected data, particularly if the device form factor is not well tolerated across all settings or participants.
+
+To probe for any such biases, it maye be 
 
 ## Collecting Data
 
@@ -215,14 +228,14 @@ Zero inflation, dynamic range.
 
 For transparency and to ensure that others can replicate and reproduce the measurement protocol and study, it is key to document various aspects related to the measurement of visual experience and light exposure. At a minimum, it is recommended to include text on the following points:
 
-* Device-related properties
+* **Device-related properties**
 	+ Manufacturer, brand and make of wearable device used
 	+ Wearing location
 	+ Sampling interval
 	+ Measured quantities
 	+ Calibration information on directional sensitivity, spectral sensitive, linearity and range properties
 	
-* Protocol-related properties
+* **Protocol-related properties**
 	+ Location and season of data collection
 	+ Time zone and changes (e.g., daylight saving time)
 	+ Wearing location
@@ -231,7 +244,7 @@ For transparency and to ensure that others can replicate and reproduce the measu
 	+ Criteria for inclusion/exclusion based on wear time and compliance
 	+ Use of prompts/reminders to ensure compliance
 
-* Analysis-related properties
+* **Analysis-related properties**
 	+ Preprocessing of data, including outlier rejection, binning and smoothing
 	+ Handling of partial or missing data
 	+ Analysis routines and functions used
