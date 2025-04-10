@@ -110,7 +110,7 @@ The quality of manufacturer documentation can vary significantly, and it is impo
   + Recommended positioning and usage instructions to ensure data validity  
 
 + **Regulatory and support information**
-  + Any relevant compliance certifications (e.g., CE, FCC, ISO)  
+  + Any relevant compliance certifications (e.g., [CE](https://europa.eu/youreurope/business/product-requirements/labels-markings/ce-marking/index_en.htm), [FCC](https://www.fcc.gov/), [ISO](https://www.iso.org/home.html))  
   + Contact information for technical support 
 
 ### Software ecosystem
@@ -186,6 +186,8 @@ Additionally, if there are any known problems with the devices, these should be 
 ### Recurrent compliance checks
 
 Throughout a measurement protocol, it could be helpful to implement regular checks to remind participants of key steps involved in the measurement, including charging. In case there is online access to the data, such as through clouds, it is possible to monitor light exposure instantaneously and remotely. This can bring several benefits, including the possibility of corrective action should a participant not comply to the study procedures.
+
+Compliance related to usability can be probed and measured using specific questionnaires [@Balajadia2023DigitBiomarkers; @Stefani2024ClockSleep].
 
 ### Device settings
 
