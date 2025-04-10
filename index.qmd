@@ -226,6 +226,9 @@ Syncing sleep, activity, and light data.
 Chronotype, location data, etc.
 
 ### Metric selection
+
+Time-series of light exposure and visual experience data can be analysed through a series of metrics [@Hartmeyer2023LightResTechnol, @Zauner2025JOpenSourceSoftw].
+
 Duration vs. intensity metrics.
 
 ### Special properties of light and visual experience data
