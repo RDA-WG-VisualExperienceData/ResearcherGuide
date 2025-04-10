@@ -327,22 +327,50 @@ div.csl-indent {
 <h3 class="anchored" data-anchor-id="documentation">Documentation</h3>
 <p>The quality of manufacturer documentation can vary significantly, and it is important to consult the manufacturer on its completeness. This includes, at a minimum:</p>
 <ul>
-<li>Full description of sensor capabilities, including calibration information</li>
-<li>Environmental operating conditions (temperature, humidity, altitude, etc.)</li>
+<li><strong>Sensor capabilities and calibration</strong>
+<ul>
+<li>Full description of sensor capabilities, including calibration information<br>
+</li>
+<li>Traceability of calibration (e.g., to national standards)<br>
+</li>
+<li>Documentation of validation procedures (e.g., lab vs.&nbsp;field performance)<br>
+</li>
+<li>Instructions for user-performed recalibration and required tools<br>
+</li>
 <li>Expected lifespan and stability of sensor performance over time (e.g., sensor drift)</li>
-<li>Known hardware/software limitations (e.g., maximum sampling rate, data loss risks)</li>
-<li>Traceability of calibration (e.g., to national standards)</li>
-<li>Documentation of validation procedures (e.g., lab vs.&nbsp;field performance)</li>
-<li>Instructions for user-performed recalibration and required tools</li>
-<li>Information on error states or error modes that may be encountered during the data collection</li>
-<li>Description of any onboard data processing, compression, or classification algorithms</li>
-<li>Details on how timestamps are generated and synchronized (e.g., internal clock behavior, drift)</li>
+</ul></li>
+<li><strong>Environmental and operational conditions</strong>
+<ul>
+<li>Environmental operating conditions (e.g., temperature, humidity, altitude)<br>
+</li>
+<li>Known hardware/software limitations (e.g., maximum sampling rate, data loss risks)<br>
+</li>
+<li>Information on error states or error modes that may be encountered during data collection</li>
+</ul></li>
+<li><strong>Device behaviour and data processing</strong>
+<ul>
+<li>Description of any onboard data processing, compression, or classification algorithms<br>
+</li>
+<li>Details on how timestamps are generated and synchronized (e.g., internal clock behavior, drift)<br>
+</li>
 <li>Firmware versioning and changelog history, especially for devices under active development</li>
+</ul></li>
+<li><strong>Data structure and output</strong>
+<ul>
+<li>Full description of all data available from the device<br>
+</li>
 <li>Clear explanation of file formats (CSV, JSON, binary, proprietary, etc.)</li>
-<li>Full description of all data available from the device</li>
-<li>Contact information for technical support</li>
+</ul></li>
+<li><strong>Usage and deployment guidance</strong>
+<ul>
 <li>Recommended positioning and usage instructions to ensure data validity</li>
-<li>Any relevant compliance certifications (e.g., CE, FCC, ISO)</li>
+</ul></li>
+<li><strong>Regulatory and support information</strong>
+<ul>
+<li>Any relevant compliance certifications (e.g., CE, FCC, ISO)<br>
+</li>
+<li>Contact information for technical support</li>
+</ul></li>
 </ul>
 </section>
 <section id="software-ecosystem" class="level3">
@@ -400,6 +428,7 @@ div.csl-indent {
 <h3 class="anchored" data-anchor-id="behavioral-modification-through-wearing-location">Behavioral modification through wearing location</h3>
 <p>Different form factors and associated wearing locations could be susceptible to different ways that participants behave. For example, wearing a device attached to spectacle frames may not be very suitable for public environments, workplace, or specific recreational contexts. As a consequence, participants may change their behaviour in response to the visibility, intrusiveness, or comfort of the device, leading to reactivity—i.e., modifications in naturalistic behaviour due to awareness of being monitored.</p>
 <p>Such behavioural adaptations can include reduced social interaction, altered time spent outdoors, or avoidance of certain activities (e.g., sports, commuting via bicycle). These changes may introduce systematic biases in the collected data, particularly if the device form factor is not well tolerated across all settings or participants.</p>
+<p>To probe for any such biases, it maye be</p>
 </section>
 </section>
 <section id="collecting-data" class="level2">
@@ -496,7 +525,7 @@ div.csl-indent {
 <h3 class="anchored" data-anchor-id="methods-section">Methods section</h3>
 <p>For transparency and to ensure that others can replicate and reproduce the measurement protocol and study, it is key to document various aspects related to the measurement of visual experience and light exposure. At a minimum, it is recommended to include text on the following points:</p>
 <ul>
-<li>Device-related properties
+<li><strong>Device-related properties</strong>
 <ul>
 <li>Manufacturer, brand and make of wearable device used</li>
 <li>Wearing location</li>
@@ -504,7 +533,7 @@ div.csl-indent {
 <li>Measured quantities</li>
 <li>Calibration information on directional sensitivity, spectral sensitive, linearity and range properties</li>
 </ul></li>
-<li>Protocol-related properties
+<li><strong>Protocol-related properties</strong>
 <ul>
 <li>Location and season of data collection</li>
 <li>Time zone and changes (e.g., daylight saving time)</li>
@@ -514,7 +543,7 @@ div.csl-indent {
 <li>Criteria for inclusion/exclusion based on wear time and compliance</li>
 <li>Use of prompts/reminders to ensure compliance</li>
 </ul></li>
-<li>Analysis-related properties
+<li><strong>Analysis-related properties</strong>
 <ul>
 <li>Preprocessing of data, including outlier rejection, binning and smoothing</li>
 <li>Handling of partial or missing data</li>
