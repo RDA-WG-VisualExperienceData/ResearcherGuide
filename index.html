@@ -164,7 +164,7 @@ div.csl-indent {
   <li><a href="#battery-capacity" id="toc-battery-capacity" class="nav-link" data-scroll-target="#battery-capacity">Battery capacity</a></li>
   <li><a href="#data-storage" id="toc-data-storage" class="nav-link" data-scroll-target="#data-storage">Data storage</a></li>
   <li><a href="#raw-data-format-and-ease-of-use" id="toc-raw-data-format-and-ease-of-use" class="nav-link" data-scroll-target="#raw-data-format-and-ease-of-use">Raw data format and ease of use</a></li>
-  <li><a href="#on-device-wear-and-occlusion-detection" id="toc-on-device-wear-and-occlusion-detection" class="nav-link" data-scroll-target="#on-device-wear-and-occlusion-detection">On-device wear and occlusion detection</a></li>
+  <li><a href="#wearnon-wear-and-occlusion-detection" id="toc-wearnon-wear-and-occlusion-detection" class="nav-link" data-scroll-target="#wearnon-wear-and-occlusion-detection">Wear/non-wear and occlusion detection</a></li>
   <li><a href="#interaction-with-the-device" id="toc-interaction-with-the-device" class="nav-link" data-scroll-target="#interaction-with-the-device">Interaction with the device</a></li>
   <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation">Documentation</a></li>
   <li><a href="#software-ecosystem" id="toc-software-ecosystem" class="nav-link" data-scroll-target="#software-ecosystem">Software ecosystem</a></li>
@@ -293,7 +293,11 @@ div.csl-indent {
 <p>The size, form and design of a wearable light logger is particular important for the specific contexts in which it will be used. Devices that are too heavy, bulky or impractically shaped will likely not be of particular use in field studies on light exposure. The most common form factors are devices that are <strong>wrist-worn</strong>, <strong>lanyard-worn</strong>, attached with a <strong>clip</strong>, or attached to <strong>spectacle frames</strong>.</p>
 <p>Different form factors are susceptible to different types of occlusions, so beyond participant comfort, a device’s dimensions and intended use case are also directly linked to data reliability. As of 2025, no specific device can be used all the time in all contexts and provide reliable information.</p>
 <p>Common problems include:</p>
-<p>–&nbsp;Wrist-worn devices are susceptible to being occluded by sleeves, particularly in settings or cold weather seasons. - Lanyard-worn and clip-worn devices are susceptible to being occluded by jackets or other outer garments. - Devices attached to spectacle frames are impractical for long-term use in the real world.</p>
+<p>–&nbsp;Wrist-worn devices are susceptible to being occluded by sleeves, particularly in settings or cold weather seasons.</p>
+<ul>
+<li><p>Lanyard-worn and clip-worn devices are susceptible to being occluded by jackets or other outer garments.</p></li>
+<li><p>Devices attached to spectacle frames are impractical for long-term use in the real world.</p></li>
+</ul>
 </section>
 <section id="battery-capacity" class="level3">
 <h3 class="anchored" data-anchor-id="battery-capacity">Battery capacity</h3>
@@ -307,13 +311,14 @@ div.csl-indent {
 <h3 class="anchored" data-anchor-id="raw-data-format-and-ease-of-use">Raw data format and ease of use</h3>
 <p>Export formats, transfer speed, and syntactic structure.</p>
 </section>
-<section id="on-device-wear-and-occlusion-detection" class="level3">
-<h3 class="anchored" data-anchor-id="on-device-wear-and-occlusion-detection">On-device wear and occlusion detection</h3>
-<p>Automatic detection capabilities.</p>
+<section id="wearnon-wear-and-occlusion-detection" class="level3">
+<h3 class="anchored" data-anchor-id="wearnon-wear-and-occlusion-detection">Wear/non-wear and occlusion detection</h3>
+<p>Some devices may be able to detect whether they are being worn, either online, or after analysis using the manufacturer-provided software. For wrist-worn devices, this could be implemented through a capacitance sensor, or temperature sensor, or in conjunction with data from the IMU. Additionally, devices might be able to detect it is occluded.</p>
+<p>When wear detection is not available from the device-inherent capabilities, it is recommended that researchers investigate concise methods for estimating wear/non-wear state, e.g.&nbsp;through additional questionnaires or using a data-driven approach.</p>
 </section>
 <section id="interaction-with-the-device" class="level3">
 <h3 class="anchored" data-anchor-id="interaction-with-the-device">Interaction with the device</h3>
-<p>Event markers, user feedback, logging tools.</p>
+<p>Some devices contain event buttons, which, when pressed, insert time-stamped information into the data log. This functionality can be very useful for determining wear/non-wear state and specific events taking place for the participant. It is worth noting that as they are a user interaction, it is not guaranteed that participants will do it consistently.</p>
 </section>
 <section id="documentation" class="level3">
 <h3 class="anchored" data-anchor-id="documentation">Documentation</h3>
@@ -491,6 +496,7 @@ div.csl-indent {
 <section id="fair-data" class="level3">
 <h3 class="anchored" data-anchor-id="fair-data">FAIR data</h3>
 <p>The FAIR principles state that data should be <strong>f</strong>indable, <strong>a</strong>ccessible, <strong>i</strong>nteroperable and <strong>r</strong>eusable, to make them easier to share and reusable. Several of the points raised in this Researcher Guide are driven to ensure that visual experience and optical radiation data are FAIR, including standard file formats and documentation. Importantly, FAIR data guarantees that the collected data are used sustainably, and available well beyond the specific published research articles.</p>
+<p>Data can be published as part of the supplementary material of journals. An alternative option is to add them as data packages to specific repositories, such as <a href="https://zenodo.org/">Zenodo</a> or <a href="https://figshare.org/">FigShare</a>.</p>
 
 
 
