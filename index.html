@@ -60,6 +60,9 @@ div.csl-indent {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-8647a4a42273f773479d27c00df3f9ed.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -271,7 +274,7 @@ div.csl-indent {
 <p>Exposure to the optical environment, sometimes called visual experience, fundamentally affects human physiology and behaviour at multiple time scales. Two examples of such effects that have received significant attention come from different research domains, but can be understood through a common retinally-referenced framework. The first concerns the ‘non-visual’ effect of light on human circadian and neuroendocrine physiology: The light-dark cycle synchronises the biological clock, and exposure to light at night suppresses melatonin production <span class="citation" data-cites="Brown2022PLoSBiol Blume2019Somnologie">(<a href="#ref-Brown2022PLoSBiol" role="doc-biblioref">Brown et al. 2022</a>; <a href="#ref-Blume2019Somnologie" role="doc-biblioref">Blume, Garbazza, and Spitschan 2019</a>)</span>. The second concerns the potential effect of light exposure and visual experience on ocular development and specific myopia, in which time spent outdoors, and its associated visual experience, have been linked with ocular health outcomes <span class="citation" data-cites="DahlmannNoor2025GraefesArchClinExpOphthal">(<a href="#ref-DahlmannNoor2025GraefesArchClinExpOphthal" role="doc-biblioref">Dahlmann-Noor et al. 2025</a>)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/light_exposure.png" class="img-fluid figure-img"></p>
+<p><a href="images/light_exposure.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Example light exposure"><img src="images/light_exposure.png" class="img-fluid figure-img" alt="Example light exposure"></a></p>
 <figcaption>Example light exposure</figcaption>
 </figure>
 </div>
@@ -306,7 +309,7 @@ div.csl-indent {
 <p>The size, form and design of a wearable light logger are particularly important for the specific contexts in which it will be used. Devices that are too heavy, bulky or impractically shaped will likely not be of particular use in field studies on light exposure. The most common form factors are devices that are <strong>wrist-worn</strong>, <strong>lanyard-worn</strong>, attached with a <strong>clip</strong>, or attached to <strong>spectacle frames</strong>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/wearing_locations.png" class="img-fluid figure-img"></p>
+<p><a href="images/wearing_locations.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Form factors and wearing locations"><img src="images/wearing_locations.png" class="img-fluid figure-img" alt="Form factors and wearing locations"></a></p>
 <figcaption>Form factors and wearing locations</figcaption>
 </figure>
 </div>
@@ -508,7 +511,8 @@ div.csl-indent {
 </section>
 <section id="locale-consistency" class="level3">
 <h3 class="anchored" data-anchor-id="locale-consistency">Locale consistency</h3>
-<p>Date/time formats, decimal markers.</p>
+<p><a href="https://en.wikipedia.org/wiki/Locale_(computer_software)">Locale</a> in computer software is a set of parameters that define how information is displayed and stored. The parameters cover language, region, and individual preferences. Locales are important because software, especially gui-heavy software like Microsoft Excel, interpret data based on a user’s locale: what is the decimal marker, how are columns separated in text files, what are datetime conventions, etc. More problematic, however, is that some software, even research-focused companion software to wearable devices, also save files with the settings defined by a users locale. This leads to a myriad of dialects in theoretically well defined text-based files, like CSV (comma separated values), thus making the FAIR exchange of data between researchers more burdensome. The most common CSV deviation, typical, e.g., for some European countries, uses a semicolon ‘;’ as a column divider instead of the eponymous comma ‘,’. Very likely, this is because the comma in this dialect is used as a decimal mark instead of the full stop ‘.’.</p>
+<p>We do not necessarily recommend for a researcher to change their locale settings on research machines (although that would help). It is, however, important that researchers are aware of the nature and influence of the locale, and we recommend the following: - Avoid wearable devices that store data based on a user’s locale without explicit prompt - Make certain that whatever import routine is used for wearable data matches the raw files, and that there are no differences between the files. If this cannot be avoided, import files separately depending on the locale. - Always check the correct interpretation of text-based data in the software of choice, especially regarding decimals, column separation, and datetimes - The analysis software LightLogR provides import routines that are based on typical settings for wearable devices. This means that by default, LightLogR users do not have to take care about locale settings, exept when device data is stored with deviant settings. <a href="https://tscnlab.github.io/LightLogR/reference/import_Dataset.html">LightLogR’s documentation page for import</a> will mention known deviations in file formats, and new ones can be reported. - Never overwrite a text-based file with software that changes a files’ locale conventions without notice. Microsoft Excel is a common offender, as it seems to interpret foreign locales correctly, but switches to the user’s locale upon saving (if the user does not actively choose a different format). At best, this potentially fragments a study’s data base, if some files are opened and resaved (e.g., when removing a header or correct some spelling), while others are not. At worst, it will misinterpret a text-string, e.g.&nbsp;interpreting a value of ‘2.04’ as ‘2 April’, which will be stored in the text file as a date, e.g.&nbsp;as ‘02-04-2025’. This type of data corruption can be easily missed at first, only to be noticed during analysis, sometimes with no mode of recovery.</p>
 </section>
 <section id="recommended-conventions-for-datetime" class="level3">
 <h3 class="anchored" data-anchor-id="recommended-conventions-for-datetime">Recommended conventions for datetime</h3>
@@ -1172,8 +1176,40 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/RDA-WG-VisualExperienceData/ResearcherGuide/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/RDA-WG-VisualExperienceData/ResearcherGuide/issues" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/RDA-WG-VisualExperienceData/ResearcherGuide/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/RDA-WG-VisualExperienceData/ResearcherGuide/issues" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+</body></html>
