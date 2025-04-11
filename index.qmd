@@ -11,6 +11,10 @@ format:
     mermaid:
       config: mermaid-config.yaml
     css: styles.css
+execute:
+    echo: true
+    warning: false
+    message: false
 lightbox: true
 ---
 
@@ -85,7 +89,7 @@ Spectral/photometric/α-opic metrics, sampling rate, uncertainty, cosine respons
 
 Spectral sensitivity [@CIE2018CIES026; @Lucas2014TrendsNeurosci]
 
-```r
+```{r}
 library(ggplot2)
 library(tidyr)
 library(readr)
@@ -111,7 +115,7 @@ ggplot(cie_long, aes(x = wavelength, y = sensitivity, color = photoreceptor)) +
 
 #### Directional properties
 
-```r
+```{r}
 library(ggplot2)
 
 # Define x in degrees
