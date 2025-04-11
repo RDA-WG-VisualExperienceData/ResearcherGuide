@@ -12,7 +12,7 @@ format:
       config: mermaid-config.yaml
     css: styles.css
     execute:
-      echo: true
+      echo: false
       warning: false
       message: false
       error: false
@@ -107,9 +107,10 @@ cie_long <- pivot_longer(cie_data,
 # Plot
 ggplot(cie_long, aes(x = wavelength, y = sensitivity, color = photoreceptor)) +
   geom_line(size = 1) +
-  labs(title = "CIE S 026:2018 Spectral Sensitivities",
+  labs(title = "CIE S 026:2018 Spectral sensitivities",
        x = "Wavelength (nm)",
-       y = "Relative Sensitivity",
+       y = "Relative sensitivity",
+       xlim(380, 780),
        color = "Photoreceptor") +
   theme_minimal()
 ```
@@ -120,14 +121,14 @@ ggplot(cie_long, aes(x = wavelength, y = sensitivity, color = photoreceptor)) +
 library(ggplot2)
 
 # Define x in degrees
-x_deg <- seq(-100, 100, length.out = 400)
+x_deg <- seq(-90, 90, length.out = 400)
 y <- cos(x_deg * pi / 180)  # Convert degrees to radians
 df <- data.frame(x = x_deg, y = y)
 
 # Plot
 ggplot(df, aes(x = x, y = y)) +
   geom_line(color = "blue") +
-  labs(title = "Cosine Function", x = "x (degrees)", y = "cos(x)") +
+  labs(title = "Cosine response", x = "Angle of incidence (degrees)", y = "Relative sensor response") +
   theme_minimal()
 ```
 
