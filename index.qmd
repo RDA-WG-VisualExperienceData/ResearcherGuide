@@ -8,6 +8,8 @@ format:
     toc-location: left
     toc-depth: 3
     toc-expand: 2
+    mermaid:
+      config: mermaid-config.yaml
 lightbox: true
 ---
 

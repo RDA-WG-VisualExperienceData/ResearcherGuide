@@ -1,0 +1,5 @@
+theme: default
+themeVariables:
+  fontFamily: 'Arial'
+  fontSize: 14px
+  fontColor: '#000000'
