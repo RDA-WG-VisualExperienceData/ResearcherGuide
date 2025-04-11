@@ -11,10 +11,6 @@ format:
     mermaid:
       config: mermaid-config.yaml
     css: styles.css
-execute:
-    echo: true
-    warning: false
-    message: false
 lightbox: true
 ---
 
