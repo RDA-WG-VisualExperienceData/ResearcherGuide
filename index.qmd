@@ -10,6 +10,7 @@ format:
     toc-expand: 2
     mermaid:
       config: mermaid-config.yaml
+	css: styles.css
 lightbox: true
 ---
 
