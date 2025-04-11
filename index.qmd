@@ -82,6 +82,24 @@ Spectral/photometric/α-opic metrics, sampling rate, uncertainty, cosine respons
 
 Spectral sensitivity functions [@CIE2018CIES026; @Lucas2014TrendsNeurosci]
 
+#### Directional properties
+
+```r
+library(ggplot2)
+
+# Define x in degrees
+x_deg <- seq(-100, 100, length.out = 400)
+y <- cos(x_deg * pi / 180)  # Convert degrees to radians
+df <- data.frame(x = x_deg, y = y)
+
+# Plot
+ggplot(df, aes(x = x, y = y)) +
+  geom_line(color = "blue") +
+  labs(title = "Cosine Function", x = "x (degrees)", y = "cos(x)") +
+  theme_minimal()
+```
+
+
 ### Advanced and additional modalities
 Spatial resolution, movement tracking, UV/IR detection.
 
