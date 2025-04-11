@@ -80,7 +80,34 @@ The first step in any project examining visual experience and light exposure is 
 ### Measurement capabilities and sensor characteristics
 Spectral/photometric/α-opic metrics, sampling rate, uncertainty, cosine response, range, etc. [@Spitschan2022DigitHealth]
 
-Spectral sensitivity functions [@CIE2018CIES026; @Lucas2014TrendsNeurosci]
+
+#### Spectral sensitivity functions
+
+Spectral sensitivity [@CIE2018CIES026; @Lucas2014TrendsNeurosci]
+
+```r
+library(ggplot2)
+library(tidyr)
+library(readr)
+
+# Load data
+cie_data <- read_csv("cie_s026.csv")
+
+# Reshape data to long format
+cie_long <- pivot_longer(cie_data, 
+                         cols = -wavelength,
+                         names_to = "photoreceptor",
+                         values_to = "sensitivity")
+
+# Plot
+ggplot(cie_long, aes(x = wavelength, y = sensitivity, color = photoreceptor)) +
+  geom_line(size = 1) +
+  labs(title = "CIE S 026:2018 Spectral Sensitivities",
+       x = "Wavelength (nm)",
+       y = "Relative Sensitivity",
+       color = "Photoreceptor") +
+  theme_minimal()
+```
 
 #### Directional properties
 
