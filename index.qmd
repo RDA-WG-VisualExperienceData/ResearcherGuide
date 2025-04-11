@@ -36,7 +36,7 @@ The scope of this Researcher Guide is to provide a guide to using wearable devic
 We consider the following workflow:
 
 ```{mermaid}
-flowchart LR
+flowchart TD
     A[Selecting devices] --> B[Designing the study]
     B --> C[Collecting data]
     C --> D[Storing/documenting data]
