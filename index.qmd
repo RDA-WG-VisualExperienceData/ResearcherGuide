@@ -29,6 +29,36 @@ Starting in the 1980s [@Okudaira1983AmJPhysiol], technology to measure exposure 
 
 The scope of this Researcher Guide is to provide a guide to using wearable devices measuring the optical environment. It is a living document and will be updated and versioned.
 
+# Workflow
+
+We consider the following workflow:
+
+```{mermaid}
+flowchart LR
+    A[Selecting devices] --> B[Designing the study]
+    B --> C[Collecting data]
+    C --> D[Storing and documenting data]
+    D --> E[Analysing data]
+    E --> F[Reporting data]
+
+    A --> G[Validating devices]
+    G --> A
+
+    C --> H[Maintaining devices]
+    H --> C
+
+    style A fill:#f9d4d4,stroke:#000
+    style B fill:#f9d4d4,stroke:#000
+    style G fill:#f9d4d4,stroke:#000
+
+    style C fill:#f9dba9,stroke:#000
+    style H fill:#f9dba9,stroke:#000
+    style D fill:#f9dba9,stroke:#000
+
+    style E fill:#b7e4f9,stroke:#000
+    style F fill:#b7e4f9,stroke:#000
+```
+
 # Researcher Guide
 
 ## Selecting devices
