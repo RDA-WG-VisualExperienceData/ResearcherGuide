@@ -233,15 +233,26 @@ For any biomedical data collection, privacy principles relevant to the local jur
 [Locale](https://en.wikipedia.org/wiki/Locale_(computer_software)) in computer software is a set of parameters that define how information is displayed and stored. The parameters cover language, region, and individual preferences. Locales are important because software, especially gui-heavy software like Microsoft Excel, interpret data based on a user's locale: what is the decimal marker, how are columns separated in text files, what are datetime conventions, etc. More problematic, however, is that some software, even research-focused companion software to wearable devices, also save files with the settings defined by a users locale. This leads to a myriad of dialects in theoretically well defined text-based files, like CSV (comma separated values), thus making the FAIR exchange of data between researchers more burdensome. The most common CSV deviation, typical, e.g., for some European countries, uses a semicolon ';' as a column divider instead of the eponymous comma ','. Very likely, this is because the comma in this dialect is used as a decimal mark instead of the full stop '.'.
 
 We do not necessarily recommend for a researcher to change their locale settings on research machines (although that would help). It is, however, important that researchers are aware of the nature and influence of the locale, and we recommend the following:
+
 - Avoid wearable devices that store data based on a user's locale without explicit prompt
+
 - Make certain that whatever import routine is used for wearable data matches the raw files, and that there are no differences between the files. If this cannot be avoided, import files separately depending on the locale.
+
 - Always check the correct interpretation of text-based data in the software of choice, especially regarding decimals, column separation, and datetimes
+
 - The analysis software LightLogR provides import routines that are based on typical settings for wearable devices. This means that by default, LightLogR users do not have to take care about locale settings, exept when device data is stored with deviant settings. [LightLogR's documentation page for import](https://tscnlab.github.io/LightLogR/reference/import_Dataset.html) will mention known deviations in file formats, and new ones can be reported.
+
 - Never overwrite a text-based file with software that changes a files' locale conventions without notice. Microsoft Excel is a common offender, as it seems to interpret foreign locales correctly, but switches to the user's locale upon saving (if the user does not actively choose a different format). At best, this potentially fragments a study's data base, if some files are opened and resaved (e.g., when removing a header or correct some spelling), while others are not. At worst, it will misinterpret a text-string, e.g. interpreting a value of '2.04' as '2 April', which will be stored in the text file as a date, e.g. as '02-04-2025'. This type of data corruption can be easily missed at first, only to be noticed during analysis, sometimes with no mode of recovery.
 
 ### Recommended conventions for datetime
 
-Best practices for timestamp handling. [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
+Timestamps for wearable data need to contain datetime information in a consistent, unambiguous, and machine-readable format. Because there are many time zones around the world, datetimes are a complex topic and need to be handled with care. A time zone should not be confused with the offset from Coordinated Universal Time (UTC), although for any given moment, a time zone can be related to a specific offset. Time zones also include information about whether or not there is daylight savings, and if the offset changes (e.g., due to policy). This means that local time + time zone contains more information than local time + offset. Date, time, and datetimes are standardized in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html), and it is recommended that datetimes follow its conventions. A comprehensive description of the structure can be found [here](https://datatracker.ietf.org/doc/html/rfc3339#section-5.6). 
+
+At the time of this writing (2025), most devices do not store the offset to UTC as part of the timestamp, which regularly results in ambiguity following switches to and from daylight savings. This ambiguity can be avoided if:
+
+- datetimes follow the conventions in iso 8601
+
+- datetimes are stored in UTC format with a known time zone, taken from the [Olson/IANA](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) databases.
 
 ## Maintaining devices
 
