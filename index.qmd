@@ -110,8 +110,8 @@ ggplot(cie_long, aes(x = wavelength, y = sensitivity, color = photoreceptor)) +
   labs(title = "CIE S 026:2018 Spectral sensitivities",
        x = "Wavelength (nm)",
        y = "Relative sensitivity",
-       xlim(380, 780),
        color = "Photoreceptor") +
+  xlim(380, 780) + 
   theme_minimal()
 ```
 
