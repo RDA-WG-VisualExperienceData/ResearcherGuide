@@ -91,7 +91,7 @@ library(tidyr)
 library(readr)
 
 # Load data
-cie_data <- read_csv("cie_s026.csv")
+cie_data <- read_csv("assets/cie_s026.csv")
 
 # Reshape data to long format
 cie_long <- pivot_longer(cie_data, 
