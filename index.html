@@ -298,7 +298,11 @@ div.csl-indent {
 <div>
 <p></p><figure class="figure"><p></p>
 <div>
-<pre class="mermaid mermaid-js">flowchart LR
+<pre class="mermaid mermaid-js">%%{init: {"themeVariables": {
+  "fontFamily": "Arial, Helvetica, sans-serif",
+  "fontColor": "#000000"
+}}}%%
+flowchart LR
     A[Selecting devices] --&gt; B[Designing the study]
     B --&gt; C[Collecting data]
     C --&gt; D[Storing data]
@@ -321,6 +325,15 @@ div.csl-indent {
 
     style E fill:#b7e4f9,stroke:#000
     style F fill:#b7e4f9,stroke:#000
+    
+    click A "https://example.com/selecting-devices" _blank
+    click B "https://example.com/designing-study" _blank
+    click C "https://example.com/collecting-data" _blank
+    click D "https://example.com/storing-data" _blank
+    click E "https://example.com/analysing-data" _blank
+    click F "https://example.com/reporting-data" _blank
+    click G "https://example.com/validating-devices" _blank
+    click H "https://example.com/maintaining-devices" _blank
 </pre>
 </div>
 <p></p></figure><p></p>
