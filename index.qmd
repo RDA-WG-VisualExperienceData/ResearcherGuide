@@ -39,7 +39,7 @@ We consider the following workflow:
 flowchart LR
     A[Selecting devices] --> B[Designing the study]
     B --> C[Collecting data]
-    C --> D[Storing/documenting data]
+    C --> D[Storing data]
     D --> E[Analysing data]
     E --> F[Reporting data]
 
