@@ -19,6 +19,19 @@ format:
 lightbox: true
 ---
 
+```{r}
+packages <- c("ggplot2", "tidyr", "readr")
+
+#check if packages are installed, if not install them
+if(!require(pacman)) {
+  install.packages("pacman") 
+  library(pacman)
+  }
+
+p_load(packages, character.only = TRUE)
+```
+
+
 This site will shortly host the Research Data Alliance (RDA) Research Guide. The Research Guide is authored by the [Optical Radiation Exposure and Visual Experience Data Working Group](https://www.rd-alliance.org/groups/optical-radiation-exposure-and-visual-experience-data-wg/activity/). The site is built using [Quarto](https://quarto.org/docs/websites), a scientific and technical publishing system.
 
 DRAFT – NOT FOR DISTRIBUTION
@@ -91,10 +104,6 @@ Spectral/photometric/α-opic metrics, sampling rate, uncertainty, cosine respons
 Spectral sensitivity [@CIE2018CIES026; @Lucas2014TrendsNeurosci]
 
 ```{r}
-library(ggplot2)
-library(tidyr)
-library(readr)
-
 # Load data
 cie_data <- read_csv("assets/cie_s026.csv")
 
@@ -118,8 +127,6 @@ ggplot(cie_long, aes(x = wavelength, y = sensitivity, color = photoreceptor)) +
 #### Directional properties
 
 ```{r}
-library(ggplot2)
-
 # Define x in degrees
 x_deg <- seq(-90, 90, length.out = 400)
 y <- cos(x_deg * pi / 180)  # Convert degrees to radians

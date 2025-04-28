@@ -26,10 +26,10 @@ jobs:
           restore-keys: |
             r-${{ runner.os }}-
 
-      - name: Install required R packages
-        run: |
-          install.packages(c("knitr", "rmarkdown", "ggplot2", "tidyr", "readr"), repos = "https://cloud.r-project.org")
-        shell: Rscript {0}
+      # - name: Install required R packages
+      #   run: |
+      #     install.packages(c("knitr", "rmarkdown", "ggplot2", "tidyr", "readr"), repos = "https://cloud.r-project.org")
+      #   shell: Rscript {0}
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
