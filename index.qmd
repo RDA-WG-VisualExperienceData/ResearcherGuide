@@ -20,15 +20,32 @@ lightbox: true
 ---
 
 ```{r}
-packages <- c("ggplot2", "tidyr", "readr", "rmarkdown", "knitr")
-
 #check if packages are installed, if not install them
-if(!require(pacman)) {
-  install.packages("pacman") 
-  library(pacman)
+if(!require(knitr)) {
+  install.packages("knitr") 
+  library(knitr)
   }
 
-p_load(packages, character.only = TRUE)
+if(!require(rmarkdown)) {
+  install.packages("rmarkdown") 
+  library(rmarkdown)
+  }
+
+if(!require(ggplot2)) {
+  install.packages("ggplot2") 
+  library(ggplot2)
+  }
+
+if(!require(tidyr)) {
+  install.packages("tidyr") 
+  library(tidyr)
+  }
+
+if(!require(readr)) {
+  install.packages("readr") 
+  library(readr)
+  }
+
 ```
 
 
