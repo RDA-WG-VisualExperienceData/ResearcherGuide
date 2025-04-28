@@ -20,32 +20,10 @@ lightbox: true
 ---
 
 ```{r}
-#check if packages are installed, if not install them
-if(!require(knitr)) {
-  install.packages("knitr") 
-  library(knitr)
-  }
-
-if(!require(rmarkdown)) {
-  install.packages("rmarkdown") 
-  library(rmarkdown)
-  }
-
-if(!require(ggplot2)) {
-  install.packages("ggplot2") 
-  library(ggplot2)
-  }
-
-if(!require(tidyr)) {
-  install.packages("tidyr") 
-  library(tidyr)
-  }
-
-if(!require(readr)) {
-  install.packages("readr") 
-  library(readr)
-  }
-
+#setup
+library(ggplot2)
+library(tidyr)
+library(readr)
 ```
 
 
