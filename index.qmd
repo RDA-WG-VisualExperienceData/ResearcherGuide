@@ -20,7 +20,7 @@ lightbox: true
 ---
 
 ```{r}
-packages <- c("ggplot2", "tidyr", "readr")
+packages <- c("ggplot2", "tidyr", "readr", "rmarkdown", "knitr")
 
 #check if packages are installed, if not install them
 if(!require(pacman)) {
