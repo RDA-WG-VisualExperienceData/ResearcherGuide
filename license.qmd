@@ -2,8 +2,4 @@
 title: "License"
 ---
 
-::: {.justify}
-
 {{< include LICENSE >}}
-
-:::
