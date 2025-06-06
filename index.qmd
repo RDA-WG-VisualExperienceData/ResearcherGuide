@@ -210,7 +210,7 @@ When wear detection is not available from the device-inherent capabilities, it i
 
 ### Interaction with the device
 
-Some devices contain event buttons, which, when pressed, insert time-stamped information into the data log. This functionality can be very useful for determining wear/non-wear state and specific events taking place for the participant. It is worth noting that as they are a user interaction, participants are not guaranteed to do it consistently.
+Some devices contain event buttons, which, when pressed, insert time-stamped information into the data log. This functionality can be very useful for determining wear/non-wear state and specific events taking place for the participant. It is worth noting that as they are a user interaction, participants are not guaranteed to do it consistently. Some devices also include a status LED that indicates the device state. It is important to inform the participant of the meaning of each of the possible states, and intervene if necessary.
 
 ### Documentation
 
@@ -287,10 +287,11 @@ Similar to how the research question, hypotheses, procedures, and methods need t
 
 ### Measurement length and sampling intervals
 
-The measurement length, i.e., how long the protocol should last, and the sampling interval, i.e., how often measurements are taken, is partially determined by the battery and storage capacity of the device, and highly contingent on the research question. If the goal is to measure or approximate the retinal stimulus at high temporal resolution, then of course, 1-minute measurements 
+The measurement length, i.e., how long the protocol should last, and the sampling interval, i.e., how often measurements are taken, is partially determined by the battery and storage capacity of the device, and highly contingent on the research question. There is currently no knowledge on interdaily variability, and future research should characterise this carefully. Regarding sampling resolution, if the goal is to measure or approximate the retinal stimulus at high temporal resolution, then of course, 1-minute measurement sampling is not sufficient. 
 
 ### Inclusion of other data
-Sleep, activity, and context. [@Guidolin2045BMCPublicHealth]
+
+Depending on the research question, additional data can be collected alongside the wearable device. This includes, for example, daily logs of mood, sleep and other aspects [@Guidolin2045BMCPublicHealth], and can be implemented using smartphone apps.
 
 ### Participant reactivity and inadvertant behavioral modification
 
@@ -302,7 +303,7 @@ To probe for such biases, it may be advisable to include a questionnaire or sing
 
 ## Collecting data
 
-With the protocol final and registered, data collection commences. There are several aspects that need to be considered.
+With the protocol final and registered, data collection commences. There are several aspects that need to be considered i nthe data collection process..
 
 ### Briefing of participants
 
@@ -314,7 +315,7 @@ Participants should receive clear instructions on
 
 To ensure that participants understand the instructions clearly, it is recommended that a short comprehension check be included after the briefing. This can be done by asking participants to repeat key instructions in their own words or having participants demonstrate how to wear, remove, and charge the device correctly. A printed or digital instruction sheet can be supplied for reference.
 
-Additionally, if there are any known problems with the devices, these should be communicated to the participants.
+Additionally, if there are any known problems with the devices (such as common mechanical failures), these should be communicated to the participants alongside mitigation strategies.
 
 ### Recurrent compliance checks
 
@@ -346,7 +347,8 @@ Surveys, companion apps.
 File organization.
 
 ### Documentation of anomalies
-Participant-reported issues.
+
+It is good practice to instruct participants to report any issues occuring in the data collection, either through a specially provided log, or through ad-hoc emailing. Some wearable devices, for example, have a status LED, which the participants can be instructed to monitor and note down any changes
 
 ### Metadata
 
@@ -490,9 +492,8 @@ Code reproducibility can be ensured through independent validation through [CODE
 To ensure the reproducibility of research studies, it is recommended to share the materials used throughout the study, including any instruction sheets given to the participant, survey questions used, as well as debriefing documents. For any digital materials, such as forms served on a survey platform (such as [REDCap](https://project-redcap.org/)), it is recommended, that the materials are provided in a format ingestible/importable by the platform
 
 ### Sharing data
-Ethical and practical aspects.
 
-It is recommended that when researchers submit their ethics approval request, they already include the provision of sharing data in anonymized form. It can be very difficult to impractical to share data after the fact or seek re-approval from the participants.
+Data should be made available transparently and openly. It is recommended that when researchers submit their ethics approval request, they already include the provision of sharing data in anonymized form. It can be very difficult to impractical to share data after the fact or seek re-approval from the participants.
 
 ### FAIR data
 
