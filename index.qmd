@@ -158,14 +158,15 @@ The visual world around us is rich in its spatial and colourful detail, and we d
 
 #### Depth information
 
-
+As with spatial information, the world is three-dimensional, and as we shift our gaze from different objects or parts of the visual scene, our accommodative state changes. In previous studies, it has been observed that near and far work are determinants of myopia onset and progression, and therefore some devices include depth information, which are then aggregated.
 
 #### Movement tracking
 
+Stemming originally from research into circadian rhythms and sleep-wake cycles, some light loggers have integrated accelerometers and inertial measurement units (IMUs). These can be particularly relevant to determine various aspects of wearing behaviour. As an example, when a device is placed on a surface and not worn, this will present as non-movement. The exact ability to determine wear state from this sensor modality depends highly on the sensor sensitivity.
 
 ### Manufacturer calibration
 
-Devices designed to measure light exposure and other aspects of the optical environment should come with information from the manufacturer on the calibration procedures used to ensure high-quality measurements. Sometimes, information for one exemplary device is included in a spec sheet or datasheet. It is worth consulting with the manufacturer on any calibrations they perform and specifically clarifying whether device-level information is available.
+Devices designed to measure light exposure and other aspects of the optical environment should come with information from the manufacturer on the calibration procedures used to ensure high-quality measurements. Sometimes, information for one exemplary device is included in a data or specification sheet. It is worth consulting with the manufacturer on any calibrations they perform and specifically clarifying whether device-level information is available.
 
 The manufacturer may also recommend recalibrations of the devices at regular intervals. It is worth understanding the rationale for any such recalibrations (in particular if they come at a cost), as well as any recalibrations that researchers themselves can do.
 
@@ -187,11 +188,15 @@ Common problems include:
 
 Previous studies [@Okudaira1983AmJPhysiol; @Jardim2011ChronobiolInt; @Aarts2017BuildEnviron; @Bhandari2021Sensors; @Wen2023BMJOpenOphthal; @Mohammadian2024IEEEInternetThingsJ] have shown that while wrist-worn measurements are correlated with chest or head measurements, they are not related by a simple relationship. This follows from the fact that the wrist and eyes point in different directions in different planes.
 
-### Battery capacity
-Battery life, charging cycles, power management.
+### Battery capacity and charging
+
+Devices differ in their battery capacity, which is a determinant factor for the way that the devices can be used in the real world. The battery capacity is typically known by the manufacturer, but will depend on a number of factors, including the sampling intervals. Additionally, the way that a device is charged is of important for the specific use. Wearables can usually be charge through one of the following methods: A direct cable connection, an insertable battery, or a charging dock. As with any electronic device, there may also be varying capacities over the lifetime of the wearable, which needs to be considered. Some wearable devices also feature a 'power down' function which puts the device into stand-by mode, thereby avoiding deep discharging.
 
 ### Data storage
-Storage capacity, retention, and privacy.
+
+Data storage capacity is related to the battery capacity: For high-frequency sampling, the storage will run full, and the data would have to be downloaded from the device. Additionally, the sampling frequency itself may also reduce the battery capacity due to repeated operations. The behaviour of devices with respect to data storage when failure of any sort occurs is core. For example, when a device runs full, it could respond either by stopping any further data intake, or by 
+
+Where the data are stored is important, not only for practical considerations, but also for privacy concerns. Some devices allow for or have mandatory synchronization through a Bluetooth-enabled connection with a smartphone. This needs to be considered in the context of research ethics.
 
 ### Raw data format and ease of use
 Export formats, transfer speed, and syntactic structure.
