@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.29">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="The Optical Radiation Exposure and Visual Experience Data Working Group">
-<meta name="dcterms.date" content="2025-04-29">
+<meta name="dcterms.date" content="2025-06-06">
 
-<title>RDA Researcher Guide – Researcher Guide</title>
+<title>Researcher Guide: Wearable optical radiation and visual experience loggers – Researcher Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -58,10 +58,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-630147fbe0b9ab2b2a517857e522e257.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dde8d7229bfee0f8bb5efd37f0f9ae1e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -170,9 +170,9 @@ div.csl-indent {
   <li><a href="#advanced-and-additional-modalities" id="toc-advanced-and-additional-modalities" class="nav-link" data-scroll-target="#advanced-and-additional-modalities">Advanced and additional modalities</a></li>
   <li><a href="#manufacturer-calibration" id="toc-manufacturer-calibration" class="nav-link" data-scroll-target="#manufacturer-calibration">Manufacturer calibration</a></li>
   <li><a href="#size-form-and-design" id="toc-size-form-and-design" class="nav-link" data-scroll-target="#size-form-and-design">Size, form, and design</a></li>
-  <li><a href="#battery-capacity" id="toc-battery-capacity" class="nav-link" data-scroll-target="#battery-capacity">Battery capacity</a></li>
+  <li><a href="#battery-capacity-and-charging" id="toc-battery-capacity-and-charging" class="nav-link" data-scroll-target="#battery-capacity-and-charging">Battery capacity and charging</a></li>
   <li><a href="#data-storage" id="toc-data-storage" class="nav-link" data-scroll-target="#data-storage">Data storage</a></li>
-  <li><a href="#raw-data-format-and-ease-of-use" id="toc-raw-data-format-and-ease-of-use" class="nav-link" data-scroll-target="#raw-data-format-and-ease-of-use">Raw data format and ease of use</a></li>
+  <li><a href="#raw-data-format-and-ease-of-transfer" id="toc-raw-data-format-and-ease-of-transfer" class="nav-link" data-scroll-target="#raw-data-format-and-ease-of-transfer">Raw data format and ease of transfer</a></li>
   <li><a href="#wearnon-wear-and-occlusion-detection" id="toc-wearnon-wear-and-occlusion-detection" class="nav-link" data-scroll-target="#wearnon-wear-and-occlusion-detection">Wear/non-wear and occlusion detection</a></li>
   <li><a href="#interaction-with-the-device" id="toc-interaction-with-the-device" class="nav-link" data-scroll-target="#interaction-with-the-device">Interaction with the device</a></li>
   <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation">Documentation</a></li>
@@ -191,7 +191,7 @@ div.csl-indent {
   <li><a href="#clarity-on-the-research-question-and-pre-registration" id="toc-clarity-on-the-research-question-and-pre-registration" class="nav-link" data-scroll-target="#clarity-on-the-research-question-and-pre-registration">Clarity on the research question and pre-registration</a></li>
   <li><a href="#participant-burden-vs.-fidelity" id="toc-participant-burden-vs.-fidelity" class="nav-link" data-scroll-target="#participant-burden-vs.-fidelity">Participant burden vs.&nbsp;fidelity</a></li>
   <li><a href="#measurement-capabilities-matched-to-use-case" id="toc-measurement-capabilities-matched-to-use-case" class="nav-link" data-scroll-target="#measurement-capabilities-matched-to-use-case">Measurement capabilities matched to use case</a></li>
-  <li><a href="#measurement-length-and-time-intervals" id="toc-measurement-length-and-time-intervals" class="nav-link" data-scroll-target="#measurement-length-and-time-intervals">Measurement length and time intervals</a></li>
+  <li><a href="#measurement-length-and-sampling-intervals" id="toc-measurement-length-and-sampling-intervals" class="nav-link" data-scroll-target="#measurement-length-and-sampling-intervals">Measurement length and sampling intervals</a></li>
   <li><a href="#inclusion-of-other-data" id="toc-inclusion-of-other-data" class="nav-link" data-scroll-target="#inclusion-of-other-data">Inclusion of other data</a></li>
   <li><a href="#participant-reactivity-and-inadvertant-behavioral-modification" id="toc-participant-reactivity-and-inadvertant-behavioral-modification" class="nav-link" data-scroll-target="#participant-reactivity-and-inadvertant-behavioral-modification">Participant reactivity and inadvertant behavioral modification</a></li>
   </ul></li>
@@ -251,7 +251,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">RDA Researcher Guide</h1>
+<h1 class="title">Researcher Guide: Wearable optical radiation and visual experience loggers</h1>
 </div>
 
 
@@ -268,7 +268,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Last modified:</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 29, 2025</p>
+      <p class="date">June 6, 2025</p>
     </div>
   </div>
   
@@ -300,7 +300,7 @@ div.csl-indent {
 </section>
 <section id="workflow" class="level1">
 <h1>Workflow</h1>
-<p>We consider the following workflow:</p>
+<p>Here, we consider the following workflow in a research project. We have built the researcher guide around each of these subsections.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -349,13 +349,15 @@ div.csl-indent {
 <h1>Researcher Guide</h1>
 <section id="selecting-devices" class="level2">
 <h2 class="anchored" data-anchor-id="selecting-devices">Selecting devices</h2>
-<p>The first step in any project examining visual experience and light exposure is the choice of a device. This involves understanding the properties of different wearable devices, and several trade-offs. A recent survey found &gt;50 wearable devices differing in form and function <span class="citation" data-cites="vanDuijnhoven2025BuildEnviron Honekopp2023ClinOphthalmol Danilenko2022AppliedSci">(<a href="#ref-vanDuijnhoven2025BuildEnviron" role="doc-biblioref">van Duijnhoven et al. 2025</a>; with previous overviews in <a href="#ref-Honekopp2023ClinOphthalmol" role="doc-biblioref">Hönekopp and Weigelt 2023</a>; <a href="#ref-Danilenko2022AppliedSci" role="doc-biblioref">Danilenko et al. 2022</a>)</span>, indicating the need to make informed choices.</p>
+<p>The first step in any project examining visual experience and light exposure is the choice of a device. This involves understanding the properties of different wearable devices, and several trade-offs. A recent survey found &gt;50 wearable devices differing in form and function <span class="citation" data-cites="vanDuijnhoven2025BuildEnviron Honekopp2023ClinOphthalmol Danilenko2022AppliedSci">(<a href="#ref-vanDuijnhoven2025BuildEnviron" role="doc-biblioref">van Duijnhoven et al. 2025</a>; with previous overviews in <a href="#ref-Honekopp2023ClinOphthalmol" role="doc-biblioref">Hönekopp and Weigelt 2023</a>; <a href="#ref-Danilenko2022AppliedSci" role="doc-biblioref">Danilenko et al. 2022</a>)</span>, indicating the need to make informed choices about selecting specific devices. As there are no standard or reference devices, each device needs to be considered individually. The following sections provide an overview of the technical properties that characterise individual devices and distinguish them.</p>
 <section id="measurement-capabilities-and-sensor-characteristics" class="level3">
 <h3 class="anchored" data-anchor-id="measurement-capabilities-and-sensor-characteristics">Measurement capabilities and sensor characteristics</h3>
-<p>Spectral/photometric/α-opic metrics, sampling rate, uncertainty, cosine response, range, etc. <span class="citation" data-cites="Spitschan2022DigitHealth">(<a href="#ref-Spitschan2022DigitHealth" role="doc-biblioref">Spitschan et al. 2022</a>)</span></p>
+<p>Devices differ in their ability to measure aspects of the visual environment. These differences arise from design decisions, choices of technical components and the specific use cases one that a manufacturer had in mind when making the device. Importantly, the manufacturers usually supplies a data or specification sheet for a product; the verification and validation of these aspects ultimately should also be in the hands of the users of the devices <span class="citation" data-cites="Spitschan2022DigitHealth">(<a href="#ref-Spitschan2022DigitHealth" role="doc-biblioref">Spitschan et al. 2022</a>)</span>.</p>
 <section id="spectral-sensitivity-functions" class="level4">
 <h4 class="anchored" data-anchor-id="spectral-sensitivity-functions">Spectral sensitivity functions</h4>
-<p>Spectral sensitivity <span class="citation" data-cites="CIE2018CIES026 Lucas2014TrendsNeurosci">(<a href="#ref-CIE2018CIES026" role="doc-biblioref">CIE 2018</a>; <a href="#ref-Lucas2014TrendsNeurosci" role="doc-biblioref">Lucas et al. 2014</a>)</span></p>
+<p>The goal of wearable optical radiation and visual experience loggers is to capture aspects of the environment relevant to human physiology and behaviour. As such, for most use cases, light is of interest. Light is defined as optical radiation within the visible region of the spectrum (approx. 380 to 780 nm). The photoreceptors in the human eye are sensitive to different parts of the spectrum, and serve different functions. The cones enable vision of space, colour and motion under daylight conditions, while the rods facilitate rudimentary vision under dim conditions. In addition to these ‘canonical’ photreceptors, the intrinsically photosensitive retinal ganglion cells (ipRGCs) encode aspects of the visual environment, specifically ambient light intensity, through the photopigment melanopsin. The specral sensitivities of the cones, rods and ipRGCs differ, and were standardized by the CIE in 2018 <span class="citation" data-cites="CIE2018CIES026 Lucas2014TrendsNeurosci">(<a href="#ref-CIE2018CIES026" role="doc-biblioref">CIE 2018</a>; <a href="#ref-Lucas2014TrendsNeurosci" role="doc-biblioref">Lucas et al. 2014</a>)</span>.</p>
+<p>The International Standard CIE S 026/E:2018 <span class="citation" data-cites="CIE2018CIES026">(<a href="#ref-CIE2018CIES026" role="doc-biblioref">CIE 2018</a>)</span> prescribes the spectral sensitivities of the photoreceptors, and thereby also provides a key reference framework for quantifying light exposure with respect to human responses. Notably, the standard proposes the α-opic quantities, where “α” is a placeholder for the cones, rods or ipRGCs.</p>
+<p>A common quantity in light measurements is photopic illuminance [lux]. Photopic illuminance is a quantity that weighs the long- and medium-wavelength sensitive cones and corresponds, roughly, to the psychophysical sensation of brightness. Photopic illuminance is not the same as the light quantity related to the ipRGCs, the melanopic equivalent equivalent daylight illuminance (melanopic EDI), and therefore needs to be measured independently.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -365,9 +367,11 @@ div.csl-indent {
 </div>
 </div>
 </div>
+<p>Wearable light loggers usually measure the quantities directly through a series of discrete sensor channels, or measure the spectrum of light and then calculate the relevant quantities (e.g.&nbsp;photopic illuminance, melanopic equivalent daylight illuminance). Importantly, it is not guaranteed that the actual spectral sensitivity of a channel in a device corresponds to the standardised spectral sensitivity of the photoreceptor. It is therefore worth either calibrating the spectral sensitivity, or prompting the manufacturer to do so.</p>
 </section>
 <section id="directional-properties" class="level4">
 <h4 class="anchored" data-anchor-id="directional-properties">Directional properties</h4>
+<p>Irradiance and illuminance measurements are usually done in cosine weighted fashion: Light that comes directly from the sensor is weighed more importantly compared to light that comes from the angle. This behaviour follows a cosine function as a function of the incident angle. Each sensor has a specific directional sensitivity that needs to be provided by the manufacturer, or measured and characterised.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -377,15 +381,32 @@ div.csl-indent {
 </div>
 </div>
 </div>
+<p>The directional properties of a wearable light logging devices are important in so far as in the real world, different scenarios have different spatial configurations. As an example, a light logger that only captured light in the central 20° of the visual world would capture limited information, and omit the light coming from, e.g.&nbsp;overhead light sources.</p>
 </section>
 </section>
 <section id="advanced-and-additional-modalities" class="level3">
 <h3 class="anchored" data-anchor-id="advanced-and-additional-modalities">Advanced and additional modalities</h3>
-<p>Spatial resolution, movement tracking, UV/IR detection.</p>
+<p>While most optical radiation and visual experience loggers measure light at a minimum, advanced devices also include other modalities by design. This includes optical radiation in the ultraviolet (UV) and infrared (IR) part of the spectrum, spatial information, distance information, and movement tracking.</p>
+<section id="uv-and-ir-measurements" class="level4">
+<h4 class="anchored" data-anchor-id="uv-and-ir-measurements">UV and IR measurements</h4>
+<p>UV and IR measurements are interesting as they can enrich and augment the data set in different ways. Through the inclusion of optical radiation in this wavelength range, it may be possible to determine whether an individual spent time indoors or outdoors (as the UV radiation entering indoor spaces through usual window glazing is negligeable). Co-measuring UV and IR may also facilitate future-proofing measurements of hitherto unknown physiological responses to this part of the spectrum. As with the spectral sensitivity of wearable light loggers, it is key to ensure that the UV and IR responses measured by a wearable device are metrologically sound.</p>
+</section>
+<section id="spatially-resolved-measurements" class="level4">
+<h4 class="anchored" data-anchor-id="spatially-resolved-measurements">Spatially resolved measurements</h4>
+<p>The visual world around us is rich in its spatial and colourful detail, and we do not live in a Lambertian integrating sphere with homogenous illumination. In turn, the retinal image and the ensuing information available to the visual and non-visual pathways of the brain is spatially structured. A measurement of visual experience therefore could also include spatially resolved measurements such as those from a camera. Cameras, of course, also need to be characterised and calibrated, and importantly, the dynamic range of the visual environment needs to be included in considerations.</p>
+</section>
+<section id="distance-information" class="level4">
+<h4 class="anchored" data-anchor-id="distance-information">Distance information</h4>
+<p>As with spatial information, the world is three-dimensional, and as we shift our gaze from different objects or parts of the visual scene, our accommodative state changes. In previous studies, it has been observed that near and far work are determinants of myopia onset and progression, and therefore some devices include depth information, which are then aggregated.</p>
+</section>
+<section id="movement-tracking" class="level4">
+<h4 class="anchored" data-anchor-id="movement-tracking">Movement tracking</h4>
+<p>Stemming originally from research into circadian rhythms and sleep-wake cycles, some light loggers have integrated accelerometers and inertial measurement units (IMUs). These can be particularly relevant to determine various aspects of wearing behaviour. As an example, when a device is placed on a surface and not worn, this will present as non-movement. The exact ability to determine wear state from this sensor modality depends highly on the sensor sensitivity.</p>
+</section>
 </section>
 <section id="manufacturer-calibration" class="level3">
 <h3 class="anchored" data-anchor-id="manufacturer-calibration">Manufacturer calibration</h3>
-<p>Devices designed to measure light exposure and other aspects of the optical environment should come with information from the manufacturer on the calibration procedures used to ensure high-quality measurements. Sometimes, information for one exemplary device is included in a spec sheet or datasheet. It is worth consulting with the manufacturer on any calibrations they perform and specifically clarifying whether device-level information is available.</p>
+<p>Devices designed to measure light exposure and other aspects of the optical environment should come with information from the manufacturer on the calibration procedures used to ensure high-quality measurements. Sometimes, information for one exemplary device is included in a data or specification sheet. It is worth consulting with the manufacturer on any calibrations they perform and specifically clarifying whether device-level information is available.</p>
 <p>The manufacturer may also recommend recalibrations of the devices at regular intervals. It is worth understanding the rationale for any such recalibrations (in particular if they come at a cost), as well as any recalibrations that researchers themselves can do.</p>
 </section>
 <section id="size-form-and-design" class="level3">
@@ -406,17 +427,18 @@ div.csl-indent {
 </ul>
 <p>Previous studies <span class="citation" data-cites="Okudaira1983AmJPhysiol Jardim2011ChronobiolInt Aarts2017BuildEnviron Bhandari2021Sensors Wen2023BMJOpenOphthal Mohammadian2024IEEEInternetThingsJ">(<a href="#ref-Okudaira1983AmJPhysiol" role="doc-biblioref">Okudaira, Kripke, and Webster 1983</a>; <a href="#ref-Jardim2011ChronobiolInt" role="doc-biblioref">Jardim et al. 2011</a>; <a href="#ref-Aarts2017BuildEnviron" role="doc-biblioref">Aarts et al. 2017</a>; <a href="#ref-Bhandari2021Sensors" role="doc-biblioref">Bhandari, Mirhajianmoghadam, and Ostrin 2021</a>; <a href="#ref-Wen2023BMJOpenOphthal" role="doc-biblioref">Wen et al. 2023</a>; <a href="#ref-Mohammadian2024IEEEInternetThingsJ" role="doc-biblioref">Mohammadian et al. 2024</a>)</span> have shown that while wrist-worn measurements are correlated with chest or head measurements, they are not related by a simple relationship. This follows from the fact that the wrist and eyes point in different directions in different planes.</p>
 </section>
-<section id="battery-capacity" class="level3">
-<h3 class="anchored" data-anchor-id="battery-capacity">Battery capacity</h3>
-<p>Battery life, charging cycles, power management.</p>
+<section id="battery-capacity-and-charging" class="level3">
+<h3 class="anchored" data-anchor-id="battery-capacity-and-charging">Battery capacity and charging</h3>
+<p>Devices differ in their battery capacity, which is a determinant factor for the way that the devices can be used in the real world. The battery capacity is typically known by the manufacturer, but will depend on a number of factors, including the sampling intervals. Additionally, the way that a device is charged is of important for the specific use. Wearables can usually be charge through one of the following methods: A direct cable connection, an insertable battery, or a charging dock. As with any electronic device, there may also be varying capacities over the lifetime of the wearable, which needs to be considered. Some wearable devices also feature a ‘power down’ function which puts the device into stand-by mode, thereby avoiding deep discharging.</p>
 </section>
 <section id="data-storage" class="level3">
 <h3 class="anchored" data-anchor-id="data-storage">Data storage</h3>
-<p>Storage capacity, retention, and privacy.</p>
+<p>Data storage capacity is related to the battery capacity: For high-frequency sampling, the storage will run full, and the data would have to be downloaded from the device. Additionally, the sampling frequency itself may also reduce the battery capacity due to repeated operations. The behaviour of devices with respect to data storage when failure of any sort occurs is core. For example, when a device runs full, it could respond either by stopping any further data intake, or by starting the recording from the beginning. Similarly, when a device loses charge/the battery is empty, the data could be lost. Understanding the exact contingencies of these failure modes can mitigate data loss.</p>
+<p>Where the data are stored is important, not only for practical considerations, but also for privacy concerns. Some devices allow for or have mandatory synchronization through a Bluetooth-enabled connection with a smartphone. This needs to be considered in the context of research ethics.</p>
 </section>
-<section id="raw-data-format-and-ease-of-use" class="level3">
-<h3 class="anchored" data-anchor-id="raw-data-format-and-ease-of-use">Raw data format and ease of use</h3>
-<p>Export formats, transfer speed, and syntactic structure.</p>
+<section id="raw-data-format-and-ease-of-transfer" class="level3">
+<h3 class="anchored" data-anchor-id="raw-data-format-and-ease-of-transfer">Raw data format and ease of transfer</h3>
+<p>To date, there is no commonly accepted data standard for data from wearable light exposure and visual experience loggers. As a consequence, manufacturers typically develop their own format, which are sometimes not well-documented. The consequence of this is that any researchers or research users working with these types of data will spend a considerable amount of time to write loading functions to wrangle the data. Within the graphical user interface (GUI) that is attached to a device, it is usually possible to export the data into a range of formats. The transfer speed for the data can be important in environments or use cases where fast analysis of data is important.</p>
 </section>
 <section id="wearnon-wear-and-occlusion-detection" class="level3">
 <h3 class="anchored" data-anchor-id="wearnon-wear-and-occlusion-detection">Wear/non-wear and occlusion detection</h3>
@@ -425,7 +447,7 @@ div.csl-indent {
 </section>
 <section id="interaction-with-the-device" class="level3">
 <h3 class="anchored" data-anchor-id="interaction-with-the-device">Interaction with the device</h3>
-<p>Some devices contain event buttons, which, when pressed, insert time-stamped information into the data log. This functionality can be very useful for determining wear/non-wear state and specific events taking place for the participant. It is worth noting that as they are a user interaction, participants are not guaranteed to do it consistently.</p>
+<p>Some devices contain event buttons, which, when pressed, insert time-stamped information into the data log. This functionality can be very useful for determining wear/non-wear state and specific events taking place for the participant. It is worth noting that as they are a user interaction, participants are not guaranteed to do it consistently. Some devices also include a status LED that indicates the device state. It is important to inform the participant of the meaning of each of the possible states, and intervene if necessary.</p>
 </section>
 <section id="documentation" class="level3">
 <h3 class="anchored" data-anchor-id="documentation">Documentation</h3>
@@ -508,27 +530,27 @@ div.csl-indent {
 </section>
 <section id="designing-the-protocol" class="level2">
 <h2 class="anchored" data-anchor-id="designing-the-protocol">Designing the protocol</h2>
-<p>Once devices are in hand, a key consideration is the design of a protocol.</p>
+<p>Once devices are in hand, a key consideration is the design of a protocol for collecting optical radiation exposure and visual experience data. In the literature, research groups usually follow their own custom protocols, but recently, a standard protocol for one-week measurements has been published <span class="citation" data-cites="Guidolin2045BMCPublicHealth">(<a href="#ref-Guidolin2045BMCPublicHealth" role="doc-biblioref">Guidolin et al. 2024</a>)</span>. The design and choice of the protocol should include the following considerations.</p>
 <section id="clarity-on-the-research-question-and-pre-registration" class="level3">
 <h3 class="anchored" data-anchor-id="clarity-on-the-research-question-and-pre-registration">Clarity on the research question and pre-registration</h3>
 <p>The research question, hypotheses, procedures, and methods need to be aligned in a tight way. In measuring visual experience and light exposure, this alignment becomes particularly important due to the changing and context-dependent nature of light. Measuring a single day of light exposure to draw conclusions about seasonal effects is methodologically flawed, neglecting intra- and inter-day fluctuations in weather, behaviour and exposures. For more robust measurements, typically, longer measurements are needed and include data from weekdays and weekends. Additionally, different work schedules <span class="citation" data-cites="Daugaard2019AnnWorkExpoHealth Price2021AnnWorkExpoHealth">(<a href="#ref-Daugaard2019AnnWorkExpoHealth" role="doc-biblioref">Daugaard et al. 2019</a>; <a href="#ref-Price2021AnnWorkExpoHealth" role="doc-biblioref">Price, Khazova, and Udovicic 2022</a>)</span> and seasons at specific latitudes <span class="citation" data-cites="Cole1995JBiolRhythms Graw2000JAffectDisord Thorne2009ChronobiolInt Ulaganathan2018ActaOphthalmol Dunster2022JPinealRes">(<a href="#ref-Cole1995JBiolRhythms" role="doc-biblioref">Cole et al. 1995</a>; <a href="#ref-Graw2000JAffectDisord" role="doc-biblioref">Graw et al. 1999</a>; <a href="#ref-Thorne2009ChronobiolInt" role="doc-biblioref">Thorne et al. 2009</a>; <a href="#ref-Ulaganathan2018ActaOphthalmol" role="doc-biblioref">Ulaganathan et al. 2019</a>; <a href="#ref-Dunster2022JPinealRes" role="doc-biblioref">Dunster et al. 2023</a>)</span> can lead to significant differences in exposure. At the same time, coverage needs to be balanced with participant burden.</p>
-<p>It is important to clearly formulate the research question, hypotheses, procedures, and methods before the data collection. An additional step is to write a pre-registration detailing the protocol and analysis plans.</p>
+<p>It is important to clearly formulate the research question, hypotheses, procedures, and methods before the data collection. An additional step is to write a pre-registration detailing the protocol and analysis plans, thereby ensuring intellectual clarity on the purpose and procedure of measurements. It is worth noting that this effort in any event has to be done, namely at the point of data analysis, and so firming up a pre-registration in advance simply frontloads this effort.</p>
 </section>
 <section id="participant-burden-vs.-fidelity" class="level3">
 <h3 class="anchored" data-anchor-id="participant-burden-vs.-fidelity">Participant burden vs.&nbsp;fidelity</h3>
-<p>Balancing precision with practicality.</p>
+<p>For any research, participant burden is a key consideration. The desired biological quantity of interest is the retinal irradiance, whih cannot be measured, as only the retina can ‘measure’ it. The next best geometrical consideration is the near-corneal plane, which places a burden on the participant under real-world conditions and may even modify their behaviour (e.g., selecting out of social situations). A core question therefore is to what extent near-corneal measurements are necessary for the research question at hand. A pilot study can bring clarity on the uncertainty introduce by the use of, e.g., wrist-mounted vs.&nbsp;chest-mounted light loggers. For some research questions, including those where distance information is important, some wearing locations are nonsensical. For example, a wrist-worn sensor will not be able to measure viewing distance.</p>
 </section>
 <section id="measurement-capabilities-matched-to-use-case" class="level3">
 <h3 class="anchored" data-anchor-id="measurement-capabilities-matched-to-use-case">Measurement capabilities matched to use case</h3>
 <p>Similar to how the research question, hypotheses, procedures, and methods need to be tightly aligned, the measurement capabilities of the wearable devices needs to be matched to the measurement context (indoors, outdoors). For example, a wearable devices might not be suited to measure light exposure below 10 lx. If the goal is to measure dynamics in nocturnal light exposure, the device would not produce robust information. Similarly, distance sensors operate differently in different conditions (depending on the sensor technology).</p>
 </section>
-<section id="measurement-length-and-time-intervals" class="level3">
-<h3 class="anchored" data-anchor-id="measurement-length-and-time-intervals">Measurement length and time intervals</h3>
-<p>Sampling strategy and battery considerations.</p>
+<section id="measurement-length-and-sampling-intervals" class="level3">
+<h3 class="anchored" data-anchor-id="measurement-length-and-sampling-intervals">Measurement length and sampling intervals</h3>
+<p>The measurement length, i.e., how long the protocol should last, and the sampling interval, i.e., how often measurements are taken, is partially determined by the battery and storage capacity of the device, and highly contingent on the research question. There is currently no knowledge on interdaily variability, and future research should characterise this carefully. Regarding sampling resolution, if the goal is to measure or approximate the retinal stimulus at high temporal resolution, then of course, 1-minute measurement sampling is not sufficient.</p>
 </section>
 <section id="inclusion-of-other-data" class="level3">
 <h3 class="anchored" data-anchor-id="inclusion-of-other-data">Inclusion of other data</h3>
-<p>Sleep, activity, and context. <span class="citation" data-cites="Guidolin2045BMCPublicHealth">(<a href="#ref-Guidolin2045BMCPublicHealth" role="doc-biblioref">Guidolin et al. 2024</a>)</span></p>
+<p>Depending on the research question, additional data can be collected alongside the wearable device. This includes, for example, daily logs of mood, sleep and other aspects <span class="citation" data-cites="Guidolin2045BMCPublicHealth">(<a href="#ref-Guidolin2045BMCPublicHealth" role="doc-biblioref">Guidolin et al. 2024</a>)</span>, and can be implemented using smartphone apps.</p>
 </section>
 <section id="participant-reactivity-and-inadvertant-behavioral-modification" class="level3">
 <h3 class="anchored" data-anchor-id="participant-reactivity-and-inadvertant-behavioral-modification">Participant reactivity and inadvertant behavioral modification</h3>
@@ -539,7 +561,7 @@ div.csl-indent {
 </section>
 <section id="collecting-data" class="level2">
 <h2 class="anchored" data-anchor-id="collecting-data">Collecting data</h2>
-<p>With the protocol final and registered, data collection commences. There are several aspects that need to be considered.</p>
+<p>With the protocol final and registered, data collection commences. There are several aspects that need to be considered i nthe data collection process..</p>
 <section id="briefing-of-participants" class="level3">
 <h3 class="anchored" data-anchor-id="briefing-of-participants">Briefing of participants</h3>
 <p>Participants should receive clear instructions on</p>
@@ -549,7 +571,7 @@ div.csl-indent {
 <li>charging the device regularly (if necessary)</li>
 </ul>
 <p>To ensure that participants understand the instructions clearly, it is recommended that a short comprehension check be included after the briefing. This can be done by asking participants to repeat key instructions in their own words or having participants demonstrate how to wear, remove, and charge the device correctly. A printed or digital instruction sheet can be supplied for reference.</p>
-<p>Additionally, if there are any known problems with the devices, these should be communicated to the participants.</p>
+<p>Additionally, if there are any known problems with the devices (such as common mechanical failures), these should be communicated to the participants alongside mitigation strategies.</p>
 </section>
 <section id="recurrent-compliance-checks" class="level3">
 <h3 class="anchored" data-anchor-id="recurrent-compliance-checks">Recurrent compliance checks</h3>
@@ -583,7 +605,7 @@ div.csl-indent {
 </section>
 <section id="documentation-of-anomalies" class="level3">
 <h3 class="anchored" data-anchor-id="documentation-of-anomalies">Documentation of anomalies</h3>
-<p>Participant-reported issues.</p>
+<p>It is good practice to instruct participants to report any issues occuring in the data collection, either through a specially provided log, or through ad-hoc emailing. Some wearable devices, for example, have a status LED, which the participants can be instructed to monitor and note down any changes</p>
 </section>
 <section id="metadata" class="level3">
 <h3 class="anchored" data-anchor-id="metadata">Metadata</h3>
@@ -727,8 +749,7 @@ div.csl-indent {
 </section>
 <section id="sharing-data" class="level3">
 <h3 class="anchored" data-anchor-id="sharing-data">Sharing data</h3>
-<p>Ethical and practical aspects.</p>
-<p>It is recommended that when researchers submit their ethics approval request, they already include the provision of sharing data in anonymized form. It can be very difficult to impractical to share data after the fact or seek re-approval from the participants.</p>
+<p>Data should be made available transparently and openly. It is recommended that when researchers submit their ethics approval request, they already include the provision of sharing data in anonymized form. It can be very difficult to impractical to share data after the fact or seek re-approval from the participants.</p>
 </section>
 <section id="fair-data" class="level3">
 <h3 class="anchored" data-anchor-id="fair-data">FAIR data</h3>
