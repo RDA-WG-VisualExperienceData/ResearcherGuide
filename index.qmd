@@ -1,5 +1,5 @@
 ---
-title: "RDA Researcher Guide"
+title: "Researcher Guide: Wearable optical radiation and visual experience loggers"
 author: The Optical Radiation Exposure and Visual Experience Data Working Group
 bibliography: references.bib
 format:
@@ -47,7 +47,7 @@ The scope of this Researcher Guide is to provide a guide to using wearable devic
 
 # Workflow
 
-We consider the following workflow:
+Here, we consider the following workflow in a research project. We have built the researcher guide around each of these subsections.
 
 ```{mermaid}
 flowchart TD
@@ -88,15 +88,19 @@ flowchart TD
 
 ## Selecting devices
 
-The first step in any project examining visual experience and light exposure is the choice of a device. This involves understanding the properties of different wearable devices, and several trade-offs. A recent survey found >50 wearable devices differing in form and function [@vanDuijnhoven2025BuildEnviron; with previous overviews in @Honekopp2023ClinOphthalmol; @Danilenko2022AppliedSci], indicating the need to make informed choices.
+The first step in any project examining visual experience and light exposure is the choice of a device. This involves understanding the properties of different wearable devices, and several trade-offs. A recent survey found >50 wearable devices differing in form and function [@vanDuijnhoven2025BuildEnviron; with previous overviews in @Honekopp2023ClinOphthalmol; @Danilenko2022AppliedSci], indicating the need to make informed choices  about selecting specific devices. As there are no standard or reference devices, each device needs to be considered individually. The following sections provide an overview of the technical properties that characterise individual devices and distinguish them.
 
 ### Measurement capabilities and sensor characteristics
-Spectral/photometric/α-opic metrics, sampling rate, uncertainty, cosine response, range, etc. [@Spitschan2022DigitHealth]
 
+Devices differ in their ability to measure aspects of the visual environment. These differences arise from design decisions, choices of technical components and the specific use cases one that a manufacturer had in mind when making the device. Importantly, the manufacturers usually supplies a data or specification sheet for a product; the verification and validation of these aspects ultimately should also be in the hands of the users of the devices [@Spitschan2022DigitHealth].
 
 #### Spectral sensitivity functions
 
-Spectral sensitivity [@CIE2018CIES026; @Lucas2014TrendsNeurosci]
+The goal of wearable optical radiation and visual experience loggers is to capture aspects of the environment relevant to human physiology and behaviour. As such, for most use cases, light is of interest. Light is defined as optical radiation within the visible region of the spectrum (approx. 380 to 780 nm). The photoreceptors in the human eye are sensitive to different parts of the spectrum, and serve different functions. The cones enable vision of space, colour and motion under daylight conditions, while the rods facilitate rudimentary vision under dim conditions. In addition to these 'canonical' photreceptors, the intrinsically photosensitive retinal ganglion cells (ipRGCs) encode aspects of the visual environment, specifically ambient light intensity, through the photopigment melanopsin. The specral sensitivities of the cones, rods and ipRGCs differ, and were standardized by the CIE in 2018 [@CIE2018CIES026; @Lucas2014TrendsNeurosci].
+
+The International Standard CIE S 026/E:2018 [@CIE2018CIES026] prescribes the spectral sensitivities of the photoreceptors, and thereby also provides a key reference framework for quantifying light exposure with respect to human responses. Notably, the standard proposes the α-opic quantities, where "α" is a placeholder for the cones, rods or ipRGCs.
+
+A common quantity in light measurements is photopic illuminance [lux]. Photopic illuminance is a quantity that weighs the long- and medium-wavelength sensitive cones and corresponds, roughly, to the psychophysical sensation of brightness. Photopic illuminance is not the same as the light quantity related to the ipRGCs, the melanopic equivalent equivalent daylight illuminance (melanopic EDI), and therefore needs to be measured independently.
 
 ```{r}
 # Load data
@@ -119,7 +123,11 @@ ggplot(cie_long, aes(x = wavelength, y = sensitivity, color = photoreceptor)) +
   theme_minimal()
 ```
 
+Wearable light loggers usually measure the quantities directly through a series of discrete sensor channels, or measure the spectrum of light and then calculate the relevant quantities (e.g. photopic illuminance, melanopic equivalent daylight illuminance). Importantly, it is not guaranteed that the actual spectral sensitivity of a channel in a device corresponds to the standardised spectral sensitivity of the photoreceptor. It is therefore worth either calibrating the spectral sensitivity, or prompting the manufacturer to do so.
+
 #### Directional properties
+
+Irradiance and illuminance measurements are usually done in cosine weighted fashion: Light that comes directly from the sensor is weighed more importantly compared to light that comes from the angle. This behaviour follows a cosine function as a function of the incident angle. Each sensor has a specific directional sensitivity that needs to be provided by the manufacturer, or measured and characterised. 
 
 ```{r}
 # Define x in degrees
@@ -134,9 +142,26 @@ ggplot(df, aes(x = x, y = y)) +
   theme_minimal()
 ```
 
+The directional properties of a wearable light logging devices are important in so far as in the real world, different scenarios have different spatial configurations. As an example, a light logger that only captured light in the central 20° of the visual world would capture limited information, and omit the light coming from, e.g. overhead light sources.
 
 ### Advanced and additional modalities
-Spatial resolution, movement tracking, UV/IR detection.
+
+While most optical radiation and visual experience loggers measure light at a minimum, advanced devices also include other modalities by design. This includes optical radiation in the ultraviolet (UV) and infrared (IR) part of the spectrum, spatial information, depth information, and movement tracking. 
+
+#### UV and IR measurements
+
+UV and IR measurements are interesting as they can enrich and augment the data set in different ways. Through the inclusion of optical radiation in this wavelength range, it may be possible to determine whether an individual spent time indoors or outdoors (as the UV radiation entering indoor spaces through usual window glazing is negligeable). Co-measuring UV and IR may also facilitate future-proofing measurements of hitherto unknown physiological responses to this part of the spectrum. As with the spectral sensitivity of wearable light loggers, it is key to ensure that the UV and IR responses measured by a wearable device are metrologically sound.
+
+#### Spatially resolved measurements
+
+The visual world around us is rich in its spatial and colourful detail, and we do not live in a Lambertian integrating sphere with homogenous illumination. In turn, the retinal image and the ensuing information available to the visual and non-visual pathways of the brain is spatially structured. A measurement of visual experience therefore could also include spatially resolved measurements such as those from a camera. Cameras, of course, also need to be characterised and calibrated, and importantly, the dynamic range of the visual environment needs to be included in considerations.
+
+#### Depth information
+
+
+
+#### Movement tracking
+
 
 ### Manufacturer calibration
 
