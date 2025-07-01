@@ -493,12 +493,22 @@ Following data collection, data are analysed.
 
 ### Data cleaning and preprocessing
 
+Depending on the device, participant compliance, and other factor, it might be necessary to invalidate some of the measurements recorded by a device. Reasons include aspects such as:
+
+- out of range measurements
+
+- non-wear
+
+- device occlusion
+
+- recordings outside relevant time frames
+
 Due to non-wear at times of day at which specific activities occur (e.g., showering, contact sports, swimming, ...), light exposure data may be missing systematically. Data may also be missing if the light exposure falls short of or exceeds the sensor range.
 
 The following sanity checks are recommended:
 
 -   Visualisation of raw time series for the available sensors
--   Visualisation of histogram to identify distributions of data and outliers
+-   Visualisation of histograms to identify distributions of data and outliers
 
 Non-wear, missing data, aggregation.
 
