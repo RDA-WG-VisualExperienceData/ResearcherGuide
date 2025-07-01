@@ -245,27 +245,49 @@ The quality of manufacturer documentation can vary significantly, and it is impo
   + Contact information for technical support 
 
 ### Software ecosystem
-Features for annotation, tagging, and version control. [@Zauner2025JOpenSourceSoftw]
+
+Light loggers as hardware are bundled with software that enable their use. Software functionality usually includes:
+
++ Setting up the device for logging
++ Choosing parameters for logging (including intervals, participant ID)
++ Live read-out of the data
++ Information about device and battery status
++ Data read-out from the device
++ Data saving into proprietary and/or open text formats
++ Manual data annotation and tagging of data
++ Data selection and masking
++ Data analysis
++ Export from analysis results
+
+A key consideration is the ease of use of these companion software packages, and their maturity. If simple errors in use can lead to data loss, that is undesirable. A further consideration is whether the software is available across multiple operating systems, such as Windows, OS X and Linux. 
+
+As the software packages supplied by the manufacturers are typically not released as open-source packages, the underlying functions, in particular those pertaining to data analysis, are not transparent. It is therefore important to always note down the software version if a given analysis is considered to be archival. Furthermore, it is recommended to keep an archive of the software installation packages or ZIPs, so that analyses can be re-performed with exactly the same analysis routines.
+
+Generally, it is recommended that the analysis of light logger data is not performed with proprietary software, but with open-source alternatives [@Zauner2025JOpenSourceSoftw]. 
 
 ## Validating devices
 
-Once devices have been acquired, a key step prior to deployment in a scientific study is their validation. 
+Once devices have been acquired, a key step prior to deployment in a scientific study is their validation [@Spitschan2022DigitHealth]. Validation ensures that the devices are performing according to specifications, measuring reliably, and delivering data that can be meaningfully interpreted .
 
 ### Standardized validation procedures
-General principles and methodology.
+
+Standardized validation procedures should be followed to evaluate the device’s accuracy, precision, and stability. Ideally, these procedures should be based on accepted metrological principles, using consistent methods and reference standards. The validation protocol should be clearly documented, replicable, and, if possible, aligned with relevant national or international standards.
 
 ### Cross-comparison with reference measurements
-Using standard light sources.
+
+Light loggers should be tested against calibrated reference instruments or standard light sources to verify their measurement accuracy. These reference conditions could include traceable spectroradiometers or other laboratory-grade equipment. By exposing the devices to known light spectra and intensities, any systematic measurement errors can be identified and, if necessary, corrected or documented.
 
 ### Inter-device variability assessment
 
-A simple and cheap method to characterise variability between devices is to place them under an overcast sky next to each other [@Markvart2015Leukos].
+A simple and cost-effective method to characterize variability between devices is to place them side by side under an overcast sky [@Markvart2015Leukos]. Overcast conditions provide a diffuse, relatively uniform light environment, which allows the identification of measurement differences between individual devices. Substantial inter-device variability should be addressed through recalibration or adjustment before deployment.
 
 ### Intra-device reliability assessment
-Same-device repeatability.
+
+In addition to comparing different devices, it is important to assess the repeatability of each device over time. This involves repeated measurements under stable light conditions to verify that the device produces consistent results. Intra-device reliability checks can reveal drift or other issues that could compromise data integrity in longitudinal studies.
 
 ### Ease of calibration
-Individual recalibration support.
+
+Finally, devices should support straightforward recalibration procedures if required. Documentation from the manufacturer should describe how to recalibrate individual devices and what equipment or conditions are necessary to do so. This ensures that any detected deviations can be corrected efficiently, maintaining long-term accuracy of the measurements.
 
 ## Designing the protocol
 
@@ -386,14 +408,27 @@ At the time of this writing (2025), most devices do not store the offset to UTC 
 
 ## Maintaining devices
 
-Throughout data collection, devices need to be maintained.
+Throughout data collection, devices need to be maintained to ensure that data remains reliable and the devices remain usable. This is particular important in the field, where we cannot control directly what happens with devices and how they are treated.
+
+### Inspection
+
+Upon receipt of a device from a participant, it is recommended to ensure that there are no obvious signs of damage, excessive dirt, moisture intrusion, or missing parts. Visually inspect the device housing, buttons, charging port, and any attached sensors or straps. If available, perform a quick functional check (e.g., power on the device, confirm data presence, test charging). Document any issues immediately and, if needed, flag the device for repair or cleaning before redeployment. It is recommended that this is kept in an inventory. Should there be major concerns, it is recommended to contact the manufacturer with a detailed report.
+
+### Firmware updates
+
+Firmware updates are an important part of maintaining light loggers, as they may include bug fixes, feature enhancements, or security patches. However, it is essential to ask the manufacturer clearly what changes each firmware update introduces. For example, if a firmware update alters calibration factors or sensor processing algorithms, data collected before and after the update on the same device may no longer be directly comparable. Any firmware changes should therefore be thoroughly documented, with version numbers tracked alongside the data, and ideally tested on a small subset of devices before widespread deployment. Most light loggers include firmware version information in the supplied metadata of their data files, and this should be recorded systematically to ensure clear traceability. Maintaining consistent firmware across all devices helps preserve data quality and comparability.
 
 ### Cleaning
 
-Devices and attachment pieces such as lanyard should be cleaned between different participants. The manufacturer should provide instructions for this, to ensure that any cleaning instructions are consistent and compatible with the specific materials used.
+Devices and attachment pieces such as lanyards and wristbands should be cleaned between different participants. The manufacturer should provide cleaning guidelines to ensure compatibility with the specific device materials. In the simplest case, textile lanyards can be washed, while wristbands can be carefully disinfected using appropriate cleaning agents. For replaceable components, such as lanyards, it may also be advisable to replace them periodically to maintain hygiene and device integrity.
 
 ### Monitoring and correcting device drift
-Detecting and recalibrating drift.
+
+Over time, sensors in light loggers may experience drift, leading to systematic errors in recorded measurements. To monitor for drift, it is recommended to perform periodic reference checks against a calibrated standard light source or reference device. These checks should be scheduled at regular intervals, for example before and after each data collection cycle, or after prolonged storage.
+
+If drift is detected, corrective action may include recalibration, manufacturer servicing, or applying a correction factor to the data — but only if such corrections are well-documented and scientifically justified. It is also important to record any detected drift, the correction procedures used, and the relevant dates, to ensure transparency and maintain data integrity across the study.
+
+### 
 
 ## Analysing data
 
