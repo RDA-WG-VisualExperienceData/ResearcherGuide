@@ -765,11 +765,18 @@ data.csv</td>
 <p>Following data collection, data are analysed.</p>
 <section id="data-cleaning-and-preprocessing" class="level3">
 <h3 class="anchored" data-anchor-id="data-cleaning-and-preprocessing">Data cleaning and preprocessing</h3>
+<p>Depending on the device, participant compliance, and other factor, it might be necessary to invalidate some of the measurements recorded by a device. Reasons include aspects such as:</p>
+<ul>
+<li><p>out of range measurements</p></li>
+<li><p>non-wear</p></li>
+<li><p>device occlusion</p></li>
+<li><p>recordings outside relevant time frames</p></li>
+</ul>
 <p>Due to non-wear at times of day at which specific activities occur (e.g., showering, contact sports, swimming, …), light exposure data may be missing systematically. Data may also be missing if the light exposure falls short of or exceeds the sensor range.</p>
 <p>The following sanity checks are recommended:</p>
 <ul>
 <li>Visualisation of raw time series for the available sensors</li>
-<li>Visualisation of histogram to identify distributions of data and outliers</li>
+<li>Visualisation of histograms to identify distributions of data and outliers</li>
 </ul>
 <p>Non-wear, missing data, aggregation.</p>
 </section>
