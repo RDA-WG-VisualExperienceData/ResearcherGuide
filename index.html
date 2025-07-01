@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="The Optical Radiation Exposure and Visual Experience Data Working Group">
-<meta name="dcterms.date" content="2025-06-06">
+<meta name="dcterms.date" content="2025-07-01">
 
 <title>Researcher Guide: Wearable optical radiation and visual experience loggers – Researcher Guide</title>
 <style>
@@ -58,10 +58,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-dde8d7229bfee0f8bb5efd37f0f9ae1e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a98ec624fb63d9b712fc3a6f62e2b305.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -215,8 +215,11 @@ div.csl-indent {
   </ul></li>
   <li><a href="#maintaining-devices" id="toc-maintaining-devices" class="nav-link" data-scroll-target="#maintaining-devices">Maintaining devices</a>
   <ul class="collapse">
+  <li><a href="#inspection" id="toc-inspection" class="nav-link" data-scroll-target="#inspection">Inspection</a></li>
+  <li><a href="#firmware-updates" id="toc-firmware-updates" class="nav-link" data-scroll-target="#firmware-updates">Firmware updates</a></li>
   <li><a href="#cleaning" id="toc-cleaning" class="nav-link" data-scroll-target="#cleaning">Cleaning</a></li>
   <li><a href="#monitoring-and-correcting-device-drift" id="toc-monitoring-and-correcting-device-drift" class="nav-link" data-scroll-target="#monitoring-and-correcting-device-drift">Monitoring and correcting device drift</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul></li>
   <li><a href="#analysing-data" id="toc-analysing-data" class="nav-link" data-scroll-target="#analysing-data">Analysing data</a>
   <ul class="collapse">
@@ -268,7 +271,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Last modified:</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 6, 2025</p>
+      <p class="date">July 1, 2025</p>
     </div>
   </div>
   
@@ -501,31 +504,46 @@ div.csl-indent {
 </section>
 <section id="software-ecosystem" class="level3">
 <h3 class="anchored" data-anchor-id="software-ecosystem">Software ecosystem</h3>
-<p>Features for annotation, tagging, and version control. <span class="citation" data-cites="Zauner2025JOpenSourceSoftw">(<a href="#ref-Zauner2025JOpenSourceSoftw" role="doc-biblioref">Zauner, Hartmeyer, and Spitschan 2025</a>)</span></p>
+<p>Light loggers as hardware are bundled with software that enable their use. Software functionality usually includes:</p>
+<ul>
+<li>Setting up the device for logging</li>
+<li>Choosing parameters for logging (including intervals, participant ID)</li>
+<li>Live read-out of the data</li>
+<li>Information about device and battery status</li>
+<li>Data read-out from the device</li>
+<li>Data saving into proprietary and/or open text formats</li>
+<li>Manual data annotation and tagging of data</li>
+<li>Data selection and masking</li>
+<li>Data analysis</li>
+<li>Export from analysis results</li>
+</ul>
+<p>A key consideration is the ease of use of these companion software packages, and their maturity. If simple errors in use can lead to data loss, that is undesirable. A further consideration is whether the software is available across multiple operating systems, such as Windows, OS X and Linux.</p>
+<p>As the software packages supplied by the manufacturers are typically not released as open-source packages, the underlying functions, in particular those pertaining to data analysis, are not transparent. It is therefore important to always note down the software version if a given analysis is considered to be archival. Furthermore, it is recommended to keep an archive of the software installation packages or ZIPs, so that analyses can be re-performed with exactly the same analysis routines.</p>
+<p>Generally, it is recommended that the analysis of light logger data is not performed with proprietary software, but with open-source alternatives <span class="citation" data-cites="Zauner2025JOpenSourceSoftw">(<a href="#ref-Zauner2025JOpenSourceSoftw" role="doc-biblioref">Zauner, Hartmeyer, and Spitschan 2025</a>)</span>.</p>
 </section>
 </section>
 <section id="validating-devices" class="level2">
 <h2 class="anchored" data-anchor-id="validating-devices">Validating devices</h2>
-<p>Once devices have been acquired, a key step prior to deployment in a scientific study is their validation.</p>
+<p>Once devices have been acquired, a key step prior to deployment in a scientific study is their validation <span class="citation" data-cites="Spitschan2022DigitHealth">(<a href="#ref-Spitschan2022DigitHealth" role="doc-biblioref">Spitschan et al. 2022</a>)</span>. Validation ensures that the devices are performing according to specifications, measuring reliably, and delivering data that can be meaningfully interpreted .</p>
 <section id="standardized-validation-procedures" class="level3">
 <h3 class="anchored" data-anchor-id="standardized-validation-procedures">Standardized validation procedures</h3>
-<p>General principles and methodology.</p>
+<p>Standardized validation procedures should be followed to evaluate the device’s accuracy, precision, and stability. Ideally, these procedures should be based on accepted metrological principles, using consistent methods and reference standards. The validation protocol should be clearly documented, replicable, and, if possible, aligned with relevant national or international standards.</p>
 </section>
 <section id="cross-comparison-with-reference-measurements" class="level3">
 <h3 class="anchored" data-anchor-id="cross-comparison-with-reference-measurements">Cross-comparison with reference measurements</h3>
-<p>Using standard light sources.</p>
+<p>Light loggers should be tested against calibrated reference instruments or standard light sources to verify their measurement accuracy. These reference conditions could include traceable spectroradiometers or other laboratory-grade equipment. By exposing the devices to known light spectra and intensities, any systematic measurement errors can be identified and, if necessary, corrected or documented.</p>
 </section>
 <section id="inter-device-variability-assessment" class="level3">
 <h3 class="anchored" data-anchor-id="inter-device-variability-assessment">Inter-device variability assessment</h3>
-<p>A simple and cheap method to characterise variability between devices is to place them under an overcast sky next to each other <span class="citation" data-cites="Markvart2015Leukos">(<a href="#ref-Markvart2015Leukos" role="doc-biblioref">Markvart, Hansen, and Christoffersen 2015</a>)</span>.</p>
+<p>A simple and cost-effective method to characterize variability between devices is to place them side by side under an overcast sky <span class="citation" data-cites="Markvart2015Leukos">(<a href="#ref-Markvart2015Leukos" role="doc-biblioref">Markvart, Hansen, and Christoffersen 2015</a>)</span>. Overcast conditions provide a diffuse, relatively uniform light environment, which allows the identification of measurement differences between individual devices. Substantial inter-device variability should be addressed through recalibration or adjustment before deployment.</p>
 </section>
 <section id="intra-device-reliability-assessment" class="level3">
 <h3 class="anchored" data-anchor-id="intra-device-reliability-assessment">Intra-device reliability assessment</h3>
-<p>Same-device repeatability.</p>
+<p>In addition to comparing different devices, it is important to assess the repeatability of each device over time. This involves repeated measurements under stable light conditions to verify that the device produces consistent results. Intra-device reliability checks can reveal drift or other issues that could compromise data integrity in longitudinal studies.</p>
 </section>
 <section id="ease-of-calibration" class="level3">
 <h3 class="anchored" data-anchor-id="ease-of-calibration">Ease of calibration</h3>
-<p>Individual recalibration support.</p>
+<p>Finally, devices should support straightforward recalibration procedures if required. Documentation from the manufacturer should describe how to recalibrate individual devices and what equipment or conditions are necessary to do so. This ensures that any detected deviations can be corrected efficiently, maintaining long-term accuracy of the measurements.</p>
 </section>
 </section>
 <section id="designing-the-protocol" class="level2">
@@ -639,14 +657,26 @@ div.csl-indent {
 </section>
 <section id="maintaining-devices" class="level2">
 <h2 class="anchored" data-anchor-id="maintaining-devices">Maintaining devices</h2>
-<p>Throughout data collection, devices need to be maintained.</p>
+<p>Throughout data collection, devices need to be maintained to ensure that data remains reliable and the devices remain usable. This is particular important in the field, where we cannot control directly what happens with devices and how they are treated.</p>
+<section id="inspection" class="level3">
+<h3 class="anchored" data-anchor-id="inspection">Inspection</h3>
+<p>Upon receipt of a device from a participant, it is recommended to ensure that there are no obvious signs of damage, excessive dirt, moisture intrusion, or missing parts. Visually inspect the device housing, buttons, charging port, and any attached sensors or straps. If available, perform a quick functional check (e.g., power on the device, confirm data presence, test charging). Document any issues immediately and, if needed, flag the device for repair or cleaning before redeployment. It is recommended that this is kept in an inventory. Should there be major concerns, it is recommended to contact the manufacturer with a detailed report.</p>
+</section>
+<section id="firmware-updates" class="level3">
+<h3 class="anchored" data-anchor-id="firmware-updates">Firmware updates</h3>
+<p>Firmware updates are an important part of maintaining light loggers, as they may include bug fixes, feature enhancements, or security patches. However, it is essential to ask the manufacturer clearly what changes each firmware update introduces. For example, if a firmware update alters calibration factors or sensor processing algorithms, data collected before and after the update on the same device may no longer be directly comparable. Any firmware changes should therefore be thoroughly documented, with version numbers tracked alongside the data, and ideally tested on a small subset of devices before widespread deployment. Most light loggers include firmware version information in the supplied metadata of their data files, and this should be recorded systematically to ensure clear traceability. Maintaining consistent firmware across all devices helps preserve data quality and comparability.</p>
+</section>
 <section id="cleaning" class="level3">
 <h3 class="anchored" data-anchor-id="cleaning">Cleaning</h3>
-<p>Devices and attachment pieces such as lanyard should be cleaned between different participants. The manufacturer should provide instructions for this, to ensure that any cleaning instructions are consistent and compatible with the specific materials used.</p>
+<p>Devices and attachment pieces such as lanyards and wristbands should be cleaned between different participants. The manufacturer should provide cleaning guidelines to ensure compatibility with the specific device materials. In the simplest case, textile lanyards can be washed, while wristbands can be carefully disinfected using appropriate cleaning agents. For replaceable components, such as lanyards, it may also be advisable to replace them periodically to maintain hygiene and device integrity.</p>
 </section>
 <section id="monitoring-and-correcting-device-drift" class="level3">
 <h3 class="anchored" data-anchor-id="monitoring-and-correcting-device-drift">Monitoring and correcting device drift</h3>
-<p>Detecting and recalibrating drift.</p>
+<p>Over time, sensors in light loggers may experience drift, leading to systematic errors in recorded measurements. To monitor for drift, it is recommended to perform periodic reference checks against a calibrated standard light source or reference device. These checks should be scheduled at regular intervals, for example before and after each data collection cycle, or after prolonged storage.</p>
+<p>If drift is detected, corrective action may include recalibration, manufacturer servicing, or applying a correction factor to the data — but only if such corrections are well-documented and scientifically justified. It is also important to record any detected drift, the correction procedures used, and the relevant dates, to ensure transparency and maintain data integrity across the study.</p>
+</section>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section"></h3>
 </section>
 </section>
 <section id="analysing-data" class="level2">
