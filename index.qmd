@@ -17,6 +17,8 @@ format:
       message: false
       error: false
 lightbox: true
+execute:
+  freeze: auto
 ---
 
 ```{r}
@@ -885,6 +887,8 @@ sample.data.environment |>
 ### Metric selection
 
 Time-series of light exposure and visual experience data can be analysed using a series of metrics [@Hartmeyer2023LightResTechnol; @Zauner2025JOpenSourceSoftw]. Importantly, there are no standard metrics for the analysis of light exposure data that have been robustly and reliably linked to outcome metrics. Given the lack of standard metrics, researchers must pay particular attention to analytic flexibility leading to inflated false positive rates in statistical analysis.
+
+![](images/metric_types.png)
 
 Very broady, metrics of light exposure can be categorised in several ways, as layed out by [@Hartmeyer2023LightResTechnol]:
 
