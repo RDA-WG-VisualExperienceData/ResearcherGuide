@@ -732,7 +732,7 @@ Good solution to look at individual dates or days of the week.
 #### Timeline-based
 
 ```{r}
-#| fig-height: 6
+#| fig-width: 10
 sample.data.environment |> gg_days(aes_col = Id) + theme(legend.position = "bottom")
 ```
 
@@ -846,13 +846,54 @@ See @sec-implementation for standardized ways to realize these functions during 
 
 ### Adding context to the time series
 
-Chronotype, location data, etc.
+Connecting time series data with context-specific data can provide valuable insights or be a necessary step towards metric calculation. 
+
+One example to highlight are location-specific details, such as photoperiod. Photoperiod (Dusk, dawn, duration) is purely based on coordinates and datetimes and has high relevance for the availability of daylight and behavioral outcomes. As such it is a low-hanging fruit that should be part of any light-related field study.
+
+```{r}
+#| fig-width: 10
+sample.data.environment |> 
+  aggregate_Datetime("15 mins") |> 
+  remove_partial_data(by.date = TRUE) |> 
+  gg_days(geom = "ribbon", alpha = 0.5, aes_fill = "ID") |> 
+  gg_photoperiod(c(47, 9)) +
+  coord_cartesian(expand = FALSE) +
+  guides(fill = "none")
+
+sample.data.environment |> 
+  add_Date_col(group.by = TRUE, as.wday = TRUE) |> 
+  summarize(duration_above_threshold(MEDI, Datetime, threshold = 10, as.df = TRUE), .groups = "drop") |> 
+  group_by(Id) |> 
+  summarize_numeric() |> 
+  gt() |> tab_header(md("Time above 10 lx mel EDI **without** taking photoperiod into account"))
+
+sample.data.environment |> 
+  add_photoperiod(c(47, 9)) |> 
+  add_Date_col(group.by = TRUE, as.wday = TRUE) |>
+  group_by(photoperiod.state, .add = TRUE) |> 
+  summarize(duration_above_threshold(MEDI, Datetime, threshold = 10, as.df = TRUE), .groups = "drop") |> 
+  group_by(Id, photoperiod.state) |> 
+  summarize_numeric() |> 
+  gt() |> tab_header("Time above 10 lx mel EDI taking photoperiod into account")
+
+```
+
 
 ### Metric selection
 
 Time-series of light exposure and visual experience data can be analysed using a series of metrics [@Hartmeyer2023LightResTechnol; @Zauner2025JOpenSourceSoftw]. Importantly, there are no standard metrics for the analysis of light exposure data that have been robustly and reliably linked to outcome metrics. Given the lack of standard metrics, researchers must pay particular attention to analytic flexibility leading to inflated false positive rates in statistical analysis.
 
-Duration vs. intensity metrics.
+Very broady, metrics of light exposure can be categorised in several ways, as layed out by [@Hartmeyer2023LightResTechnol]:
+
+- **Spectral composition**: The distribution of wavelenghts in the spectrum influences non-visual responses. This is encoded in the alpha-opic metrics CIE S 026 puts forth. Visual brightness perception is coded in the $V(\lambda)$ function and several derivatives that deal with larger viewing angles (10° instead of 2°) or *mesopic* and *scotopic* conditions. Besides that, there are broader stroked attempts, e.g., when comparing spectral irradiance in the short compared to the long wavelength segment of the spectrum.
+
+- **Level, duration, and temporal dynamics**: Non-visual responses have been shown do follow a dose-dependent relationship with the stimulus intensity (level) and the stimulus duration (length of exposition). Many metrics have been centered around these concepts, e.g., the time above a certain threshold ([TAT](https://tscnlab.github.io/LightLogR/reference/duration_above_threshold.html)), the mean or median of a given period, or the duration and length of *pulses* above a given threshold ([PAT](https://tscnlab.github.io/LightLogR/reference/pulses_above_threshold.html)).
+
+- **Timing**: besides the intensity and duration of a stimulus, when it is applied also carries important information, as humans react in a phase-response dependent manner to stimuli, e.g. with phase shifts more potent in the morning compared to midday. Common metrics in this category are the midpoint of the cumulative light exposure, or the midpoint of the brightest 10 hours ([M10](https://tscnlab.github.io/LightLogR/reference/bright_dark_period.html)) or darkest 5 hours of the day ([L5](https://tscnlab.github.io/LightLogR/reference/bright_dark_period.html)).
+
+- **Prior history**: photic history, i.e., the amount of light prior to a given moment, shapes the intensity of a response. The non-visual circadian response ([nvRC](https://tscnlab.github.io/LightLogR/reference/nvRC_metrics.html)) encodes this behavior. 
+
+Importantly, many metrics share similar features and core metrics that express certain health-related outcomes have to be defined.
 
 ### Special properties of light and visual experience data
 
