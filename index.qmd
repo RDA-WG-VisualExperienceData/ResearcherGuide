@@ -24,6 +24,11 @@ lightbox: true
 library(ggplot2)
 library(tidyr)
 library(readr)
+library(dplyr)
+library(LightLogR)
+library(gt)
+library(lubridate)
+library(forcats)
 ```
 
 This site will shortly host the Research Data Alliance (RDA) Research Guide. The Research Guide is authored by the [Optical Radiation Exposure and Visual Experience Data Working Group](https://www.rd-alliance.org/groups/optical-radiation-exposure-and-visual-experience-data-wg/activity/). The site is built using [Quarto](https://quarto.org/docs/websites), a scientific and technical publishing system.
@@ -489,13 +494,13 @@ If drift is detected, corrective action may include recalibration, manufacturer 
 
 ## Analysing data
 
-Following data collection, data are analysed.
+Following data collection, data are analysed. The following sections lay out theoretical and practical considerations for analysis
 
 ### Data cleaning and preprocessing
 
-Depending on the device, participant compliance, and other factor, it might be necessary to invalidate some of the measurements recorded by a device. Reasons include aspects such as:
+Depending on the device, participant compliance, and other factors, it is commonly necessary to invalidate some of the measurements recorded by a device. Reasons include aspects such as:
 
-- out of range measurements
+- out of range measurements (beyond sensor saturation and at the noise level)
 
 - non-wear
 
@@ -503,22 +508,341 @@ Depending on the device, participant compliance, and other factor, it might be n
 
 - recordings outside relevant time frames
 
-Due to non-wear at times of day at which specific activities occur (e.g., showering, contact sports, swimming, ...), light exposure data may be missing systematically. Data may also be missing if the light exposure falls short of or exceeds the sensor range.
+Often, these invalid data are randomly distributed, but due to non-wear at times of day at which specific activities occur (e.g., showering, contact sports, swimming, ...), light exposure data may be missing systematically.
 
 The following sanity checks are recommended:
 
 -   Visualisation of raw time series for the available sensors
 -   Visualisation of histograms to identify distributions of data and outliers
 
-Non-wear, missing data, aggregation.
+#### Non-wear
+
+Participants likely have to remove their wearable devices at some point of a data collection. These times may or may not reflect the visual environment of the participants, but they need to be identified in any case. Ideally the protocol specifies certain actions when a device is removed and put on again. E.g., an entry in a companion app, putting the device in a black bag, or setting it on the night stand, face up, so that it can record the ambient light level of the sleep environment. Occlusion of the device is also to be considered non-wear. These are some typical ways how to identify non-wear times:
+
+- Use external, time-stamped information, such as from a companion app that logs non-wear. These can be easily added to the time series and invalidated (see @sec-merging_data_streams). The downside is that participants regularly forget to log these events which requires additional oversight by the experimenter or visual checks of the data.
+- Order participants to put their devices in a black bag on non-wear. Then filter for zero lux values. The downside is that this only is sensible during daytime (as zero lux is common during nighttimes).
+- Analyse the variance/standard deviation of the sensor reading or an actimetry measurement (if available) in a rolling window, e.g. 2 minutes when sampling every 10 seconds. Times of low variance often indicate non-wear, but can be show false positives if a person is not moving, the ambient environment would still be represented (night stand), and zero-lux readings. False negatives can occur if a device is not worn according to protocol, but still shows high variance, e.g. activity with occlusion, or a moving environment, such as a train. If the measurement interval is too large, it will also not be reliable.
+- Some sensors have automated wear detection and usually show in a column, whether the device was worn or not. It is easy to invalidate those measurements, but may overwrite helpful readings of the ambient environment (night stand).
+
+Every method to capture non-wear has up and downsides. [@Guidolin2024BehavResMethods] provides a comparison of different methods. In general it is recommended to brief participants on the importance of strict wear, following non-wear procedures laid out in the protocol, and to collect data over sufficiently long periods so that the likelihood of distorted results due to unidentified non-wear times is reduced.
+
+#### Implicit and explicit missing data
+
+An analysis time series should contain an uninterrupted sequence of equally spaced intervals from start to finish. Some cases fall outside:
+
+- *NA* values in the data. These are denoted as **explicit missing data** or **explicit gaps**, because a time stamp is present, indicating an observation, but no valid reading is available. Explicit gaps are often unavoidable (if no aggregation is performed) and are often OK, as long as the ratio of missing to available data is good. There is no fixed value for this ratio and it heavily depends on whether and what metric is calculated from it. Bootstrap analysis of select circadian metrics have shown that for long data collection periods of one month (and random distribution of missing data), no significant change in mean daily metric values is present on the individual level, even when 25% of data are missing [@Biller2025bioRxiv]. For shorter recording periods this will be less.
+
+- Gaps in the data, i.e., missing observations in the regular time series. These are denoted as **implicit missing data** or **implicit gaps**. Gaps in the data are problematic when calculated durations are based on time stamps, as they include the missing period. Explicit gaps need to be explicitly handled and are therefore always to be preferred. 
+
+- Observations at time points outside the regular time series are denoted as **irregular data**. Examples are slight fluctuations in the recording interval and interrupted recordings (e.g., recording 2 hours in the morning, stopping recording, and restarting in the afternoon. The chance that the second recording will fall exactly on the regular time series beginning to end is negligible). Irregular data are problematic when calculated durations are based on the number of observations times the regular interval. Irregular data can be handled either by aggregating data to a coarser interval (see next section) or - if deviations are small - by rounding the timestamp to the regular interval.
+
+To illustrate these types of data, let us consider a week of data measured in the environment and from a participant. 
+
+::: {.column-page-inset}
+::: {.panel-tabset group="top_group"}
+
+#### Implicit gaps
+
+If we remove all data below 1000 lx, we create implicit gaps, because the observations are dropped, as shown here (full time series is shown in grey):
+
+```{r}
+#| echo: true
+#| fig-width: 12
+sample.data.environment |> 
+  gg_days(col = "grey") + 
+  geom_line(data = \(x) filter(x, MEDI >= 1000))
+```
+
+#### Explicit gaps
+
+If we set all data above 1000 lx to *NA*, we create explicit gaps, because the observations are **not** dropped, as shown here (full time series is shown in grey):
+
+```{r}
+#| echo: true
+#| fig-width: 12
+sample.data.environment |> 
+  gg_days(col = "grey") + 
+  geom_line(data = \(x) mutate(x, MEDI = ifelse(MEDI >=1000, MEDI, NA)))
+```
+
+#### Irregular data
+
+We can simulate irregular data by offsetting measurements on the second day by 5 seconds.
+
+```{r}
+#| echo: true
+#| fig-width: 12
+irregular_data <- sample.data.environment |> add_Date_col(as.wday = TRUE) |> mutate(Datetime = ifelse(Date == "Wed", Datetime +5, Datetime) |> as.POSIXct())
+irregular_data |> 
+  gg_gaps(show.irregulars = TRUE, include.implicit.gaps = FALSE)
+```
+
+:::
+:::
+
+::: {.column-page-inset}
+::: {.panel-tabset group="top_group"}
+
+#### Implicit gaps
+
+```{r}
+sample.data.environment |> filter(MEDI >= 1000) |> gap_table() |> 
+  opt_css("
+  .gt_table, .gt_table * {
+    font-size: clamp(10px, calc(1vw + 8px), 12px);
+  }
+")
+```
+
+::: {.callout-note}
+Note that the implicit line is connected, as the plot considers the time series as a single (uninterrupted) series.
+:::
+
+#### Explicit gaps
+
+```{r}
+sample.data.environment |> mutate(MEDI = ifelse(MEDI >=1000, MEDI, NA)) |> gap_table()
+```
+
+#### Irregular data
+
+```{r}
+irregular_data |> gap_table(include.implicit.gaps = FALSE)
+```
+
+::: {.callout-note}
+Note that this step creates not only irregular data, but also implicit gaps, because the original measurement at the regular interval is missing. For brevity, implicit gaps will be omitted in both representations
+:::
+
+:::
+:::
+
+#### Aggregation
+
+It can be sensible to change the analysis interval from the recording interval. Common use cases include:
+
+- Removing irregular data
+
+- Reducing n, both for computational time and/or easier legibility (visualizations)
+
+- Satisfying requirements for certain metrics (e.g., [interdaily stability](https://tscnlab.github.io/LightLogR/reference/interdaily_stability.html) is calculated based on hourly means)
+
+When changing the observation interval two key aspects need to be considered:
+
+- Is the resolution still sufficient to help answer the analysis question at hand? E.g., looking at the variance of data to assess movement or wear only makes sense in the seconds range. Measurement intervals above 15 seconds are not very valuable in that regard. To consider another case - if the time spent outside is of relevance, and short periods of 15 to 30 minutes are considered relevant, then looking at 1-hour intervals is too coarse. 
+
+- How are the values for the new interval calculated? Is it the mean, median, max, sum, mode, or some custom function? How are missing observations treated? 
+
+- How are time stamps binned? Are values around the new time points taken into consideration (round), or are they rounded up or down (floor/ceiling)? Are all values considered equally, or depending on their time distance (in the case of irregular data)
+
+These decisions heavily influence the outcome und need to be made deliberately. For visualization purposes, `5-minute` values show a good balance of readability while retaining the overall features well. The following tabs show aggregation through means.
+
+::: {.panel-tabset}
+
+#### 10-second
+
+```{r}
+sample.data.environment |> aggregate_Date() |> gg_doubleplot() + 
+  coord_cartesian(ylim = c(0,10^5), expand = FALSE)
+```
+
+
+#### 30-second
+
+```{r}
+sample.data.environment |> aggregate_Date(unit = "30 secs") |> gg_doubleplot() + 
+  coord_cartesian(ylim = c(0,10^5), expand = FALSE)
+```
+
+#### 1-minute
+
+```{r}
+sample.data.environment |> aggregate_Date(unit = "1 min") |> gg_doubleplot() + 
+  coord_cartesian(ylim = c(0,10^5), expand = FALSE)
+```
+
+#### 5-minute
+
+```{r}
+sample.data.environment |> aggregate_Date(unit = "5 min") |> gg_doubleplot() + 
+  coord_cartesian(ylim = c(0,10^5), expand = FALSE)
+```
+
+#### 15-minute
+
+```{r}
+sample.data.environment |> aggregate_Date(unit = "15 min") |> gg_doubleplot() + 
+  coord_cartesian(ylim = c(0,10^5), expand = FALSE)
+```
+
+#### 30-minute
+
+```{r}
+sample.data.environment |> aggregate_Date(unit = "30 min") |> gg_doubleplot() + 
+  coord_cartesian(ylim = c(0,10^5), expand = FALSE)
+```
+
+#### 1-hour
+
+```{r}
+sample.data.environment |> aggregate_Date(unit = "1 hour") |> gg_doubleplot() + 
+  coord_cartesian(ylim = c(0,10^5), expand = FALSE)
+```
+
+#### 2-hours
+
+```{r}
+sample.data.environment |> aggregate_Date(unit = "2 hour") |> gg_doubleplot() + 
+  coord_cartesian(ylim = c(0,10^5), expand = FALSE)
+```
+
+#### 6-hours
+
+```{r}
+sample.data.environment |> aggregate_Date(unit = "6 hour") |> gg_doubleplot() + 
+  coord_cartesian(ylim = c(0,10^5), expand = FALSE)
+```
+
+:::
 
 ### Exploration and exploratory visualization
 
-Visual strategies for time series.
+Exploring the time series in various regards is key for grasping typical and anomalous patterns. Common ways are shown below:
 
-### Merging data streams
+::: {.panel-tabset}
 
-Syncing sleep, activity, and light data.
+#### Heatmap
+
+```{r}
+#| fig-width: 12
+sample.data.environment |> gg_heatmap(doubleplot = "next")
+```
+
+Shows a dense, color-coded overview across long periods and many participants
+
+#### Day-based
+
+```{r}
+#| fig-height: 7
+sample.data.environment |> gg_day(geom = "line", aes_col = Id)
+```
+
+Good solution to look at individual dates or days of the week.
+
+#### Timeline-based
+
+```{r}
+#| fig-height: 6
+sample.data.environment |> gg_days(aes_col = Id) + theme(legend.position = "bottom")
+```
+
+Practical to visualize longer periods as a continuous timeline, separated by groups
+
+#### Doubleplot
+
+```{r}
+sample.data.environment |> aggregate_Date() |> gg_doubleplot(aes_fill = Id) + theme(legend.position = "bottom")
+```
+
+Useful to inspect patterns across midnight.
+
+#### Aggregated data
+
+```{r}
+#| fig-width: 8
+sample.data.environment |> 
+  aggregate_Date(
+    unit = "30 min",
+    numeric.handler = median,
+    u95 = quantile(MEDI, 0.975),
+    u75 = quantile(MEDI, 0.875),
+    u50 = quantile(MEDI, 0.75),
+    l50 = quantile(MEDI, 0.25),
+    l75 = quantile(MEDI, 0.125),
+    l95 = quantile(MEDI, 0.025)
+  ) |> 
+  gg_day(geom = "blank", x.axis.breaks = hms::hms(hours = seq(0, 24, by = 6))) +
+  geom_ribbon(aes(ymin=l50, ymax = u50, fill = Id, col = Id), size = 0.25, alpha = 0.3) +
+  geom_ribbon(aes(ymin=l75, ymax = u75, fill = Id, col = Id), size = 0.25, alpha = 0.3) +
+  geom_ribbon(aes(ymin=l95, ymax = u95, fill = Id, col = Id), size = 0.25, alpha = 0.3) +
+  geom_line(aes(y= MEDI, group = Id)) +
+  facet_wrap(~Id) +
+  guides(fill = "none", color = "none") +
+  theme(panel.spacing = unit(3, "lines"))
+
+```
+
+Condense single datasets to one day, indicating the spread of (95%, 75%, 50%) of data through colored ribbons.
+
+*Note, data were aggregated to 30 minute intervals in addition to the aggregation into one day*
+
+#### Boxplot
+
+```{r}
+#| fig-width: 8
+sample.data.environment |>
+  cut_Datetime(unit = "1 hour", type = "floor") |>
+  add_Time_col(Datetime.rounded, Time.colname = Time.rounded) |>
+  gg_day(geom = "boxplot", aes_fill = Id, alpha = 0.5, aes_col = Id, group = interaction(Id, Time.rounded), facetting = FALSE)
+
+```
+
+Similar approach to aggregated data, but expressing the spread through boxplots (1-hour intervals)
+
+#### Histogram
+
+```{r}
+sample.data.environment |>
+  ggplot(aes(x=MEDI, fill = Id)) +
+  geom_histogram(bins = 30, aes(y = after_stat(ncount))) +
+  ggsci::scale_fill_jco() +
+  cowplot::theme_cowplot() +
+  scale_x_continuous(trans = "symlog", breaks = c(0, 10^(0:5)),
+                     labels = \(x) label_parsed(ifelse(x == 0, 0, paste0("10^",log10(x))))) +
+  facet_wrap(~Id) +
+  labs(y = "Scaled count")+
+  guides(fill = "none")
+  
+```
+
+Nice overview to catch outliers.
+
+#### Cumulative distribution
+
+```{r}
+sample.data.environment |> 
+  add_Time_col() |> 
+  Brown_cut(vector_labels = c("<1lx", "1 - 10lx", "10 - 250lx", "> 250lx")) |> 
+  ggplot(aes(x= Time, after_stat(count), fill = fct_rev(state))) +
+  geom_density(position = "fill", col = NA, bw = 60*5) +
+  facet_wrap(~Id) +
+  scale_fill_manual(values = c("yellow", "darkgrey", "lightgrey", "black")) +
+  cowplot::theme_cowplot() +
+  labs(fill = "mel EDI", y = "Cumulative percentage") +
+  scale_y_continuous(labels = scales::label_percent()) +
+  scale_x_time(breaks = hms::hms(hours = seq(0, 24, by = 6)), 
+                                 labels = scales::label_time(format = "%H:%M"),
+                          expand = c(0,0),
+                          limits = c(0,24*3600))+
+  theme(panel.spacing = unit(2.5, "lines"))
+
+```
+
+Condensed dataset to value-bins per time of day across multiple days (5-minute bandwith for smoothing).
+
+:::
+
+### Merging data streams {#sec-merging_data_streams}
+
+Various time-stamped data stream have to be merged on a regular basis. This includes the addition of, e.g., a non-wear diary, sleep and wake times, or concurrent measurements, e.g. from environmental measurements.
+
+In most circumstances, the data to be added to the time series will be of a much lower sampling interval (e.g., sleep-wake will only contain two values per day), which makes the addition easy through techniques like the [non-equi join](https://dplyr.tidyverse.org/reference/join_by.html), e.g., adding a state of `sleep` to a light dataset for observations that are between (i.e., not equal to) `sleep` and `wake` moments.
+
+![](images/merging_streams.png)
+
+See @sec-implementation for standardized ways to realize these functions during analysis, e.g. from [LightLogR](https://tscnlab.github.io/LightLogR/articles/states.html#example-sleepwake-data)
+
+![](images/sleep_wake.png)
 
 ### Adding context to the time series
 
@@ -536,7 +860,7 @@ Light exposure data spans a wide dynamic range, mirroring the differences in pos
 
 An additional statistical property of 24-hour light exposure data is that it is heavily zero-inflated, due to the lack of light at night, or light below the measurement threshold of the device.
 
-### Implementation
+### Implementation {#sec-implementation}
 
 It is recommended that analysis of visual experience data is implemented using programmatic tools, such as [R](https://www.r-project.org/), [Python](https://www.python.org/) or [MATLAB](https://de.mathworks.com/products/matlab.html). [LightLogR](https://tscnlab.github.io/LightLogR/) [@Zauner2025JOpenSourceSoftw] offers a powerful [open-source tool](https://github.com/tscnlab/LightLogR/) available on [CRAN](https://cloud.r-project.org/web/packages/LightLogR/index.html) for the analysis of light exposure and visual experience data.
 
