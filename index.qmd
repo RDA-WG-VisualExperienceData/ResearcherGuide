@@ -572,7 +572,7 @@ We can simulate irregular data by offsetting measurements on the second day by 5
 ```{r}
 #| echo: true
 #| fig-width: 12
-irregular_data <- sample.data.environment |> add_Date_col(as.wday = TRUE) |> mutate(Datetime = ifelse(Date == "Wed", Datetime +5, Datetime) |> as.POSIXct())
+irregular_data <- sample.data.environment |> add_Date_col(as.wday = TRUE) |> mutate(Datetime = ifelse(Date == "Wed", Datetime +5, Datetime) |> as.POSIXct(tz = "Europe/Berlin"))
 irregular_data |> 
   gg_gaps(show.irregulars = TRUE, include.implicit.gaps = FALSE)
 ```
@@ -855,17 +855,18 @@ One example to highlight are location-specific details, such as photoperiod. Pho
 sample.data.environment |> 
   aggregate_Datetime("15 mins") |> 
   remove_partial_data(by.date = TRUE) |> 
-  gg_days(geom = "ribbon", alpha = 0.5, aes_fill = "ID") |> 
+  gg_days(geom = "ribbon", alpha = 0.5, aes_fill = "ID", aes_col = "ID") |> 
   gg_photoperiod(c(47, 9)) +
   coord_cartesian(expand = FALSE) +
-  guides(fill = "none")
+  guides(fill = "none", color = "none")
 
 sample.data.environment |> 
   add_Date_col(group.by = TRUE, as.wday = TRUE) |> 
   summarize(duration_above_threshold(MEDI, Datetime, threshold = 10, as.df = TRUE), .groups = "drop") |> 
   group_by(Id) |> 
   summarize_numeric() |> 
-  gt() |> tab_header(md("Time above 10 lx mel EDI **without** taking photoperiod into account"))
+  gt() |> tab_header(md("Time above 10 lx mel EDI **without** taking photoperiod into account"))|> 
+  tab_options(table.width = px(600))
 
 sample.data.environment |> 
   add_photoperiod(c(47, 9)) |> 
@@ -874,7 +875,9 @@ sample.data.environment |>
   summarize(duration_above_threshold(MEDI, Datetime, threshold = 10, as.df = TRUE), .groups = "drop") |> 
   group_by(Id, photoperiod.state) |> 
   summarize_numeric() |> 
-  gt() |> tab_header("Time above 10 lx mel EDI taking photoperiod into account")
+  gt() |> tab_header("Time above 10 lx mel EDI taking photoperiod into account") |> 
+  tab_options(table.width = px(600)) |> 
+  cols_label(photoperiod.state = "")
 
 ```
 
