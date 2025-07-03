@@ -2,23 +2,15 @@
 title: "Researcher Guide: Wearable optical radiation and visual experience loggers"
 author: The Optical Radiation Exposure and Visual Experience Data Working Group
 bibliography: references.bib
-format:
-  html:
-    toc: true
-    toc-location: left
-    toc-depth: 3
-    toc-expand: 2
-    mermaid:
-      config: mermaid-config.yaml
-    css: styles.css
-    execute:
-      echo: false
-      warning: false
-      message: false
-      error: false
-lightbox: true
 execute:
+  echo: false
+  warning: false
+  message: false
+  error: false
   freeze: auto
+lightbox: true
+css: styles.css
+
 ---
 
 ```{r}

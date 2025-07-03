@@ -1,5 +1,5 @@
 project:
-  type: website
+  type: manuscript
 
 website:
   title: "Researcher Guide"
@@ -34,6 +34,29 @@ format:
       - brand
     css: styles.css
     toc: true
+    comments:
+      hypothesis: true
+    format:
+    toc-location: left
+    toc-depth: 3
+    toc-expand: 2
+  # docx: default
+  # jats: default
+  # agu-pdf: default
+  typst:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    papersize: a4
+    fig-format: png
+    fig-dpi: 600
+    fig-height: 3.45
+format-links:
+  - html
+  - format: typst
+    text: PDF
+    icon: file-pdf
+
 
 date: last-modified
 
