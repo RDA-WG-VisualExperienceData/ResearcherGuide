@@ -1,1 +1,0 @@
-Sitemap: https://rda-wg-visualexperiencedata.github.io/ResearcherGuide/sitemap.xml

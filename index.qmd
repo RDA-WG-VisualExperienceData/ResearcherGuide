@@ -1,0 +1,963 @@
+---
+title: "Researcher Guide: Wearable optical radiation and visual experience loggers"
+author: The Optical Radiation Exposure and Visual Experience Data Working Group
+bibliography: references.bib
+lightbox: true
+css: styles.css
+---
+
+```{r}
+#setup
+library(ggplot2)
+library(tidyr)
+library(readr)
+library(dplyr)
+library(LightLogR)
+library(gt)
+library(lubridate)
+library(forcats)
+```
+
+This site will shortly host the Research Data Alliance (RDA) Research Guide. The Research Guide is authored by the [Optical Radiation Exposure and Visual Experience Data Working Group](https://www.rd-alliance.org/groups/optical-radiation-exposure-and-visual-experience-data-wg/activity/). The site is built using [Quarto](https://quarto.org/docs/websites), a scientific and technical publishing system.
+
+DRAFT – NOT FOR DISTRIBUTION
+
+# Introduction
+
+Exposure to the optical environment, sometimes called visual experience, fundamentally affects human physiology and behaviour at multiple time scales. Two examples of such effects that have received significant attention come from different research domains, but can be understood through a common retinally-referenced framework. The first concerns the 'non-visual' effect of light on human circadian and neuroendocrine physiology: The light-dark cycle synchronises the biological clock, and exposure to light at night suppresses melatonin production [@Brown2022PLoSBiol; @Blume2019Somnologie]. The second concerns the potential effect of light exposure and visual experience on ocular development and specific myopia, in which time spent outdoors, and its associated visual experience, have been linked with ocular health outcomes [@DahlmannNoor2025GraefesArchClinExpOphthal].
+
+![Example light exposure](images/light_exposure.png)
+
+In typical laboratory studies, light exposure can be fixed and held constant, or modulated parametrically. Such artificial exposures are very much unlike the real-world exposures to the optical environment that people received through the day. As people move in and between spaces (indoors and outdoors) and move their trunks, heads and eyes, the exposure to the optical environment varies significantly [@Webler2019CurrOpinBehavSci], and is modulated by behaviour [@Biller2024CommunPsychol]. As a consequence, understanding real-world exposure to link to real-world impacts requires real-world measurements, faciliated by wearable devices.
+
+Starting in the 1980s [@Okudaira1983AmJPhysiol], technology to measure exposure to the optical environment has been developed and matured, with miniaturized illuminance sensors now (2025) being very common in consumer smartwatches. In research, several device and device types are available, which differ in their functionality, ranging from small pin-like devices measuring light exposure [@Mohamed2021OptExpress] to head-mounted multi-modal measurement devices capturing almost all relevant aspects of visual experience [@Gibaldi2024TranslVisSciTechnol]. To make informed decisions about the properties of specific devices requires a careful ascertainment of their properties, and the specific trade-offs they entail.
+
+# Scope
+
+The scope of this Researcher Guide is to provide a guide to using wearable devices measuring the optical environment. It is a living document and will be updated and versioned.
+
+# Workflow
+
+Here, we consider the following workflow in a research project. We have built the researcher guide around each of these subsections.
+
+```{mermaid}
+flowchart TD
+    A[Selecting devices] --> B[Designing the study]
+    B --> C[Collecting data]
+    C --> D[Storing/documenting data]
+    D --> E[Analysing data]
+    E --> F[Reporting data]
+
+    A --> G[Validating devices]
+    G --> A
+
+    C --> H[Maintaining devices]
+    H --> C
+
+    style A fill:#f9d4d4,stroke:#000
+    style B fill:#f9d4d4,stroke:#000
+    style G fill:#f9d4d4,stroke:#000
+
+    style C fill:#f9dba9,stroke:#000
+    style H fill:#f9dba9,stroke:#000
+    style D fill:#f9dba9,stroke:#000
+
+    style E fill:#b7e4f9,stroke:#000
+    style F fill:#b7e4f9,stroke:#000
+
+    click A "license.html" _self
+    click B "license.html" _self
+    click C "license.html" _self
+    click D "license.html" _self
+    click E "license.html" _self
+    click F "license.html" _self
+    click G "license.html" _self
+    click H "license.html" _self
+```
+
+# Researcher Guide
+
+## Selecting devices
+
+The first step in any project examining visual experience and light exposure is the choice of a device. This involves understanding the properties of different wearable devices, and several trade-offs. A recent survey found \>50 wearable devices differing in form and function [@vanDuijnhoven2025BuildEnviron; with previous overviews in @Honekopp2023ClinOphthalmol; @Danilenko2022AppliedSci], indicating the need to make informed choices about selecting specific devices. As there are no standard or reference devices, each device needs to be considered individually. The following sections provide an overview of the technical properties that characterise individual devices and distinguish them.
+
+### Measurement capabilities and sensor characteristics
+
+Devices differ in their ability to measure aspects of the visual environment. These differences arise from design decisions, choices of technical components and the specific use cases one that a manufacturer had in mind when making the device. Importantly, the manufacturers usually supplies a data or specification sheet for a product; the verification and validation of these aspects ultimately should also be in the hands of the users of the devices [@Spitschan2022DigitHealth].
+
+#### Spectral sensitivity functions
+
+The goal of wearable optical radiation and visual experience loggers is to capture aspects of the environment relevant to human physiology and behaviour. As such, for most use cases, light is of interest. Light is defined as optical radiation within the visible region of the spectrum (approx. 380 to 780 nm). The photoreceptors in the human eye are sensitive to different parts of the spectrum, and serve different functions. The cones enable vision of space, colour and motion under daylight conditions, while the rods facilitate rudimentary vision under dim conditions. In addition to these 'canonical' photreceptors, the intrinsically photosensitive retinal ganglion cells (ipRGCs) encode aspects of the visual environment, specifically ambient light intensity, through the photopigment melanopsin. The specral sensitivities of the cones, rods and ipRGCs differ, and were standardized by the CIE in 2018 [@CIE2018CIES026; @Lucas2014TrendsNeurosci].
+
+The International Standard CIE S 026/E:2018 [@CIE2018CIES026] prescribes the spectral sensitivities of the photoreceptors, and thereby also provides a key reference framework for quantifying light exposure with respect to human responses. Notably, the standard proposes the α-opic quantities, where "α" is a placeholder for the cones, rods or ipRGCs.
+
+A common quantity in light measurements is photopic illuminance \[lux\]. Photopic illuminance is a quantity that weighs the long- and medium-wavelength sensitive cones and corresponds, roughly, to the psychophysical sensation of brightness. Photopic illuminance is not the same as the light quantity related to the ipRGCs, the melanopic equivalent equivalent daylight illuminance (melanopic EDI), and therefore needs to be measured independently.
+
+```{r}
+# Load data
+cie_data <- read_csv("assets/cie_s026.csv")
+
+# Reshape data to long format
+cie_long <- pivot_longer(cie_data, 
+                         cols = -wavelength,
+                         names_to = "photoreceptor",
+                         values_to = "sensitivity")
+
+# Plot
+ggplot(cie_long, aes(x = wavelength, y = sensitivity, color = photoreceptor)) +
+  geom_line(size = 1) +
+  labs(title = "CIE S 026:2018 Spectral sensitivities",
+       x = "Wavelength (nm)",
+       y = "Relative sensitivity",
+       color = "Photoreceptor") +
+  xlim(380, 780) + 
+  theme_minimal()
+```
+
+Wearable light loggers usually measure the quantities directly through a series of discrete sensor channels, or measure the spectrum of light and then calculate the relevant quantities (e.g. photopic illuminance, melanopic equivalent daylight illuminance). Importantly, it is not guaranteed that the actual spectral sensitivity of a channel in a device corresponds to the standardised spectral sensitivity of the photoreceptor. It is therefore worth either calibrating the spectral sensitivity, or prompting the manufacturer to do so.
+
+#### Directional properties
+
+Irradiance and illuminance measurements are usually done in cosine weighted fashion: Light that comes directly from the sensor is weighed more importantly compared to light that comes from the angle. This behaviour follows a cosine function as a function of the incident angle. Each sensor has a specific directional sensitivity that needs to be provided by the manufacturer, or measured and characterised.
+
+```{r}
+# Define x in degrees
+x_deg <- seq(-90, 90, length.out = 400)
+y <- cos(x_deg * pi / 180)  # Convert degrees to radians
+df <- data.frame(x = x_deg, y = y)
+
+# Plot
+ggplot(df, aes(x = x, y = y)) +
+  geom_line(color = "blue") +
+  labs(title = "Cosine response", x = "Angle of incidence (degrees)", y = "Relative sensor response") +
+  theme_minimal()
+```
+
+The directional properties of a wearable light logging devices are important in so far as in the real world, different scenarios have different spatial configurations. As an example, a light logger that only captured light in the central 20° of the visual world would capture limited information, and omit the light coming from, e.g. overhead light sources.
+
+### Advanced and additional modalities
+
+While most optical radiation and visual experience loggers measure light at a minimum, advanced devices also include other modalities by design. This includes optical radiation in the ultraviolet (UV) and infrared (IR) part of the spectrum, spatial information, distance information, and movement tracking.
+
+#### UV and IR measurements
+
+UV and IR measurements are interesting as they can enrich and augment the data set in different ways. Through the inclusion of optical radiation in this wavelength range, it may be possible to determine whether an individual spent time indoors or outdoors (as the UV radiation entering indoor spaces through usual window glazing is negligeable). Co-measuring UV and IR may also facilitate future-proofing measurements of hitherto unknown physiological responses to this part of the spectrum. As with the spectral sensitivity of wearable light loggers, it is key to ensure that the UV and IR responses measured by a wearable device are metrologically sound.
+
+#### Spatially resolved measurements
+
+The visual world around us is rich in its spatial and colourful detail, and we do not live in a Lambertian integrating sphere with homogenous illumination. In turn, the retinal image and the ensuing information available to the visual and non-visual pathways of the brain is spatially structured. A measurement of visual experience therefore could also include spatially resolved measurements such as those from a camera. Cameras, of course, also need to be characterised and calibrated, and importantly, the dynamic range of the visual environment needs to be included in considerations.
+
+#### Distance information
+
+As with spatial information, the world is three-dimensional, and as we shift our gaze from different objects or parts of the visual scene, our accommodative state changes. In previous studies, it has been observed that near and far work are determinants of myopia onset and progression, and therefore some devices include depth information, which are then aggregated.
+
+#### Movement tracking
+
+Stemming originally from research into circadian rhythms and sleep-wake cycles, some light loggers have integrated accelerometers and inertial measurement units (IMUs). These can be particularly relevant to determine various aspects of wearing behaviour. As an example, when a device is placed on a surface and not worn, this will present as non-movement. The exact ability to determine wear state from this sensor modality depends highly on the sensor sensitivity.
+
+### Manufacturer calibration
+
+Devices designed to measure light exposure and other aspects of the optical environment should come with information from the manufacturer on the calibration procedures used to ensure high-quality measurements. Sometimes, information for one exemplary device is included in a data or specification sheet. It is worth consulting with the manufacturer on any calibrations they perform and specifically clarifying whether device-level information is available.
+
+The manufacturer may also recommend recalibrations of the devices at regular intervals. It is worth understanding the rationale for any such recalibrations (in particular if they come at a cost), as well as any recalibrations that researchers themselves can do.
+
+### Size, form, and design
+
+The size, form and design of a wearable light logger are particularly important for the specific contexts in which it will be used. Devices that are too heavy, bulky or impractically shaped will likely not be of particular use in field studies on light exposure. The most common form factors are devices that are **wrist-worn**, **lanyard-worn**, attached with a **clip**, or attached to **spectacle frames**.
+
+![Form factors and wearing locations](images/wearing_locations.png)
+
+Different form factors are susceptible to different types of occlusions, so beyond participant comfort, a device's dimensions and intended use case are also directly linked to data reliability. As of 2025, no specific device can be used all the time in all contexts and provide reliable information.
+
+Common problems include:
+
+-   Wrist-worn devices are susceptible to being occluded by sleeves, particularly in settings or cold weather seasons.
+
+-   Lanyard-worn and clip-worn devices are susceptible to being occluded by jackets or other outer garments.
+
+-   Devices attached to spectacle frames are impractical for long-term use in the real world.
+
+Previous studies [@Okudaira1983AmJPhysiol; @Jardim2011ChronobiolInt; @Aarts2017BuildEnviron; @Bhandari2021Sensors; @Wen2023BMJOpenOphthal; @Mohammadian2024IEEEInternetThingsJ] have shown that while wrist-worn measurements are correlated with chest or head measurements, they are not related by a simple relationship. This follows from the fact that the wrist and eyes point in different directions in different planes.
+
+### Battery capacity and charging
+
+Devices differ in their battery capacity, which is a determinant factor for the way that the devices can be used in the real world. The battery capacity is typically known by the manufacturer, but will depend on a number of factors, including the sampling intervals. Additionally, the way that a device is charged is of important for the specific use. Wearables can usually be charge through one of the following methods: A direct cable connection, an insertable battery, or a charging dock. As with any electronic device, there may also be varying capacities over the lifetime of the wearable, which needs to be considered. Some wearable devices also feature a 'power down' function which puts the device into stand-by mode, thereby avoiding deep discharging.
+
+### Data storage
+
+Data storage capacity is related to the battery capacity: For high-frequency sampling, the storage will run full, and the data would have to be downloaded from the device. Additionally, the sampling frequency itself may also reduce the battery capacity due to repeated operations. The behaviour of devices with respect to data storage when failure of any sort occurs is core. For example, when a device runs full, it could respond either by stopping any further data intake, or by starting the recording from the beginning. Similarly, when a device loses charge/the battery is empty, the data could be lost. Understanding the exact contingencies of these failure modes can mitigate data loss.
+
+Where the data are stored is important, not only for practical considerations, but also for privacy concerns. Some devices allow for or have mandatory synchronization through a Bluetooth-enabled connection with a smartphone. This needs to be considered in the context of research ethics.
+
+### Raw data format and ease of transfer
+
+To date, there is no commonly accepted data standard for data from wearable light exposure and visual experience loggers. As a consequence, manufacturers typically develop their own format, which are sometimes not well-documented. The consequence of this is that any researchers or research users working with these types of data will spend a considerable amount of time to write loading functions to wrangle the data. Within the graphical user interface (GUI) that is attached to a device, it is usually possible to export the data into a range of formats. The transfer speed for the data can be important in environments or use cases where fast analysis of data is important.
+
+### Wear/non-wear and occlusion detection
+
+Some devices may be able to detect whether they are being worn, either online, or after analysis using the manufacturer-provided software. For wrist-worn devices, this could be implemented through a capacitance sensor, or temperature sensor, or in conjunction with data from the IMU. Additionally, devices might be able to detect it is occluded.
+
+When wear detection is not available from the device-inherent capabilities, it is recommended that researchers investigate concise methods for estimating wear/non-wear state, e.g. through additional questionnaires or using a data-driven approach.
+
+### Interaction with the device
+
+Some devices contain event buttons, which, when pressed, insert time-stamped information into the data log. This functionality can be very useful for determining wear/non-wear state and specific events taking place for the participant. It is worth noting that as they are a user interaction, participants are not guaranteed to do it consistently. Some devices also include a status LED that indicates the device state. It is important to inform the participant of the meaning of each of the possible states, and intervene if necessary.
+
+### Documentation
+
+The quality of manufacturer documentation can vary significantly, and it is important to consult the manufacturer on its completeness. This includes, at a minimum:
+
+-   **Sensor capabilities and calibration**
+    -   Full description of sensor capabilities, including calibration information\
+    -   Traceability of calibration (e.g., to national standards)\
+    -   Documentation of validation procedures (e.g., lab vs. field performance)\
+    -   Instructions for user-performed recalibration and required tools\
+    -   Expected lifespan and stability of sensor performance over time (e.g., sensor drift)
+-   **Environmental and operational conditions**
+    -   Environmental operating conditions (e.g., temperature, humidity, altitude)\
+    -   Known hardware/software limitations (e.g., maximum sampling rate, data loss risks)\
+    -   Information on error states or error modes that may be encountered during data collection
+-   **Device behaviour and data processing**
+    -   Description of any onboard data processing, compression, or classification algorithms\
+    -   Details on how timestamps are generated and synchronized (e.g., internal clock behavior, drift)\
+    -   Firmware versioning and changelog history, especially for devices under active development
+-   **Data structure and output**
+    -   Full description of all data available from the device\
+    -   Clear explanation of file formats (CSV, JSON, binary, proprietary, etc.)
+-   **Usage and deployment guidance**
+    -   Recommended positioning and usage instructions to ensure data validity
+-   **Regulatory and support information**
+    -   Any relevant compliance certifications (e.g., [CE](https://europa.eu/youreurope/business/product-requirements/labels-markings/ce-marking/index_en.htm), [FCC](https://www.fcc.gov/), [ISO](https://www.iso.org/home.html))\
+    -   Contact information for technical support
+
+### Software ecosystem
+
+Light loggers as hardware are bundled with software that enable their use. Software functionality usually includes:
+
+-   Setting up the device for logging
+-   Choosing parameters for logging (including intervals, participant ID)
+-   Live read-out of the data
+-   Information about device and battery status
+-   Data read-out from the device
+-   Data saving into proprietary and/or open text formats
+-   Manual data annotation and tagging of data
+-   Data selection and masking
+-   Data analysis
+-   Export from analysis results
+
+A key consideration is the ease of use of these companion software packages, and their maturity. If simple errors in use can lead to data loss, that is undesirable. A further consideration is whether the software is available across multiple operating systems, such as Windows, OS X and Linux.
+
+As the software packages supplied by the manufacturers are typically not released as open-source packages, the underlying functions, in particular those pertaining to data analysis, are not transparent. It is therefore important to always note down the software version if a given analysis is considered to be archival. Furthermore, it is recommended to keep an archive of the software installation packages or ZIPs, so that analyses can be re-performed with exactly the same analysis routines.
+
+Generally, it is recommended that the analysis of light logger data is not performed with proprietary software, but with open-source alternatives [@Zauner2025JOpenSourceSoftw].
+
+## Validating devices
+
+Once devices have been acquired, a key step prior to deployment in a scientific study is their validation [@Spitschan2022DigitHealth]. Validation ensures that the devices are performing according to specifications, measuring reliably, and delivering data that can be meaningfully interpreted .
+
+### Standardized validation procedures
+
+Standardized validation procedures should be followed to evaluate the device’s accuracy, precision, and stability. Ideally, these procedures should be based on accepted metrological principles, using consistent methods and reference standards. The validation protocol should be clearly documented, replicable, and, if possible, aligned with relevant national or international standards.
+
+### Cross-comparison with reference measurements
+
+Light loggers should be tested against calibrated reference instruments or standard light sources to verify their measurement accuracy. These reference conditions could include traceable spectroradiometers or other laboratory-grade equipment. By exposing the devices to known light spectra and intensities, any systematic measurement errors can be identified and, if necessary, corrected or documented.
+
+### Inter-device variability assessment
+
+A simple and cost-effective method to characterize variability between devices is to place them side by side under an overcast sky [@Markvart2015Leukos]. Overcast conditions provide a diffuse, relatively uniform light environment, which allows the identification of measurement differences between individual devices. Substantial inter-device variability should be addressed through recalibration or adjustment before deployment.
+
+### Intra-device reliability assessment
+
+In addition to comparing different devices, it is important to assess the repeatability of each device over time. This involves repeated measurements under stable light conditions to verify that the device produces consistent results. Intra-device reliability checks can reveal drift or other issues that could compromise data integrity in longitudinal studies.
+
+### Ease of calibration
+
+Finally, devices should support straightforward recalibration procedures if required. Documentation from the manufacturer should describe how to recalibrate individual devices and what equipment or conditions are necessary to do so. This ensures that any detected deviations can be corrected efficiently, maintaining long-term accuracy of the measurements.
+
+## Designing the protocol
+
+Once devices are in hand, a key consideration is the design of a protocol for collecting optical radiation exposure and visual experience data. In the literature, research groups usually follow their own custom protocols, but recently, a standard protocol for one-week measurements has been published [@Guidolin2045BMCPublicHealth]. The design and choice of the protocol should include the following considerations.
+
+### Clarity on the research question and pre-registration
+
+The research question, hypotheses, procedures, and methods need to be aligned in a tight way. In measuring visual experience and light exposure, this alignment becomes particularly important due to the changing and context-dependent nature of light. Measuring a single day of light exposure to draw conclusions about seasonal effects is methodologically flawed, neglecting intra- and inter-day fluctuations in weather, behaviour and exposures. For more robust measurements, typically, longer measurements are needed and include data from weekdays and weekends. Additionally, different work schedules [@Daugaard2019AnnWorkExpoHealth; @Price2021AnnWorkExpoHealth] and seasons at specific latitudes [@Cole1995JBiolRhythms; @Graw2000JAffectDisord; @Thorne2009ChronobiolInt; @Ulaganathan2018ActaOphthalmol; @Dunster2022JPinealRes] can lead to significant differences in exposure. At the same time, coverage needs to be balanced with participant burden.
+
+It is important to clearly formulate the research question, hypotheses, procedures, and methods before the data collection. An additional step is to write a pre-registration detailing the protocol and analysis plans, thereby ensuring intellectual clarity on the purpose and procedure of measurements. It is worth noting that this effort in any event has to be done, namely at the point of data analysis, and so firming up a pre-registration in advance simply frontloads this effort.
+
+### Participant burden vs. fidelity
+
+For any research, participant burden is a key consideration. The desired biological quantity of interest is the retinal irradiance, whih cannot be measured, as only the retina can 'measure' it. The next best geometrical consideration is the near-corneal plane, which places a burden on the participant under real-world conditions and may even modify their behaviour (e.g., selecting out of social situations). A core question therefore is to what extent near-corneal measurements are necessary for the research question at hand. A pilot study can bring clarity on the uncertainty introduce by the use of, e.g., wrist-mounted vs. chest-mounted light loggers. For some research questions, including those where distance information is important, some wearing locations are nonsensical. For example, a wrist-worn sensor will not be able to measure viewing distance.
+
+### Measurement capabilities matched to use case
+
+Similar to how the research question, hypotheses, procedures, and methods need to be tightly aligned, the measurement capabilities of the wearable devices needs to be matched to the measurement context (indoors, outdoors). For example, a wearable devices might not be suited to measure light exposure below 10 lx. If the goal is to measure dynamics in nocturnal light exposure, the device would not produce robust information. Similarly, distance sensors operate differently in different conditions (depending on the sensor technology).
+
+### Measurement length and sampling intervals
+
+The measurement length, i.e., how long the protocol should last, and the sampling interval, i.e., how often measurements are taken, is partially determined by the battery and storage capacity of the device, and highly contingent on the research question. There is currently no knowledge on interdaily variability, and future research should characterise this carefully. Regarding sampling resolution, if the goal is to measure or approximate the retinal stimulus at high temporal resolution, then of course, 1-minute measurement sampling is not sufficient.
+
+### Inclusion of other data
+
+Depending on the research question, additional data can be collected alongside the wearable device. This includes, for example, daily logs of mood, sleep and other aspects [@Guidolin2045BMCPublicHealth], and can be implemented using smartphone apps.
+
+### Participant reactivity and inadvertant behavioral modification
+
+Different form factors and associated wearing locations could be susceptible to different ways that participants behave, a phenomenon similar to reactivity, in measurement leads to changes in the people being measured [@French2010BrJHealthPsychol]. For example, wearing a device attached to spectacle frames may not be very suitable for public environments, workplace, or specific recreational contexts. Consequently, participants may change their behaviour in response to the visibility, intrusiveness, or comfort of the device, leading to reactivity—i.e., modifications in naturalistic behaviour due to awareness of being monitored.
+
+Such behavioural adaptations can include reduced social interaction, altered outdoor time, or avoidance of certain activities (e.g., sports, commuting via bicycle). These changes may introduce systematic biases in the collected data, particularly if the device form factor is not well tolerated across all settings or participants.
+
+To probe for such biases, it may be advisable to include a questionnaire or single open-ended question after data collection asking whether they perceived any changes in their behaviour due to wearing the devices.
+
+## Collecting data
+
+With the protocol final and registered, data collection commences. There are several aspects that need to be considered i nthe data collection process..
+
+### Briefing of participants
+
+Participants should receive clear instructions on
+
+-   wearing the device, including suitable contexts and situations (related to the durability and IP rating of the device)
+-   handling the device when they take it off, including logging it
+-   charging the device regularly (if necessary)
+
+To ensure that participants understand the instructions clearly, it is recommended that a short comprehension check be included after the briefing. This can be done by asking participants to repeat key instructions in their own words or having participants demonstrate how to wear, remove, and charge the device correctly. A printed or digital instruction sheet can be supplied for reference.
+
+Additionally, if there are any known problems with the devices (such as common mechanical failures), these should be communicated to the participants alongside mitigation strategies.
+
+### Recurrent compliance checks
+
+Throughout a measurement protocol, it could be helpful to implement regular checks to remind participants of key steps involved in the measurement, including charging. In case there is online access to the data, such as through clouds, it is possible to monitor light exposure instantaneously and remotely. This can bring several benefits, including the possibility of corrective action should a participant not comply to the study procedures.
+
+Compliance related to usability can be probed and measured using specific questionnaires [@Balajadia2023DigitBiomarkers; @Stefani2024ClockSleep].
+
+### Device settings
+
+A time-stamped and versioned standard operating procedure (SOP) document can help ensure the reproducibility of device settings when there are multiple operators setting up devices for studies. A key component is to ensure the same parameters, but also other configuration flags being consistently used for logging.
+
+Logging configuration, time sync, DST handling.
+
+## Storing and documenting data
+
+As data is collected and exported to file, it is important to take care that the data are stored safely and in a principled fashion.
+
+### Documentation principles
+
+Study data is not self-explanatory. It is necessary to document:
+
+-   the location of stored data and their relative paths within the storage
+-   contents of files
+-   metadata and/or codebooks
+-   file and path naming conventions
+-   references to the protocol
+
+A minimum approach includes the use of a README file that describes the data collected [@Zielinski2023ClocksSleep]. A more complete approach is specified by the [TIER protocol](https://www.projecttier.org/tier-protocol/protocol-4-0/). In general, the goal of data documentation is that a third party without further insights can work with the data and all relevant information is contained within the documentation. A lean way to collect all information - data and metadata - in one place is through a [Github repository](www.github.com). For most needs, these are free, can be automatically archived to [Zenodo](zenodo.org) and assigned a DOI (with new versions every time data are updated).
+
+### Consistent file format
+
+Individual files should be non-proprietary as well as human- and machine-readable. This is possible in almost all cases, with few exceptions for specific measurement devices. Ideally, data comes in a text-based, rectangular format, such as CSV (comma separated values). Rectangular means that each line of the file contains the same number of separators. CSV has the benefit that is is universally understood and can be interpreted even by technical novices, can be easily shared, and imported by software. Beware, however, that there are many dialects of CSV, often dependent on the locale of the researcher. Hierarchical data (e.g., metadata) often comes in a nested file format, such as JSON or XML. Effort should be undertaken to keep file formats as consistent as possible across different data sources and they need to be consistent within data sources (which can be a problem, e.g., after a device update that changes the output). Dates and times within files need to be handled with care and consistently as well. While deviations can be manually adjusted during data import, it is tedious, unnecessary, and error-prone work.
+
+### Auxiliary data
+
+Wearable data on its own – even if it is high fidelity from a measurement perspective – is often lacking essential information beyond light but about the environment and the participant, e.g., non-wear time, physical activity, or climate-based information. Auxiliary data is defined as time-dependent (i.e. time-stamped) data relevant to the analysis of light logging data but not collected through wearable light logger devices. Data sources include but are not limited to diaries, companion apps, and concurrent measurements.
+
+![](images/Auxiliary_data.png)
+
+### Standard directory structure
+
+There are many ways to structure a data directory. Most importantly, it needs to be consistent, speaking, and well described. It is suggested to differentiate between data containing the whole group, or individuals. Further, continuous data (i.e. time-stamped data), can be contained in a sub-folder. Here is an exemplary file structure constructed from a real example.
+
+```         
+ Project/
+    ethics/
+    data/
+        raw/
+            group/
+               demographics/
+               discharge/
+               screening/
+               ...
+            individual/
+               $ParticipantID/
+                     chronotype/
+                     continuous/
+                         health_monitor/
+                         sleepdiary/
+                         wearlog/
+                         wellbeingdiary/
+                         ...
+                     discharge/
+                     clinical/
+                         OCT/
+                         ...
+                     screening/
+    research_logs/
+        anomalies/
+    materials/
+        inperson_screening/
+        online_screening/
+        questionnaires/
+    output/
+        figures/
+        tables/
+        explorative/
+    participant_docs/
+    scripts/
+```
+
+### Documentation of anomalies
+
+It is good practice to instruct participants to report any issues occuring in the data collection, either through a specially provided log, or through ad-hoc emailing. Some wearable devices, for example, have a status LED, which the participants can be instructed to monitor and note down any changes. These anomalies should be collected in one file.
+
+Similarly, necessary data manipulations need to be logged, e.g., when manually changing a datetime-format that was entered inconsistently by the participant or experimenter. The log can take the form of a simple CSV file. For example:
+
++------------+--------------+--------------+-------------------------------------+---------------------------------------+------------------+---------------+
+| Date       | Experimenter | File         | Manipulation description            | Rationale                             | Affected columns | Affected rows |
++============+==============+==============+=====================================+=======================================+==================+===============+
+| 2025-06-01 | John Doe     | individual/\ | changed Datetime to standard format | Datetimes were entered inconsistently | 3                | all           |
+|            |              | discharge/\  |                                     |                                       |                  |               |
+|            |              | data.csv     |                                     |                                       |                  |               |
++------------+--------------+--------------+-------------------------------------+---------------------------------------+------------------+---------------+
+
+### Metadata
+
+Metadata is data about data. Domain-specific metadata ensures data is annotated in a consistent way across projects and research groups. For wearable light logger a metadata descriptor was developed that contains study-level, participant-level, device-level, and dataset-level information [@Spitschan2024BMCDigitHealth]. Implementations of the descriptor are in active development and will facilitate the creation and application of metadata in analyses.
+
+![](images/metadata_descriptor.png)
+
+### Privacy aspects
+
+For any biomedical data collection, privacy principles relevant to the local jurisdictions need to be upheld (e.g. [HIPAA](https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html), [GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng), ...). Careful consideration needs to be placed on which aspects of data contain personally identifiable information. It is not clear whether visual experience and light exposure, or time courses thereof, constitute personally identifiable information. More research needs to be done to understand the identifiability of people from their visual experience data.
+
+### Locale consistency
+
+[Locale](https://en.wikipedia.org/wiki/Locale_(computer_software)) in computer software is a set of parameters that define how information is displayed and stored. The parameters cover language, region, and individual preferences. Locales are important because software, especially gui-heavy software like Microsoft Excel, interpret data based on a user's locale: what is the decimal marker, how are columns separated in text files, what are datetime conventions, etc. More problematic, however, is that some software, even research-focused companion software to wearable devices, also save files with the settings defined by a users locale. This leads to a myriad of dialects in theoretically well defined text-based files, like CSV (comma separated values), thus making the FAIR exchange of data between researchers more burdensome. The most common CSV deviation, typical, e.g., for some European countries, uses a semicolon ';' as a column divider instead of the eponymous comma ','. Very likely, this is because the comma in this dialect is used as a decimal mark instead of the full stop '.'.
+
+We do not necessarily recommend for a researcher to change their locale settings on research machines (although that would help). It is, however, important that researchers are aware of the nature and influence of the locale, and we recommend the following:
+
+-   Avoid wearable devices that store data based on a user's locale without explicit prompt
+
+-   Make certain that whatever import routine is used for wearable data matches the raw files, and that there are no differences between the files. If this cannot be avoided, import files separately depending on the locale.
+
+-   Always check the correct interpretation of text-based data in the software of choice, especially regarding decimals, column separation, and datetimes
+
+-   The analysis software LightLogR provides import routines that are based on typical settings for wearable devices. This means that by default, LightLogR users do not have to take care about locale settings, exept when device data is stored with deviant settings. [LightLogR's documentation page for import](https://tscnlab.github.io/LightLogR/reference/import_Dataset.html) will mention known deviations in file formats, and new ones can be reported.
+
+-   Never overwrite a text-based file with software that changes a files' locale conventions without notice. Microsoft Excel is a common offender, as it seems to interpret foreign locales correctly, but switches to the user's locale upon saving (if the user does not actively choose a different format). At best, this potentially fragments a study's data base, if some files are opened and resaved (e.g., when removing a header or correct some spelling), while others are not. At worst, it will misinterpret a text-string, e.g. interpreting a value of '2.04' as '2 April', which will be stored in the text file as a date, e.g. as '02-04-2025'. This type of data corruption can be easily missed at first, only to be noticed during analysis, sometimes with no mode of recovery.
+
+### Recommended conventions for datetime
+
+Timestamps for wearable data need to contain datetime information in a consistent, unambiguous, and machine-readable format. Because there are many time zones around the world, datetimes are a complex topic and need to be handled with care. A time zone should not be confused with the offset from Coordinated Universal Time (UTC), although for any given moment, a time zone can be related to a specific offset. Time zones also include information about whether or not there is daylight savings, and if the offset changes (e.g., due to policy). This means that local time + time zone contains more information than local time + offset. Date, time, and datetimes are standardized in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html), and it is recommended that datetimes follow its conventions. A comprehensive description of the structure can be found [here](https://datatracker.ietf.org/doc/html/rfc3339#section-5.6).
+
+At the time of this writing (2025), most devices do not store the offset to UTC as part of the timestamp, which regularly results in ambiguity following switches to and from daylight savings. This ambiguity can be avoided if:
+
+-   datetimes follow the conventions in iso 8601
+
+-   datetimes are stored in UTC format with a known time zone, taken from the [Olson/IANA](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) databases.
+
+## Maintaining devices
+
+Throughout data collection, devices need to be maintained to ensure that data remains reliable and the devices remain usable. This is particular important in the field, where we cannot control directly what happens with devices and how they are treated.
+
+### Inspection
+
+Upon receipt of a device from a participant, it is recommended to ensure that there are no obvious signs of damage, excessive dirt, moisture intrusion, or missing parts. Visually inspect the device housing, buttons, charging port, and any attached sensors or straps. If available, perform a quick functional check (e.g., power on the device, confirm data presence, test charging). Document any issues immediately and, if needed, flag the device for repair or cleaning before redeployment. It is recommended that this is kept in an inventory. Should there be major concerns, it is recommended to contact the manufacturer with a detailed report.
+
+### Firmware updates
+
+Firmware updates are an important part of maintaining light loggers, as they may include bug fixes, feature enhancements, or security patches. However, it is essential to ask the manufacturer clearly what changes each firmware update introduces. For example, if a firmware update alters calibration factors or sensor processing algorithms, data collected before and after the update on the same device may no longer be directly comparable. Any firmware changes should therefore be thoroughly documented, with version numbers tracked alongside the data, and ideally tested on a small subset of devices before widespread deployment. Most light loggers include firmware version information in the supplied metadata of their data files, and this should be recorded systematically to ensure clear traceability. Maintaining consistent firmware across all devices helps preserve data quality and comparability.
+
+### Cleaning
+
+Devices and attachment pieces such as lanyards and wristbands should be cleaned between different participants. The manufacturer should provide cleaning guidelines to ensure compatibility with the specific device materials. In the simplest case, textile lanyards can be washed, while wristbands can be carefully disinfected using appropriate cleaning agents. For replaceable components, such as lanyards, it may also be advisable to replace them periodically to maintain hygiene and device integrity.
+
+### Monitoring and correcting device drift
+
+Over time, sensors in light loggers may experience drift, leading to systematic errors in recorded measurements. To monitor for drift, it is recommended to perform periodic reference checks against a calibrated standard light source or reference device. These checks should be scheduled at regular intervals, for example before and after each data collection cycle, or after prolonged storage.
+
+If drift is detected, corrective action may include recalibration, manufacturer servicing, or applying a correction factor to the data — but only if such corrections are well-documented and scientifically justified. It is also important to record any detected drift, the correction procedures used, and the relevant dates, to ensure transparency and maintain data integrity across the study.
+
+### 
+
+## Analysing data
+
+Following data collection, data are analysed. The following sections lay out theoretical and practical considerations for analysis
+
+### Data cleaning and preprocessing
+
+Depending on the device, participant compliance, and other factors, it is commonly necessary to invalidate some of the measurements recorded by a device. Reasons include aspects such as:
+
+- out of range measurements (beyond sensor saturation and at the noise level)
+
+- non-wear
+
+- device occlusion
+
+- recordings outside relevant time frames
+
+Often, these invalid data are randomly distributed, but due to non-wear at times of day at which specific activities occur (e.g., showering, contact sports, swimming, ...), light exposure data may be missing systematically.
+
+The following sanity checks are recommended:
+
+-   Visualisation of raw time series for the available sensors
+-   Visualisation of histograms to identify distributions of data and outliers
+
+#### Non-wear
+
+Participants likely have to remove their wearable devices at some point of a data collection. These times may or may not reflect the visual environment of the participants, but they need to be identified in any case. Ideally the protocol specifies certain actions when a device is removed and put on again. E.g., an entry in a companion app, putting the device in a black bag, or setting it on the night stand, face up, so that it can record the ambient light level of the sleep environment. Occlusion of the device is also to be considered non-wear. These are some typical ways how to identify non-wear times:
+
+- Use external, time-stamped information, such as from a companion app that logs non-wear. These can be easily added to the time series and invalidated (see @sec-merging_data_streams). The downside is that participants regularly forget to log these events which requires additional oversight by the experimenter or visual checks of the data.
+- Order participants to put their devices in a black bag on non-wear. Then filter for zero lux values. The downside is that this only is sensible during daytime (as zero lux is common during nighttimes).
+- Analyse the variance/standard deviation of the sensor reading or an actimetry measurement (if available) in a rolling window, e.g. 2 minutes when sampling every 10 seconds. Times of low variance often indicate non-wear, but can be show false positives if a person is not moving, the ambient environment would still be represented (night stand), and zero-lux readings. False negatives can occur if a device is not worn according to protocol, but still shows high variance, e.g. activity with occlusion, or a moving environment, such as a train. If the measurement interval is too large, it will also not be reliable.
+- Some sensors have automated wear detection and usually show in a column, whether the device was worn or not. It is easy to invalidate those measurements, but may overwrite helpful readings of the ambient environment (night stand).
+
+Every method to capture non-wear has up and downsides. [@Guidolin2024BehavResMethods] provides a comparison of different methods. In general it is recommended to brief participants on the importance of strict wear, following non-wear procedures laid out in the protocol, and to collect data over sufficiently long periods so that the likelihood of distorted results due to unidentified non-wear times is reduced.
+
+#### Implicit and explicit missing data
+
+An analysis time series should contain an uninterrupted sequence of equally spaced intervals from start to finish. Some cases fall outside:
+
+- *NA* values in the data. These are denoted as **explicit missing data** or **explicit gaps**, because a time stamp is present, indicating an observation, but no valid reading is available. Explicit gaps are often unavoidable (if no aggregation is performed) and are often OK, as long as the ratio of missing to available data is good. There is no fixed value for this ratio and it heavily depends on whether and what metric is calculated from it. Bootstrap analysis of select circadian metrics have shown that for long data collection periods of one month (and random distribution of missing data), no significant change in mean daily metric values is present on the individual level, even when 25% of data are missing [@Biller2025bioRxiv]. For shorter recording periods this will be less.
+
+- Gaps in the data, i.e., missing observations in the regular time series. These are denoted as **implicit missing data** or **implicit gaps**. Gaps in the data are problematic when calculated durations are based on time stamps, as they include the missing period. Explicit gaps need to be explicitly handled and are therefore always to be preferred. 
+
+- Observations at time points outside the regular time series are denoted as **irregular data**. Examples are slight fluctuations in the recording interval and interrupted recordings (e.g., recording 2 hours in the morning, stopping recording, and restarting in the afternoon. The chance that the second recording will fall exactly on the regular time series beginning to end is negligible). Irregular data are problematic when calculated durations are based on the number of observations times the regular interval. Irregular data can be handled either by aggregating data to a coarser interval (see next section) or - if deviations are small - by rounding the timestamp to the regular interval.
+
+To illustrate these types of data, let us consider a week of data measured in the environment and from a participant. 
+
+::: {.column-page-inset}
+::: {.panel-tabset group="top_group"}
+
+#### Implicit gaps
+
+If we remove all data below 1000 lx, we create implicit gaps, because the observations are dropped, as shown here (full time series is shown in grey):
+
+```{r}
+#| echo: true
+#| fig-width: 12
+sample.data.environment |> 
+  gg_days(col = "grey") + 
+  geom_line(data = \(x) filter(x, MEDI >= 1000))
+```
+
+#### Explicit gaps
+
+If we set all data above 1000 lx to *NA*, we create explicit gaps, because the observations are **not** dropped, as shown here (full time series is shown in grey):
+
+```{r}
+#| echo: true
+#| fig-width: 12
+sample.data.environment |> 
+  gg_days(col = "grey") + 
+  geom_line(data = \(x) mutate(x, MEDI = ifelse(MEDI >=1000, MEDI, NA)))
+```
+
+#### Irregular data
+
+We can simulate irregular data by offsetting measurements on the second day by 5 seconds.
+
+```{r}
+#| echo: true
+#| fig-width: 12
+irregular_data <- sample.data.environment |> add_Date_col(as.wday = TRUE) |> mutate(Datetime = ifelse(Date == "Wed", Datetime +5, Datetime) |> as.POSIXct(tz = "Europe/Berlin"))
+irregular_data |> 
+  gg_gaps(show.irregulars = TRUE, include.implicit.gaps = FALSE)
+```
+
+:::
+:::
+
+::: {.column-page-inset}
+::: {.panel-tabset group="top_group"}
+
+#### Implicit gaps
+
+```{r}
+sample.data.environment |> filter(MEDI >= 1000) |> gap_table() |> 
+  opt_css("
+  .gt_table, .gt_table * {
+    font-size: clamp(10px, calc(1vw + 8px), 12px);
+  }
+")
+```
+
+::: {.callout-note}
+Note that the implicit line is connected, as the plot considers the time series as a single (uninterrupted) series.
+:::
+
+#### Explicit gaps
+
+```{r}
+sample.data.environment |> mutate(MEDI = ifelse(MEDI >=1000, MEDI, NA)) |> gap_table()
+```
+
+#### Irregular data
+
+```{r}
+irregular_data |> gap_table(include.implicit.gaps = FALSE)
+```
+
+::: {.callout-note}
+Note that this step creates not only irregular data, but also implicit gaps, because the original measurement at the regular interval is missing. For brevity, implicit gaps will be omitted in both representations
+:::
+
+:::
+:::
+
+#### Aggregation
+
+It can be sensible to change the analysis interval from the recording interval. Common use cases include:
+
+- Removing irregular data
+
+- Reducing n, both for computational time and/or easier legibility (visualizations)
+
+- Satisfying requirements for certain metrics (e.g., [interdaily stability](https://tscnlab.github.io/LightLogR/reference/interdaily_stability.html) is calculated based on hourly means)
+
+When changing the observation interval two key aspects need to be considered:
+
+- Is the resolution still sufficient to help answer the analysis question at hand? E.g., looking at the variance of data to assess movement or wear only makes sense in the seconds range. Measurement intervals above 15 seconds are not very valuable in that regard. To consider another case - if the time spent outside is of relevance, and short periods of 15 to 30 minutes are considered relevant, then looking at 1-hour intervals is too coarse. 
+
+- How are the values for the new interval calculated? Is it the mean, median, max, sum, mode, or some custom function? How are missing observations treated? 
+
+- How are time stamps binned? Are values around the new time points taken into consideration (round), or are they rounded up or down (floor/ceiling)? Are all values considered equally, or depending on their time distance (in the case of irregular data)
+
+These decisions heavily influence the outcome und need to be made deliberately. For visualization purposes, `5-minute` values show a good balance of readability while retaining the overall features well. The following tabs show aggregation through means.
+
+::: {.panel-tabset}
+
+#### 10-second
+
+```{r}
+sample.data.environment |> aggregate_Date() |> gg_doubleplot() + 
+  coord_cartesian(ylim = c(0,10^5), expand = FALSE)
+```
+
+
+#### 30-second
+
+```{r}
+sample.data.environment |> aggregate_Date(unit = "30 secs") |> gg_doubleplot() + 
+  coord_cartesian(ylim = c(0,10^5), expand = FALSE)
+```
+
+#### 1-minute
+
+```{r}
+sample.data.environment |> aggregate_Date(unit = "1 min") |> gg_doubleplot() + 
+  coord_cartesian(ylim = c(0,10^5), expand = FALSE)
+```
+
+#### 5-minute
+
+```{r}
+sample.data.environment |> aggregate_Date(unit = "5 min") |> gg_doubleplot() + 
+  coord_cartesian(ylim = c(0,10^5), expand = FALSE)
+```
+
+#### 15-minute
+
+```{r}
+sample.data.environment |> aggregate_Date(unit = "15 min") |> gg_doubleplot() + 
+  coord_cartesian(ylim = c(0,10^5), expand = FALSE)
+```
+
+#### 30-minute
+
+```{r}
+sample.data.environment |> aggregate_Date(unit = "30 min") |> gg_doubleplot() + 
+  coord_cartesian(ylim = c(0,10^5), expand = FALSE)
+```
+
+#### 1-hour
+
+```{r}
+sample.data.environment |> aggregate_Date(unit = "1 hour") |> gg_doubleplot() + 
+  coord_cartesian(ylim = c(0,10^5), expand = FALSE)
+```
+
+#### 2-hours
+
+```{r}
+sample.data.environment |> aggregate_Date(unit = "2 hour") |> gg_doubleplot() + 
+  coord_cartesian(ylim = c(0,10^5), expand = FALSE)
+```
+
+#### 6-hours
+
+```{r}
+sample.data.environment |> aggregate_Date(unit = "6 hour") |> gg_doubleplot() + 
+  coord_cartesian(ylim = c(0,10^5), expand = FALSE)
+```
+
+:::
+
+### Exploration and exploratory visualization
+
+Exploring the time series in various regards is key for grasping typical and anomalous patterns. Common ways are shown below:
+
+::: {.panel-tabset}
+
+#### Heatmap
+
+```{r}
+#| fig-width: 12
+sample.data.environment |> gg_heatmap(doubleplot = "next")
+```
+
+Shows a dense, color-coded overview across long periods and many participants
+
+#### Day-based
+
+```{r}
+#| fig-height: 7
+sample.data.environment |> gg_day(geom = "line", aes_col = Id)
+```
+
+Good solution to look at individual dates or days of the week.
+
+#### Timeline-based
+
+```{r}
+#| fig-width: 10
+sample.data.environment |> gg_days(aes_col = Id) + theme(legend.position = "bottom")
+```
+
+Practical to visualize longer periods as a continuous timeline, separated by groups
+
+#### Doubleplot
+
+```{r}
+sample.data.environment |> aggregate_Date() |> gg_doubleplot(aes_fill = Id) + theme(legend.position = "bottom")
+```
+
+Useful to inspect patterns across midnight.
+
+#### Aggregated data
+
+```{r}
+#| fig-width: 8
+sample.data.environment |> 
+  aggregate_Date(
+    unit = "30 min",
+    numeric.handler = median,
+    u95 = quantile(MEDI, 0.975),
+    u75 = quantile(MEDI, 0.875),
+    u50 = quantile(MEDI, 0.75),
+    l50 = quantile(MEDI, 0.25),
+    l75 = quantile(MEDI, 0.125),
+    l95 = quantile(MEDI, 0.025)
+  ) |> 
+  gg_day(geom = "blank", x.axis.breaks = hms::hms(hours = seq(0, 24, by = 6))) +
+  geom_ribbon(aes(ymin=l50, ymax = u50, fill = Id, col = Id), size = 0.25, alpha = 0.3) +
+  geom_ribbon(aes(ymin=l75, ymax = u75, fill = Id, col = Id), size = 0.25, alpha = 0.3) +
+  geom_ribbon(aes(ymin=l95, ymax = u95, fill = Id, col = Id), size = 0.25, alpha = 0.3) +
+  geom_line(aes(y= MEDI, group = Id)) +
+  facet_wrap(~Id) +
+  guides(fill = "none", color = "none") +
+  theme(panel.spacing = unit(3, "lines"))
+
+```
+
+Condense single datasets to one day, indicating the spread of (95%, 75%, 50%) of data through colored ribbons.
+
+*Note, data were aggregated to 30 minute intervals in addition to the aggregation into one day*
+
+#### Boxplot
+
+```{r}
+#| fig-width: 8
+sample.data.environment |>
+  cut_Datetime(unit = "1 hour", type = "floor") |>
+  add_Time_col(Datetime.rounded, Time.colname = Time.rounded) |>
+  gg_day(geom = "boxplot", aes_fill = Id, alpha = 0.5, aes_col = Id, group = interaction(Id, Time.rounded), facetting = FALSE)
+
+```
+
+Similar approach to aggregated data, but expressing the spread through boxplots (1-hour intervals)
+
+#### Histogram
+
+```{r}
+sample.data.environment |>
+  ggplot(aes(x=MEDI, fill = Id)) +
+  geom_histogram(bins = 30, aes(y = after_stat(ncount))) +
+  ggsci::scale_fill_jco() +
+  cowplot::theme_cowplot() +
+  scale_x_continuous(trans = "symlog", breaks = c(0, 10^(0:5)),
+                     labels = \(x) label_parsed(ifelse(x == 0, 0, paste0("10^",log10(x))))) +
+  facet_wrap(~Id) +
+  labs(y = "Scaled count")+
+  guides(fill = "none")
+  
+```
+
+Nice overview to catch outliers.
+
+#### Cumulative distribution
+
+```{r}
+sample.data.environment |> 
+  add_Time_col() |> 
+  Brown_cut(vector_labels = c("<1lx", "1 - 10lx", "10 - 250lx", "> 250lx")) |> 
+  ggplot(aes(x= Time, after_stat(count), fill = fct_rev(state))) +
+  geom_density(position = "fill", col = NA, bw = 60*5) +
+  facet_wrap(~Id) +
+  scale_fill_manual(values = c("yellow", "darkgrey", "lightgrey", "black")) +
+  cowplot::theme_cowplot() +
+  labs(fill = "mel EDI", y = "Cumulative percentage") +
+  scale_y_continuous(labels = scales::label_percent()) +
+  scale_x_time(breaks = hms::hms(hours = seq(0, 24, by = 6)), 
+                                 labels = scales::label_time(format = "%H:%M"),
+                          expand = c(0,0),
+                          limits = c(0,24*3600))+
+  theme(panel.spacing = unit(2.5, "lines"))
+
+```
+
+Condensed dataset to value-bins per time of day across multiple days (5-minute bandwith for smoothing).
+
+:::
+
+### Merging data streams {#sec-merging_data_streams}
+
+Various time-stamped data stream have to be merged on a regular basis. This includes the addition of, e.g., a non-wear diary, sleep and wake times, or concurrent measurements, e.g. from environmental measurements.
+
+In most circumstances, the data to be added to the time series will be of a much lower sampling interval (e.g., sleep-wake will only contain two values per day), which makes the addition easy through techniques like the [non-equi join](https://dplyr.tidyverse.org/reference/join_by.html), e.g., adding a state of `sleep` to a light dataset for observations that are between (i.e., not equal to) `sleep` and `wake` moments.
+
+![](images/merging_streams.png)
+
+See @sec-implementation for standardized ways to realize these functions during analysis, e.g. from [LightLogR](https://tscnlab.github.io/LightLogR/articles/states.html#example-sleepwake-data)
+
+![](images/sleep_wake.png)
+
+### Adding context to the time series
+
+Connecting time series data with context-specific data can provide valuable insights or be a necessary step towards metric calculation. 
+
+One example to highlight are location-specific details, such as photoperiod. Photoperiod (Dusk, dawn, duration) is purely based on coordinates and datetimes and has high relevance for the availability of daylight and behavioral outcomes. As such it is a low-hanging fruit that should be part of any light-related field study.
+
+```{r}
+#| fig-width: 10
+sample.data.environment |> 
+  aggregate_Datetime("15 mins") |> 
+  remove_partial_data(by.date = TRUE) |> 
+  gg_days(geom = "ribbon", alpha = 0.5, aes_fill = "ID", aes_col = "ID") |> 
+  gg_photoperiod(c(47, 9)) +
+  coord_cartesian(expand = FALSE) +
+  guides(fill = "none", color = "none")
+
+sample.data.environment |> 
+  add_Date_col(group.by = TRUE, as.wday = TRUE) |> 
+  summarize(duration_above_threshold(MEDI, Datetime, threshold = 10, as.df = TRUE), .groups = "drop") |> 
+  group_by(Id) |> 
+  summarize_numeric() |> 
+  gt() |> tab_header(md("Time above 10 lx mel EDI **without** taking photoperiod into account"))|> 
+  tab_options(table.width = px(600))
+
+sample.data.environment |> 
+  add_photoperiod(c(47, 9)) |> 
+  add_Date_col(group.by = TRUE, as.wday = TRUE) |>
+  group_by(photoperiod.state, .add = TRUE) |> 
+  summarize(duration_above_threshold(MEDI, Datetime, threshold = 10, as.df = TRUE), .groups = "drop") |> 
+  group_by(Id, photoperiod.state) |> 
+  summarize_numeric() |> 
+  gt() |> tab_header("Time above 10 lx mel EDI taking photoperiod into account") |> 
+  tab_options(table.width = px(600)) |> 
+  cols_label(photoperiod.state = "")
+
+```
+
+
+### Metric selection
+
+Time-series of light exposure and visual experience data can be analysed using a series of metrics [@Hartmeyer2023LightResTechnol; @Zauner2025JOpenSourceSoftw]. Importantly, there are no standard metrics for the analysis of light exposure data that have been robustly and reliably linked to outcome metrics. Given the lack of standard metrics, researchers must pay particular attention to analytic flexibility leading to inflated false positive rates in statistical analysis.
+
+![](images/metric_types.png)
+
+Very broady, metrics of light exposure can be categorised in several ways, as layed out by [@Hartmeyer2023LightResTechnol]:
+
+- **Spectral composition**: The distribution of wavelenghts in the spectrum influences non-visual responses. This is encoded in the alpha-opic metrics CIE S 026 puts forth. Visual brightness perception is coded in the $V(\lambda)$ function and several derivatives that deal with larger viewing angles (10° instead of 2°) or *mesopic* and *scotopic* conditions. Besides that, there are broader stroked attempts, e.g., when comparing spectral irradiance in the short compared to the long wavelength segment of the spectrum.
+
+- **Level, duration, and temporal dynamics**: Non-visual responses have been shown do follow a dose-dependent relationship with the stimulus intensity (level) and the stimulus duration (length of exposition). Many metrics have been centered around these concepts, e.g., the time above a certain threshold ([TAT](https://tscnlab.github.io/LightLogR/reference/duration_above_threshold.html)), the mean or median of a given period, or the duration and length of *pulses* above a given threshold ([PAT](https://tscnlab.github.io/LightLogR/reference/pulses_above_threshold.html)).
+
+- **Timing**: besides the intensity and duration of a stimulus, when it is applied also carries important information, as humans react in a phase-response dependent manner to stimuli, e.g. with phase shifts more potent in the morning compared to midday. Common metrics in this category are the midpoint of the cumulative light exposure, or the midpoint of the brightest 10 hours ([M10](https://tscnlab.github.io/LightLogR/reference/bright_dark_period.html)) or darkest 5 hours of the day ([L5](https://tscnlab.github.io/LightLogR/reference/bright_dark_period.html)).
+
+- **Prior history**: photic history, i.e., the amount of light prior to a given moment, shapes the intensity of a response. The non-visual circadian response ([nvRC](https://tscnlab.github.io/LightLogR/reference/nvRC_metrics.html)) encodes this behavior. 
+
+Importantly, many metrics share similar features and core metrics that express certain health-related outcomes have to be defined.
+
+### Special properties of light and visual experience data
+
+Light exposure data spans a wide dynamic range, mirroring the differences in possible environmental exposures from the scotopic to the photopic range of light levels. This means that data are usually considered in a log~10~-transformed fashion.
+
+An additional statistical property of 24-hour light exposure data is that it is heavily zero-inflated, due to the lack of light at night, or light below the measurement threshold of the device.
+
+### Implementation {#sec-implementation}
+
+It is recommended that analysis of visual experience data is implemented using programmatic tools, such as [R](https://www.r-project.org/), [Python](https://www.python.org/) or [MATLAB](https://de.mathworks.com/products/matlab.html). [LightLogR](https://tscnlab.github.io/LightLogR/) [@Zauner2025JOpenSourceSoftw] offers a powerful [open-source tool](https://github.com/tscnlab/LightLogR/) available on [CRAN](https://cloud.r-project.org/web/packages/LightLogR/index.html) for the analysis of light exposure and visual experience data.
+
+## Reporting data
+
+Upon conclusion of the data collection, the next step is to report the data and associated results.
+
+### Methods section
+
+For transparency and to ensure that others can replicate and reproduce the measurement protocol and study, it is key to document various aspects related to the measurement of visual experience and light exposure. At a minimum, it is recommended to include text on the following points:
+
+-   **Device-related properties**
+    -   Manufacturer, brand and make of wearable device used
+    -   Wearing location
+    -   Sampling interval
+    -   Measured quantities
+    -   Calibration information on directional sensitivity, spectral sensitive, linearity and range properties
+-   **Protocol-related properties**
+    -   Location and season of data collection
+    -   Time zone and changes (e.g., daylight saving time)
+    -   Wearing location
+    -   Wearing duration
+    -   Instructions given to the participant for wear context and non-wear behaviour
+    -   Criteria for inclusion/exclusion based on wear time and compliance
+    -   Use of prompts/reminders to ensure compliance
+-   **Analysis-related properties**
+    -   Preprocessing of data, including outlier rejection, binning and smoothing
+    -   Handling of partial or missing data
+    -   Analysis routines and functions used
+    -   Software and version used for analysis and open-source availability
+
+Future work may formalise these recommendations in the form of a consensus checklist.
+
+### Discussion section
+
+It is recommended that the Discussion section discloses various limitations arising from the choice of devices or protocols, such as the inability to measure visual experience in the near-corneal plane using wrist-worn devices. Additionally, the rationale for device selection, protocol design and analysis choices should be explained.
+
+### Metadata documentation
+
+Thorough sharing practices.
+
+### Sharing code
+
+The code used to analyse the data is not just a byproduct of the research process, but a result by itself. There are several reasons to make code available under an open source license:
+
+-   The work underlying the scientific results is shared sustainably for re-use and independent checking
+-   The researcher community can benefit from the availability of existing and citable code
+
+Code can be shared as static files attached to the supplementary material of a published article, or on a repository, such as [GitHub](https://github.com/) or [Bitbucket](https://bitbucket.org/). For GitHub, [Zenodo](https://zenodo.org/) offers an integration module such that when creating a release on GitHub, Zenodo creates a DOI, making the code citable.
+
+Importantly, when sharing code, it is necessary to select a license under which the code is available. Common licenses include the [MIT License](https://opensource.org/license/mit), which is permissive with respect to commercial use, and the [GPL License](https://opensource.org/license/gpl-3-0), which is more restricted. [Choose a License](https://choosealicense.com/) can help making an informed decisions about software licenses.
+
+Code reproducibility can be ensured through independent validation through [CODECHECK](https://codecheck.org/) [@Nust2021F1000Research].
+
+### Sharing materials
+
+To ensure the reproducibility of research studies, it is recommended to share the materials used throughout the study, including any instruction sheets given to the participant, survey questions used, as well as debriefing documents. For any digital materials, such as forms served on a survey platform (such as [REDCap](https://project-redcap.org/)), it is recommended, that the materials are provided in a format ingestible/importable by the platform
+
+### Sharing data
+
+Data should be made available transparently and openly. It is recommended that when researchers submit their ethics approval request, they already include the provision of sharing data in anonymized form. It can be very difficult to impractical to share data after the fact or seek re-approval from the participants.
+
+### FAIR data
+
+The [FAIR principles](https://www.go-fair.org/fair-principles/) state that data should be **f**indable, **a**ccessible, **i**nteroperable and **r**eusable, to make them easier to share [@Wilkinson2016SciData]. Several points raised in this Researcher Guide are driven to ensure that visual experience and optical radiation data are FAIR, including standard file formats and documentation. Importantly, FAIR data guarantees that the collected data are used sustainably, and available well beyond the specific published research articles.
+
+Data can be published as part of the supplementary material of journals. An alternative option is to add them as data packages to specific repositories, such as [Zenodo](https://zenodo.org/) or [FigShare](https://figshare.org/).
