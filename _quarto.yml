@@ -11,7 +11,7 @@ website:
   bread-crumbs: true
   page-footer:
     center: |
-      [![](assets/logo-mpi.png){width=180pt}](https://www.kyb.tuebingen.mpg.de/en)
+      [![](assets/logo-mpi.png)(https://www.kyb.tuebingen.mpg.de/en)
     right: "[Imprint](imprint.qmd)"
   navbar:
     logo: images/RDA_Logotype_CMYK.png
