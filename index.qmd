@@ -1,6 +1,40 @@
 ---
 title: "Researcher Guide: Wearable optical radiation and visual experience loggers"
-author: The Optical Radiation Exposure and Visual Experience Data Working Group
+author:
+  - name: "Johannes Zauner"
+    affiliation: "Technical University of Munich (Germany)"
+    orcid: "0000-0003-2171-4566"
+  - name: "Rigmor C. Baraas"
+    affiliation: "University of South-Eastern Norway (Norway)"
+    orcid: "0000-0003-3259-7617"
+  - name: "Elise N. Harb"
+    affiliation: University of California, Berkeley (USA); University of California, San Francisco (USA)"
+    orcid: "0000-0002-6489-5689"
+  - name: "Ali Heshmati"
+    affiliation: Norwegian University of Science and Technology (Norway)"
+    orcid: "0000-0001-8172-7794"
+  - name: "Francisco Imai"
+    affiliation: "Optica Color Technical Group (USA)"
+    orcid: "0000-0003-0182-4952"
+  - name: "Pauline Kang"
+    affiliation: "University of New South Wales (Australia)"
+    orcid: "0000-0002-3969-2871"
+  - name: "Raymond P. Najjar"
+    affiliation: "National University of Singapore; Singapore Eye Research Institute; Duke-NUS (Singapore)"
+    orcid: "0000-0002-3770-2300"
+  - name: "Aaron Nicholls"
+    affiliation: "Meta Reality Labs Research (USA)"
+    orcid: "0009-0001-6683-6826"
+  - name: "Lisa Ostrin"
+    affiliation: "University of Houston (USA)"
+    orcid: "0000-0001-8675-1478"
+  - name: "Erik Page"
+    affiliation: "Blue Iris Labs, Inc. (USA)"
+  - name: "Manuel Spitschan"
+    affiliation: "Technical University of Munich (Germany); Max Planck Institute for Biological Cybernetics (Germany); TUMCREATE Ltd. (Singapore)"
+    orcid: "0000-0002-8572-9268"
+    corresponding: true
+  - name: As the Research Data Alliance Working Group "Optical Radiation Exposure and Visual Experience Data" Working Group"
 bibliography: references.bib
 lightbox: true
 css: styles.css

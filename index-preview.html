@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
     <meta charset="utf-8">
-    <meta name="generator" content="quarto-1.7.32">
+    <meta name="generator" content="quarto-1.8.25">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-    <meta name="author" content="The Optical Radiation Exposure and Visual Experience Data Working Group">
-    <meta name="dcterms.date" content="2025-07-03">
+    <meta name="author" content="Johannes Zauner">
+    <meta name="author" content="Rigmor C. Baraas">
+    <meta name="author" content="Elise N. Harb">
+    <meta name="author" content="Ali Heshmati">
+    <meta name="author" content="Francisco Imai">
+    <meta name="author" content="Pauline Kang">
+    <meta name="author" content="Raymond P. Najjar">
+    <meta name="author" content="Aaron Nicholls">
+    <meta name="author" content="Lisa Ostrin">
+    <meta name="author" content="Erik Page">
+    <meta name="author" content="Manuel Spitschan">
+    <meta name="author" content="As the Research Data Alliance Working Group “Optical Radiation Exposure and Visual Experience Data” Working Group”">
+    <meta name="dcterms.date" content="2025-10-06">
 
     <title>Researcher Guide: Wearable optical radiation and visual experience loggers</title>
     <style>
@@ -172,14 +183,15 @@
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b9aedc3c581de397c3385a5acc9783b4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-0a61af393cc41664e89a7addda21b354.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -193,11 +205,22 @@
 <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script> 
         <link rel="stylesheet" href="styles.css">
       <meta name="citation_title" content="Researcher Guide: Wearable optical radiation and visual experience loggers">
-<meta name="citation_author" content="The Optical Radiation Exposure and Visual Experience Data Working Group">
-<meta name="citation_publication_date" content="2025-07-03">
-<meta name="citation_cover_date" content="2025-07-03">
+<meta name="citation_author" content="Johannes Zauner">
+<meta name="citation_author" content="Rigmor C. Baraas">
+<meta name="citation_author" content="Elise N. Harb">
+<meta name="citation_author" content="Ali Heshmati">
+<meta name="citation_author" content="Francisco Imai">
+<meta name="citation_author" content="Pauline Kang">
+<meta name="citation_author" content="Raymond P. Najjar">
+<meta name="citation_author" content="Aaron Nicholls">
+<meta name="citation_author" content="Lisa Ostrin">
+<meta name="citation_author" content="Erik Page">
+<meta name="citation_author" content="Manuel Spitschan">
+<meta name="citation_author" content="As the Research Data Alliance Working Group &amp;amp;quot;Optical Radiation Exposure and Visual Experience Data&quot; Working Group&quot;">
+<meta name="citation_publication_date" content="2025-10-06">
+<meta name="citation_cover_date" content="2025-10-06">
 <meta name="citation_year" content="2025">
-<meta name="citation_online_date" content="2025-07-03">
+<meta name="citation_online_date" content="2025-10-06">
 <meta name="citation_fulltext_html_url" content="https://rda-wg-visualexperiencedata.github.io/ResearcherGuide/index-preview.html">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Protocol for a prospective, multicentre, cross-sectional cohort study to assess personal light exposure;,citation_abstract=Light profoundly impacts many aspects of human physiology and behaviour, including the synchronization of the circadian clock, the production of melatonin, and cognition. These effects of light, termed the non-visual effects of light, have been primarily investigated in laboratory settings, where light intensity, spectrum and timing can be carefully controlled to draw associations with physiological outcomes of interest. Recently, the increasing availability of wearable light loggers has opened the possibility of studying personal light exposure in free-living conditions where people engage in activities of daily living, yielding findings associating aspects of light exposure and health outcomes, supporting the importance of adequate light exposure at appropriate times for human health. However, comprehensive protocols capturing environmental (e.g., geographical location, season, climate, photoperiod) and individual factors (e.g., culture, personal habits, behaviour, commute type, profession) contributing to the measured light exposure are currently lacking. Here, we present a protocol that combines smartphone-based experience sampling (experience sampling implementing Karolinska Sleepiness Scale, KSS ratings) and high-quality light exposure data collection at three body sites (near-corneal plane between the two eyes mounted on spectacle, neck-worn pendant/badge, and wrist-worn watch-like design) to capture daily factors related to individuals’ light exposure. We will implement the protocol in an international multi-centre study to investigate the environmental and socio-cultural factors influencing light exposure patterns in Germany, Ghana, Netherlands, Spain, Sweden, and Turkey (minimum n = 15, target n = 30 per site, minimum n = 90, target n = 180 across all sites). With the resulting dataset, lifestyle and context-specific factors that contribute to healthy light exposure will be identified. This information is essential in designing effective public health interventions.;,citation_author=C. Guidolin;,citation_author=S. Aerts;,citation_author=G. K. Agbeshie;,citation_author=K. O. Akuffo;,citation_author=S. N. Aydin;,citation_author=D. Baeza-Moyano;,citation_author=J. Bolte;,citation_author=K. Broszio;,citation_author=G. Cantarero-Garcia;,citation_author=A. Didikoglu;,citation_author=R. A. Gonzalez-Lezcano;,citation_author=H. Joosten-Ma;,citation_author=S. Melero-Tur;,citation_author=M. N. Tengelin;,citation_author=M. C. Perez Gutierrez;,citation_author=O. Stefani;,citation_author=I. Svensson;,citation_author=L. Udovicic;,citation_author=J. Zauner;,citation_author=M. Spitschan;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_fulltext_html_url=https://www.ncbi.nlm.nih.gov/pubmed/39592960;,citation_issue=1;,citation_doi=10.1186/s12889-024-20206-4;,citation_issn=1471-2458 (Electronic)
@@ -303,20 +326,110 @@
     
     <div class="quarto-title-meta-container">
       <div class="quarto-title-meta-column-start">
+            <div class="quarto-title-meta-author">
+          <div class="quarto-title-meta-heading">Authors</div>
+          <div class="quarto-title-meta-heading">Affiliations</div>
+          
+                <div class="quarto-title-meta-contents">
+            <p class="author">Johannes Zauner <a href="https://orcid.org/0000-0003-2171-4566" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        Technical University of Munich (Germany)
+                      </p>
+                  </div>
+                      <div class="quarto-title-meta-contents">
+            <p class="author">Rigmor C. Baraas <a href="https://orcid.org/0000-0003-3259-7617" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        University of South-Eastern Norway (Norway)
+                      </p>
+                  </div>
+                      <div class="quarto-title-meta-contents">
+            <p class="author">Elise N. Harb <a href="https://orcid.org/0000-0002-6489-5689" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        University of California, Berkeley (USA); University of California, San Francisco (USA)”
+                      </p>
+                  </div>
+                      <div class="quarto-title-meta-contents">
+            <p class="author">Ali Heshmati <a href="https://orcid.org/0000-0001-8172-7794" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        Norwegian University of Science and Technology (Norway)”
+                      </p>
+                  </div>
+                      <div class="quarto-title-meta-contents">
+            <p class="author">Francisco Imai <a href="https://orcid.org/0000-0003-0182-4952" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        Optica Color Technical Group (USA)
+                      </p>
+                  </div>
+                      <div class="quarto-title-meta-contents">
+            <p class="author">Pauline Kang <a href="https://orcid.org/0000-0002-3969-2871" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        University of New South Wales (Australia)
+                      </p>
+                  </div>
+                      <div class="quarto-title-meta-contents">
+            <p class="author">Raymond P. Najjar <a href="https://orcid.org/0000-0002-3770-2300" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        National University of Singapore; Singapore Eye Research Institute; Duke-NUS (Singapore)
+                      </p>
+                  </div>
+                      <div class="quarto-title-meta-contents">
+            <p class="author">Aaron Nicholls <a href="https://orcid.org/0009-0001-6683-6826" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        Meta Reality Labs Research (USA)
+                      </p>
+                  </div>
+                      <div class="quarto-title-meta-contents">
+            <p class="author">Lisa Ostrin <a href="https://orcid.org/0000-0001-8675-1478" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        University of Houston (USA)
+                      </p>
+                  </div>
+                      <div class="quarto-title-meta-contents">
+            <p class="author">Erik Page </p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        Blue Iris Labs, Inc.&nbsp;(USA)
+                      </p>
+                  </div>
+                      <div class="quarto-title-meta-contents">
+            <p class="author">Manuel Spitschan <a href="https://orcid.org/0000-0002-8572-9268" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        Technical University of Munich (Germany); Max Planck Institute for Biological Cybernetics (Germany); TUMCREATE Ltd.&nbsp;(Singapore)
+                      </p>
+                  </div>
+                      <div class="quarto-title-meta-contents">
+            <p class="author">As the Research Data Alliance Working Group “Optical Radiation Exposure and Visual Experience Data” Working Group” </p>
+          </div>
+                    </div>
         
         <div class="quarto-title-meta">
 
-                <div>
-            <div class="quarto-title-meta-heading">Author</div>
-            <div class="quarto-title-meta-contents">
-                        <p>The Optical Radiation Exposure and Visual Experience Data Working Group </p>
-                      </div>
-          </div>
-                
+                      
                 <div>
             <div class="quarto-title-meta-heading">Last modified:</div>
             <div class="quarto-title-meta-contents">
-              <p class="date">July 3, 2025</p>
+              <p class="date">October 6, 2025</p>
             </div>
           </div>
           
@@ -428,11 +541,11 @@
 <main class="content quarto-banner-title-block" id="quarto-document-content">      
 
        <div class="cell-container"><div class="cell-decorator"><pre>In [1]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#setup</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#setup</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'dplyr'</code></pre>
@@ -447,9 +560,9 @@ Attaching package: 'dplyr'</code></pre>
 
     intersect, setdiff, setequal, union</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(LightLogR)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(LightLogR)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'lubridate'</code></pre>
@@ -459,7 +572,7 @@ Attaching package: 'lubridate'</code></pre>
 
     date, intersect, setdiff, union</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
 <p>This site will shortly host the Research Data Alliance (RDA) Research Guide. The Research Guide is authored by the <a href="https://www.rd-alliance.org/groups/optical-radiation-exposure-and-visual-experience-data-wg/activity/">Optical Radiation Exposure and Visual Experience Data Working Group</a>. The site is built using <a href="https://quarto.org/docs/websites">Quarto</a>, a scientific and technical publishing system.</p>
 <p>DRAFT –&nbsp;NOT FOR DISTRIBUTION</p>
@@ -540,8 +653,8 @@ Attaching package: 'lubridate'</code></pre>
 <p>The International Standard CIE S 026/E:2018 <span class="citation" data-cites="CIE2018CIES026">(<a href="#ref-CIE2018CIES026" role="doc-biblioref">CIE 2018</a>)</span> prescribes the spectral sensitivities of the photoreceptors, and thereby also provides a key reference framework for quantifying light exposure with respect to human responses. Notably, the standard proposes the α-opic quantities, where “α” is a placeholder for the cones, rods or ipRGCs.</p>
 <p>A common quantity in light measurements is photopic illuminance [lux]. Photopic illuminance is a quantity that weighs the long- and medium-wavelength sensitive cones and corresponds, roughly, to the psychophysical sensation of brightness. Photopic illuminance is not the same as the light quantity related to the ipRGCs, the melanopic equivalent equivalent daylight illuminance (melanopic EDI), and therefore needs to be measured independently.</p>
 <div class="cell-container"><div class="cell-decorator"><pre>In [3]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>cie_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"assets/cie_s026.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>cie_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"assets/cie_s026.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Rows: 81 Columns: 6
 ── Column specification ────────────────────────────────────────────────────────
@@ -551,7 +664,7 @@ dbl (6): wavelength, melanopic, s_cone, m_cone, l_cone, rhodopic
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reshape data to long format</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reshape data to long format</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>cie_long <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(cie_data, </span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">cols =</span> <span class="sc">-</span>wavelength,</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">names_to =</span> <span class="st">"photoreceptor"</span>,</span>
@@ -565,7 +678,7 @@ dbl (6): wavelength, melanopic, s_cone, m_cone, l_cone, rhodopic
 <span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Relative sensitivity"</span>,</span>
 <span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Photoreceptor"</span>) <span class="sc">+</span></span>
 <span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">380</span>, <span class="dv">780</span>) <span class="sc">+</span> </span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
 ℹ Please use `linewidth` instead.</code></pre>
@@ -584,7 +697,7 @@ dbl (6): wavelength, melanopic, s_cone, m_cone, l_cone, rhodopic
 <h4 class="anchored" data-anchor-id="directional-properties">Directional properties</h4>
 <p>Irradiance and illuminance measurements are usually done in cosine weighted fashion: Light that comes directly from the sensor is weighed more importantly compared to light that comes from the angle. This behaviour follows a cosine function as a function of the incident angle. Each sensor has a specific directional sensitivity that needs to be provided by the manufacturer, or measured and characterised.</p>
 <div class="cell-container"><div class="cell-decorator"><pre>In [4]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define x in degrees</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define x in degrees</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>x_deg <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">90</span>, <span class="dv">90</span>, <span class="at">length.out =</span> <span class="dv">400</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">cos</span>(x_deg <span class="sc">*</span> pi <span class="sc">/</span> <span class="dv">180</span>)  <span class="co"># Convert degrees to radians</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x_deg, <span class="at">y =</span> y)</span>
@@ -593,7 +706,7 @@ dbl (6): wavelength, melanopic, s_cone, m_cone, l_cone, rhodopic
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Cosine response"</span>, <span class="at">x =</span> <span class="st">"Angle of incidence (degrees)"</span>, <span class="at">y =</span> <span class="st">"Relative sensor response"</span>) <span class="sc">+</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="">
 <figure class="figure">
@@ -1023,9 +1136,9 @@ data.csv</td>
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>If we remove all data below 1000 lx, we create implicit gaps, because the observations are dropped, as shown here (full time series is shown in grey):</p>
 <div class="cell-container"><div class="cell-decorator"><pre>In [5]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> </span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gg_days</span>(<span class="at">col =</span> <span class="st">"grey"</span>) <span class="sc">+</span> </span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> \(x) <span class="fu">filter</span>(x, MEDI <span class="sc">&gt;=</span> <span class="dv">1000</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> \(x) <span class="fu">filter</span>(x, MEDI <span class="sc">&gt;=</span> <span class="dv">1000</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1038,9 +1151,9 @@ data.csv</td>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>If we set all data above 1000 lx to <em>NA</em>, we create explicit gaps, because the observations are <strong>not</strong> dropped, as shown here (full time series is shown in grey):</p>
 <div class="cell-container"><div class="cell-decorator"><pre>In [6]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> </span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gg_days</span>(<span class="at">col =</span> <span class="st">"grey"</span>) <span class="sc">+</span> </span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> \(x) <span class="fu">mutate</span>(x, <span class="at">MEDI =</span> <span class="fu">ifelse</span>(MEDI <span class="sc">&gt;=</span><span class="dv">1000</span>, MEDI, <span class="cn">NA</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> \(x) <span class="fu">mutate</span>(x, <span class="at">MEDI =</span> <span class="fu">ifelse</span>(MEDI <span class="sc">&gt;=</span><span class="dv">1000</span>, MEDI, <span class="cn">NA</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Removed 2632 rows containing missing values or values outside the scale range
 (`geom_line()`).</code></pre>
@@ -1057,9 +1170,9 @@ data.csv</td>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <p>We can simulate irregular data by offsetting measurements on the second day by 5 seconds.</p>
 <div class="cell-container"><div class="cell-decorator"><pre>In [7]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>irregular_data <span class="ot">&lt;-</span> sample.data.environment <span class="sc">|&gt;</span> <span class="fu">add_Date_col</span>(<span class="at">as.wday =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">Datetime =</span> <span class="fu">ifelse</span>(Date <span class="sc">==</span> <span class="st">"Wed"</span>, Datetime <span class="sc">+</span><span class="dv">5</span>, Datetime) <span class="sc">|&gt;</span> <span class="fu">as.POSIXct</span>(<span class="at">tz =</span> <span class="st">"Europe/Berlin"</span>))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>irregular_data <span class="ot">&lt;-</span> sample.data.environment <span class="sc">|&gt;</span> <span class="fu">add_Date_col</span>(<span class="at">as.wday =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">Datetime =</span> <span class="fu">ifelse</span>(Date <span class="sc">==</span> <span class="st">"Wed"</span>, Datetime <span class="sc">+</span><span class="dv">5</span>, Datetime) <span class="sc">|&gt;</span> <span class="fu">as.POSIXct</span>(<span class="at">tz =</span> <span class="st">"Europe/Berlin"</span>))</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>irregular_data <span class="sc">|&gt;</span> </span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gg_gaps</span>(<span class="at">show.irregulars =</span> <span class="cn">TRUE</span>, <span class="at">include.implicit.gaps =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gg_gaps</span>(<span class="at">show.irregulars =</span> <span class="cn">TRUE</span>, <span class="at">include.implicit.gaps =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1078,30 +1191,30 @@ data.csv</td>
 <div class="tab-content" data-group="top_group">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div class="cell-container"><div class="cell-decorator"><pre>In [8]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">filter</span>(MEDI <span class="sc">&gt;=</span> <span class="dv">1000</span>) <span class="sc">|&gt;</span> <span class="fu">gap_table</span>() <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">filter</span>(MEDI <span class="sc">&gt;=</span> <span class="dv">1000</span>) <span class="sc">|&gt;</span> <span class="fu">gap_table</span>() <span class="sc">|&gt;</span> </span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_css</span>(<span class="st">"</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="st">  .gt_table, .gt_table * {</span></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="st">    font-size: clamp(10px, calc(1vw + 8px), 12px);</span></span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="st">  }</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fknotkdwxp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fknotkdwxp table {
+<div id="swplttezjy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#swplttezjy table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fknotkdwxp thead, #fknotkdwxp tbody, #fknotkdwxp tfoot, #fknotkdwxp tr, #fknotkdwxp td, #fknotkdwxp th {
+#swplttezjy thead, #swplttezjy tbody, #swplttezjy tfoot, #swplttezjy tr, #swplttezjy td, #swplttezjy th {
   border-style: none;
 }
 
-#fknotkdwxp p {
+#swplttezjy p {
   margin: 0;
   padding: 0;
 }
 
-#fknotkdwxp .gt_table {
+#swplttezjy .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1127,12 +1240,12 @@ data.csv</td>
   border-left-color: #D3D3D3;
 }
 
-#fknotkdwxp .gt_caption {
+#swplttezjy .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fknotkdwxp .gt_title {
+#swplttezjy .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1144,7 +1257,7 @@ data.csv</td>
   border-bottom-width: 0;
 }
 
-#fknotkdwxp .gt_subtitle {
+#swplttezjy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1156,7 +1269,7 @@ data.csv</td>
   border-top-width: 0;
 }
 
-#fknotkdwxp .gt_heading {
+#swplttezjy .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1168,13 +1281,13 @@ data.csv</td>
   border-right-color: #D3D3D3;
 }
 
-#fknotkdwxp .gt_bottom_border {
+#swplttezjy .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fknotkdwxp .gt_col_headings {
+#swplttezjy .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1189,7 +1302,7 @@ data.csv</td>
   border-right-color: #D3D3D3;
 }
 
-#fknotkdwxp .gt_col_heading {
+#swplttezjy .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1209,7 +1322,7 @@ data.csv</td>
   overflow-x: hidden;
 }
 
-#fknotkdwxp .gt_column_spanner_outer {
+#swplttezjy .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1221,15 +1334,15 @@ data.csv</td>
   padding-right: 4px;
 }
 
-#fknotkdwxp .gt_column_spanner_outer:first-child {
+#swplttezjy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fknotkdwxp .gt_column_spanner_outer:last-child {
+#swplttezjy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fknotkdwxp .gt_column_spanner {
+#swplttezjy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1241,11 +1354,11 @@ data.csv</td>
   width: 100%;
 }
 
-#fknotkdwxp .gt_spanner_row {
+#swplttezjy .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fknotkdwxp .gt_group_heading {
+#swplttezjy .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1271,7 +1384,7 @@ data.csv</td>
   text-align: left;
 }
 
-#fknotkdwxp .gt_empty_group_heading {
+#swplttezjy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1286,15 +1399,15 @@ data.csv</td>
   vertical-align: middle;
 }
 
-#fknotkdwxp .gt_from_md > :first-child {
+#swplttezjy .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fknotkdwxp .gt_from_md > :last-child {
+#swplttezjy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fknotkdwxp .gt_row {
+#swplttezjy .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1313,7 +1426,7 @@ data.csv</td>
   overflow-x: hidden;
 }
 
-#fknotkdwxp .gt_stub {
+#swplttezjy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1326,7 +1439,7 @@ data.csv</td>
   padding-right: 5px;
 }
 
-#fknotkdwxp .gt_stub_row_group {
+#swplttezjy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1340,15 +1453,15 @@ data.csv</td>
   vertical-align: top;
 }
 
-#fknotkdwxp .gt_row_group_first td {
+#swplttezjy .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fknotkdwxp .gt_row_group_first th {
+#swplttezjy .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fknotkdwxp .gt_summary_row {
+#swplttezjy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1358,16 +1471,16 @@ data.csv</td>
   padding-right: 5px;
 }
 
-#fknotkdwxp .gt_first_summary_row {
+#swplttezjy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fknotkdwxp .gt_first_summary_row.thick {
+#swplttezjy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fknotkdwxp .gt_last_summary_row {
+#swplttezjy .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1377,7 +1490,7 @@ data.csv</td>
   border-bottom-color: #D3D3D3;
 }
 
-#fknotkdwxp .gt_grand_summary_row {
+#swplttezjy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1387,7 +1500,7 @@ data.csv</td>
   padding-right: 5px;
 }
 
-#fknotkdwxp .gt_first_grand_summary_row {
+#swplttezjy .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1397,7 +1510,7 @@ data.csv</td>
   border-top-color: #D3D3D3;
 }
 
-#fknotkdwxp .gt_last_grand_summary_row_top {
+#swplttezjy .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1407,11 +1520,11 @@ data.csv</td>
   border-bottom-color: #D3D3D3;
 }
 
-#fknotkdwxp .gt_striped {
+#swplttezjy .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fknotkdwxp .gt_table_body {
+#swplttezjy .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1420,7 +1533,7 @@ data.csv</td>
   border-bottom-color: #D3D3D3;
 }
 
-#fknotkdwxp .gt_footnotes {
+#swplttezjy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1434,7 +1547,7 @@ data.csv</td>
   border-right-color: #D3D3D3;
 }
 
-#fknotkdwxp .gt_footnote {
+#swplttezjy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1443,7 +1556,7 @@ data.csv</td>
   padding-right: 5px;
 }
 
-#fknotkdwxp .gt_sourcenotes {
+#swplttezjy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1457,7 +1570,7 @@ data.csv</td>
   border-right-color: #D3D3D3;
 }
 
-#fknotkdwxp .gt_sourcenote {
+#swplttezjy .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1465,72 +1578,72 @@ data.csv</td>
   padding-right: 5px;
 }
 
-#fknotkdwxp .gt_left {
+#swplttezjy .gt_left {
   text-align: left;
 }
 
-#fknotkdwxp .gt_center {
+#swplttezjy .gt_center {
   text-align: center;
 }
 
-#fknotkdwxp .gt_right {
+#swplttezjy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fknotkdwxp .gt_font_normal {
+#swplttezjy .gt_font_normal {
   font-weight: normal;
 }
 
-#fknotkdwxp .gt_font_bold {
+#swplttezjy .gt_font_bold {
   font-weight: bold;
 }
 
-#fknotkdwxp .gt_font_italic {
+#swplttezjy .gt_font_italic {
   font-style: italic;
 }
 
-#fknotkdwxp .gt_super {
+#swplttezjy .gt_super {
   font-size: 65%;
 }
 
-#fknotkdwxp .gt_footnote_marks {
+#swplttezjy .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fknotkdwxp .gt_asterisk {
+#swplttezjy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fknotkdwxp .gt_indent_1 {
+#swplttezjy .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fknotkdwxp .gt_indent_2 {
+#swplttezjy .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fknotkdwxp .gt_indent_3 {
+#swplttezjy .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fknotkdwxp .gt_indent_4 {
+#swplttezjy .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fknotkdwxp .gt_indent_5 {
+#swplttezjy .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fknotkdwxp .katex-display {
+#swplttezjy .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fknotkdwxp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#swplttezjy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 
@@ -1539,7 +1652,7 @@ data.csv</td>
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 5%">
 <col style="width: 5%">
@@ -1564,10 +1677,10 @@ data.csv</td>
 </colgroup>
 <thead>
 <tr class="gt_heading header">
-<th colspan="20" class="gt_heading gt_title gt_font_normal">Summary of available and missing data</th>
+<td colspan="20" class="gt_heading gt_title gt_font_normal">Summary of available and missing data</td>
 </tr>
 <tr class="gt_heading even">
-<th colspan="20" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Variable: melanopic EDI</th>
+<td colspan="20" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Variable: melanopic EDI</td>
 </tr>
 <tr class="gt_col_headings gt_spanner_row header">
 <th data-quarto-table-cell-role="th" scope="col"></th>
@@ -1626,7 +1739,7 @@ Explicit
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td id="grand_summary_stub_1" class="gt_row gt_left gt_stub gt_grand_summary_row gt_last_grand_summary_row_top" data-quarto-table-cell-role="th" scope="row" style="background-color: #E5E5E5"><strong>Overall</strong></td>
+<th id="grand_summary_stub_1" class="gt_row gt_left gt_stub gt_grand_summary_row gt_last_grand_summary_row_top" data-quarto-table-cell-role="th" scope="row" style="background-color: #E5E5E5"><strong>Overall</strong></th>
 <td class="gt_row gt_center gt_grand_summary_row gt_last_grand_summary_row_top" headers="grand_summary_stub_1 available_data" style="background-color: #E5E5E5">3d 21h 35m</td>
 <td class="gt_row gt_right gt_grand_summary_row gt_last_grand_summary_row_top" headers="grand_summary_stub_1 available_data_pct" style="background-color: #E5E5E5">32.5%<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>3</sup></span></td>
 <td class="gt_row gt_right gt_grand_summary_row gt_last_grand_summary_row_top" headers="grand_summary_stub_1 available_data_n" style="background-color: #E5E5E5">15,038</td>
@@ -1648,10 +1761,10 @@ Explicit
 <td class="gt_row gt_right gt_grand_summary_row gt_last_grand_summary_row_top" headers="grand_summary_stub_1 missing_explicit_n" style="background-color: #E5E5E5">0</td>
 </tr>
 <tr class="gt_group_heading_row even">
-<td colspan="20" id="Environment" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Environment</td>
+<th colspan="20" id="Environment" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Environment</th>
 </tr>
 <tr class="gt_row_group_first odd">
-<td id="stub_1_1" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row"></td>
+<th id="stub_1_1" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row"></th>
 <td class="gt_row gt_center" headers="Environment stub_1_1 available_data">3d 5h 43m</td>
 <td class="gt_row gt_right" headers="Environment stub_1_1 available_data_pct">54.0%</td>
 <td class="gt_row gt_right" headers="Environment stub_1_1 available_data_n">9,326</td>
@@ -1673,10 +1786,10 @@ Explicit
 <td class="gt_row gt_right" headers="Environment stub_1_1 missing_explicit_n">0</td>
 </tr>
 <tr class="gt_group_heading_row even">
-<td colspan="20" id="Participant" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Participant</td>
+<th colspan="20" id="Participant" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Participant</th>
 </tr>
 <tr class="gt_row_group_first odd">
-<td id="stub_1_2" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row"></td>
+<th id="stub_1_2" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row"></th>
 <td class="gt_row gt_center" headers="Participant stub_1_2 available_data">15h 52m</td>
 <td class="gt_row gt_right" headers="Participant stub_1_2 available_data_pct">11.0%</td>
 <td class="gt_row gt_right" headers="Participant stub_1_2 available_data_n">5,712</td>
@@ -1730,25 +1843,25 @@ Note
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <div class="cell-container"><div class="cell-decorator"><pre>In [9]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">MEDI =</span> <span class="fu">ifelse</span>(MEDI <span class="sc">&gt;=</span><span class="dv">1000</span>, MEDI, <span class="cn">NA</span>)) <span class="sc">|&gt;</span> <span class="fu">gap_table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">MEDI =</span> <span class="fu">ifelse</span>(MEDI <span class="sc">&gt;=</span><span class="dv">1000</span>, MEDI, <span class="cn">NA</span>)) <span class="sc">|&gt;</span> <span class="fu">gap_table</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="aizdgwjjtq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#aizdgwjjtq table {
+<div id="dbninoyewr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dbninoyewr table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#aizdgwjjtq thead, #aizdgwjjtq tbody, #aizdgwjjtq tfoot, #aizdgwjjtq tr, #aizdgwjjtq td, #aizdgwjjtq th {
+#dbninoyewr thead, #dbninoyewr tbody, #dbninoyewr tfoot, #dbninoyewr tr, #dbninoyewr td, #dbninoyewr th {
   border-style: none;
 }
 
-#aizdgwjjtq p {
+#dbninoyewr p {
   margin: 0;
   padding: 0;
 }
 
-#aizdgwjjtq .gt_table {
+#dbninoyewr .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1774,12 +1887,12 @@ Note
   border-left-color: #D3D3D3;
 }
 
-#aizdgwjjtq .gt_caption {
+#dbninoyewr .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#aizdgwjjtq .gt_title {
+#dbninoyewr .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1791,7 +1904,7 @@ Note
   border-bottom-width: 0;
 }
 
-#aizdgwjjtq .gt_subtitle {
+#dbninoyewr .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1803,7 +1916,7 @@ Note
   border-top-width: 0;
 }
 
-#aizdgwjjtq .gt_heading {
+#dbninoyewr .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1815,13 +1928,13 @@ Note
   border-right-color: #D3D3D3;
 }
 
-#aizdgwjjtq .gt_bottom_border {
+#dbninoyewr .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#aizdgwjjtq .gt_col_headings {
+#dbninoyewr .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1836,7 +1949,7 @@ Note
   border-right-color: #D3D3D3;
 }
 
-#aizdgwjjtq .gt_col_heading {
+#dbninoyewr .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1856,7 +1969,7 @@ Note
   overflow-x: hidden;
 }
 
-#aizdgwjjtq .gt_column_spanner_outer {
+#dbninoyewr .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1868,15 +1981,15 @@ Note
   padding-right: 4px;
 }
 
-#aizdgwjjtq .gt_column_spanner_outer:first-child {
+#dbninoyewr .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#aizdgwjjtq .gt_column_spanner_outer:last-child {
+#dbninoyewr .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#aizdgwjjtq .gt_column_spanner {
+#dbninoyewr .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1888,11 +2001,11 @@ Note
   width: 100%;
 }
 
-#aizdgwjjtq .gt_spanner_row {
+#dbninoyewr .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#aizdgwjjtq .gt_group_heading {
+#dbninoyewr .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1918,7 +2031,7 @@ Note
   text-align: left;
 }
 
-#aizdgwjjtq .gt_empty_group_heading {
+#dbninoyewr .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1933,15 +2046,15 @@ Note
   vertical-align: middle;
 }
 
-#aizdgwjjtq .gt_from_md > :first-child {
+#dbninoyewr .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#aizdgwjjtq .gt_from_md > :last-child {
+#dbninoyewr .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#aizdgwjjtq .gt_row {
+#dbninoyewr .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1960,7 +2073,7 @@ Note
   overflow-x: hidden;
 }
 
-#aizdgwjjtq .gt_stub {
+#dbninoyewr .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1973,7 +2086,7 @@ Note
   padding-right: 5px;
 }
 
-#aizdgwjjtq .gt_stub_row_group {
+#dbninoyewr .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1987,15 +2100,15 @@ Note
   vertical-align: top;
 }
 
-#aizdgwjjtq .gt_row_group_first td {
+#dbninoyewr .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#aizdgwjjtq .gt_row_group_first th {
+#dbninoyewr .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#aizdgwjjtq .gt_summary_row {
+#dbninoyewr .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2005,16 +2118,16 @@ Note
   padding-right: 5px;
 }
 
-#aizdgwjjtq .gt_first_summary_row {
+#dbninoyewr .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#aizdgwjjtq .gt_first_summary_row.thick {
+#dbninoyewr .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#aizdgwjjtq .gt_last_summary_row {
+#dbninoyewr .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2024,7 +2137,7 @@ Note
   border-bottom-color: #D3D3D3;
 }
 
-#aizdgwjjtq .gt_grand_summary_row {
+#dbninoyewr .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2034,7 +2147,7 @@ Note
   padding-right: 5px;
 }
 
-#aizdgwjjtq .gt_first_grand_summary_row {
+#dbninoyewr .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2044,7 +2157,7 @@ Note
   border-top-color: #D3D3D3;
 }
 
-#aizdgwjjtq .gt_last_grand_summary_row_top {
+#dbninoyewr .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2054,11 +2167,11 @@ Note
   border-bottom-color: #D3D3D3;
 }
 
-#aizdgwjjtq .gt_striped {
+#dbninoyewr .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#aizdgwjjtq .gt_table_body {
+#dbninoyewr .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2067,7 +2180,7 @@ Note
   border-bottom-color: #D3D3D3;
 }
 
-#aizdgwjjtq .gt_footnotes {
+#dbninoyewr .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2081,7 +2194,7 @@ Note
   border-right-color: #D3D3D3;
 }
 
-#aizdgwjjtq .gt_footnote {
+#dbninoyewr .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2090,7 +2203,7 @@ Note
   padding-right: 5px;
 }
 
-#aizdgwjjtq .gt_sourcenotes {
+#dbninoyewr .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2104,7 +2217,7 @@ Note
   border-right-color: #D3D3D3;
 }
 
-#aizdgwjjtq .gt_sourcenote {
+#dbninoyewr .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2112,77 +2225,77 @@ Note
   padding-right: 5px;
 }
 
-#aizdgwjjtq .gt_left {
+#dbninoyewr .gt_left {
   text-align: left;
 }
 
-#aizdgwjjtq .gt_center {
+#dbninoyewr .gt_center {
   text-align: center;
 }
 
-#aizdgwjjtq .gt_right {
+#dbninoyewr .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#aizdgwjjtq .gt_font_normal {
+#dbninoyewr .gt_font_normal {
   font-weight: normal;
 }
 
-#aizdgwjjtq .gt_font_bold {
+#dbninoyewr .gt_font_bold {
   font-weight: bold;
 }
 
-#aizdgwjjtq .gt_font_italic {
+#dbninoyewr .gt_font_italic {
   font-style: italic;
 }
 
-#aizdgwjjtq .gt_super {
+#dbninoyewr .gt_super {
   font-size: 65%;
 }
 
-#aizdgwjjtq .gt_footnote_marks {
+#dbninoyewr .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#aizdgwjjtq .gt_asterisk {
+#dbninoyewr .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#aizdgwjjtq .gt_indent_1 {
+#dbninoyewr .gt_indent_1 {
   text-indent: 5px;
 }
 
-#aizdgwjjtq .gt_indent_2 {
+#dbninoyewr .gt_indent_2 {
   text-indent: 10px;
 }
 
-#aizdgwjjtq .gt_indent_3 {
+#dbninoyewr .gt_indent_3 {
   text-indent: 15px;
 }
 
-#aizdgwjjtq .gt_indent_4 {
+#dbninoyewr .gt_indent_4 {
   text-indent: 20px;
 }
 
-#aizdgwjjtq .gt_indent_5 {
+#dbninoyewr .gt_indent_5 {
   text-indent: 25px;
 }
 
-#aizdgwjjtq .katex-display {
+#dbninoyewr .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#aizdgwjjtq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#dbninoyewr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 5%">
 <col style="width: 5%">
@@ -2207,10 +2320,10 @@ Note
 </colgroup>
 <thead>
 <tr class="gt_heading header">
-<th colspan="20" class="gt_heading gt_title gt_font_normal">Summary of available and missing data</th>
+<td colspan="20" class="gt_heading gt_title gt_font_normal">Summary of available and missing data</td>
 </tr>
 <tr class="gt_heading even">
-<th colspan="20" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Variable: melanopic EDI</th>
+<td colspan="20" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Variable: melanopic EDI</td>
 </tr>
 <tr class="gt_col_headings gt_spanner_row header">
 <th data-quarto-table-cell-role="th" scope="col"></th>
@@ -2269,7 +2382,7 @@ Explicit
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td id="grand_summary_stub_1" class="gt_row gt_left gt_stub gt_grand_summary_row gt_last_grand_summary_row_top" data-quarto-table-cell-role="th" scope="row" style="background-color: #E5E5E5"><strong>Overall</strong></td>
+<th id="grand_summary_stub_1" class="gt_row gt_left gt_stub gt_grand_summary_row gt_last_grand_summary_row_top" data-quarto-table-cell-role="th" scope="row" style="background-color: #E5E5E5"><strong>Overall</strong></th>
 <td class="gt_row gt_center gt_grand_summary_row gt_last_grand_summary_row_top" headers="grand_summary_stub_1 available_data" style="background-color: #E5E5E5">3d 21h 35m</td>
 <td class="gt_row gt_right gt_grand_summary_row gt_last_grand_summary_row_top" headers="grand_summary_stub_1 available_data_pct" style="background-color: #E5E5E5">32.5%<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>3</sup></span></td>
 <td class="gt_row gt_right gt_grand_summary_row gt_last_grand_summary_row_top" headers="grand_summary_stub_1 available_data_n" style="background-color: #E5E5E5">15,038</td>
@@ -2291,10 +2404,10 @@ Explicit
 <td class="gt_row gt_right gt_grand_summary_row gt_last_grand_summary_row_top" headers="grand_summary_stub_1 missing_explicit_n" style="background-color: #E5E5E5">54,082</td>
 </tr>
 <tr class="gt_group_heading_row even">
-<td colspan="20" id="Environment" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Environment</td>
+<th colspan="20" id="Environment" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Environment</th>
 </tr>
 <tr class="gt_row_group_first odd">
-<td id="stub_1_1" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row"></td>
+<th id="stub_1_1" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row"></th>
 <td class="gt_row gt_center" headers="Environment stub_1_1 available_data">3d 5h 43m</td>
 <td class="gt_row gt_right" headers="Environment stub_1_1 available_data_pct">54.0%</td>
 <td class="gt_row gt_right" headers="Environment stub_1_1 available_data_n">9,326</td>
@@ -2316,10 +2429,10 @@ Explicit
 <td class="gt_row gt_right" headers="Environment stub_1_1 missing_explicit_n">7,954</td>
 </tr>
 <tr class="gt_group_heading_row even">
-<td colspan="20" id="Participant" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Participant</td>
+<th colspan="20" id="Participant" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Participant</th>
 </tr>
 <tr class="gt_row_group_first odd">
-<td id="stub_1_2" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row"></td>
+<th id="stub_1_2" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row"></th>
 <td class="gt_row gt_center" headers="Participant stub_1_2 available_data">15h 52m</td>
 <td class="gt_row gt_right" headers="Participant stub_1_2 available_data_pct">11.0%</td>
 <td class="gt_row gt_right" headers="Participant stub_1_2 available_data_n">5,712</td>
@@ -2360,7 +2473,7 @@ Explicit
 </div>
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
 <div class="cell-container"><div class="cell-decorator"><pre>In [10]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>irregular_data <span class="sc">|&gt;</span> <span class="fu">gap_table</span>(<span class="at">include.implicit.gaps =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>irregular_data <span class="sc">|&gt;</span> <span class="fu">gap_table</span>(<span class="at">include.implicit.gaps =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: There are implicit gaps in the dataset that will not be part of the
 extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
@@ -2369,23 +2482,23 @@ extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
 <pre><code>No gaps found</code></pre>
 </div>
 <div class="cell-output-display">
-<div id="ufjlggamfq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ufjlggamfq table {
+<div id="sdtecndlfn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#sdtecndlfn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ufjlggamfq thead, #ufjlggamfq tbody, #ufjlggamfq tfoot, #ufjlggamfq tr, #ufjlggamfq td, #ufjlggamfq th {
+#sdtecndlfn thead, #sdtecndlfn tbody, #sdtecndlfn tfoot, #sdtecndlfn tr, #sdtecndlfn td, #sdtecndlfn th {
   border-style: none;
 }
 
-#ufjlggamfq p {
+#sdtecndlfn p {
   margin: 0;
   padding: 0;
 }
 
-#ufjlggamfq .gt_table {
+#sdtecndlfn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2411,12 +2524,12 @@ extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#ufjlggamfq .gt_caption {
+#sdtecndlfn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ufjlggamfq .gt_title {
+#sdtecndlfn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2428,7 +2541,7 @@ extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
   border-bottom-width: 0;
 }
 
-#ufjlggamfq .gt_subtitle {
+#sdtecndlfn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2440,7 +2553,7 @@ extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
   border-top-width: 0;
 }
 
-#ufjlggamfq .gt_heading {
+#sdtecndlfn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2452,13 +2565,13 @@ extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ufjlggamfq .gt_bottom_border {
+#sdtecndlfn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ufjlggamfq .gt_col_headings {
+#sdtecndlfn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2473,7 +2586,7 @@ extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ufjlggamfq .gt_col_heading {
+#sdtecndlfn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2493,7 +2606,7 @@ extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
   overflow-x: hidden;
 }
 
-#ufjlggamfq .gt_column_spanner_outer {
+#sdtecndlfn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2505,15 +2618,15 @@ extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
   padding-right: 4px;
 }
 
-#ufjlggamfq .gt_column_spanner_outer:first-child {
+#sdtecndlfn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ufjlggamfq .gt_column_spanner_outer:last-child {
+#sdtecndlfn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ufjlggamfq .gt_column_spanner {
+#sdtecndlfn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2525,11 +2638,11 @@ extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
   width: 100%;
 }
 
-#ufjlggamfq .gt_spanner_row {
+#sdtecndlfn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ufjlggamfq .gt_group_heading {
+#sdtecndlfn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2555,7 +2668,7 @@ extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
   text-align: left;
 }
 
-#ufjlggamfq .gt_empty_group_heading {
+#sdtecndlfn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2570,15 +2683,15 @@ extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
   vertical-align: middle;
 }
 
-#ufjlggamfq .gt_from_md > :first-child {
+#sdtecndlfn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ufjlggamfq .gt_from_md > :last-child {
+#sdtecndlfn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ufjlggamfq .gt_row {
+#sdtecndlfn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2597,7 +2710,7 @@ extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
   overflow-x: hidden;
 }
 
-#ufjlggamfq .gt_stub {
+#sdtecndlfn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2610,7 +2723,7 @@ extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
   padding-right: 5px;
 }
 
-#ufjlggamfq .gt_stub_row_group {
+#sdtecndlfn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2624,15 +2737,15 @@ extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
   vertical-align: top;
 }
 
-#ufjlggamfq .gt_row_group_first td {
+#sdtecndlfn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ufjlggamfq .gt_row_group_first th {
+#sdtecndlfn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ufjlggamfq .gt_summary_row {
+#sdtecndlfn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2642,16 +2755,16 @@ extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
   padding-right: 5px;
 }
 
-#ufjlggamfq .gt_first_summary_row {
+#sdtecndlfn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ufjlggamfq .gt_first_summary_row.thick {
+#sdtecndlfn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ufjlggamfq .gt_last_summary_row {
+#sdtecndlfn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2661,7 +2774,7 @@ extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#ufjlggamfq .gt_grand_summary_row {
+#sdtecndlfn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2671,7 +2784,7 @@ extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
   padding-right: 5px;
 }
 
-#ufjlggamfq .gt_first_grand_summary_row {
+#sdtecndlfn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2681,7 +2794,7 @@ extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#ufjlggamfq .gt_last_grand_summary_row_top {
+#sdtecndlfn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2691,11 +2804,11 @@ extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#ufjlggamfq .gt_striped {
+#sdtecndlfn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ufjlggamfq .gt_table_body {
+#sdtecndlfn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2704,7 +2817,7 @@ extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#ufjlggamfq .gt_footnotes {
+#sdtecndlfn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2718,7 +2831,7 @@ extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ufjlggamfq .gt_footnote {
+#sdtecndlfn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2727,7 +2840,7 @@ extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
   padding-right: 5px;
 }
 
-#ufjlggamfq .gt_sourcenotes {
+#sdtecndlfn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2741,7 +2854,7 @@ extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ufjlggamfq .gt_sourcenote {
+#sdtecndlfn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2749,77 +2862,77 @@ extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
   padding-right: 5px;
 }
 
-#ufjlggamfq .gt_left {
+#sdtecndlfn .gt_left {
   text-align: left;
 }
 
-#ufjlggamfq .gt_center {
+#sdtecndlfn .gt_center {
   text-align: center;
 }
 
-#ufjlggamfq .gt_right {
+#sdtecndlfn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ufjlggamfq .gt_font_normal {
+#sdtecndlfn .gt_font_normal {
   font-weight: normal;
 }
 
-#ufjlggamfq .gt_font_bold {
+#sdtecndlfn .gt_font_bold {
   font-weight: bold;
 }
 
-#ufjlggamfq .gt_font_italic {
+#sdtecndlfn .gt_font_italic {
   font-style: italic;
 }
 
-#ufjlggamfq .gt_super {
+#sdtecndlfn .gt_super {
   font-size: 65%;
 }
 
-#ufjlggamfq .gt_footnote_marks {
+#sdtecndlfn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ufjlggamfq .gt_asterisk {
+#sdtecndlfn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ufjlggamfq .gt_indent_1 {
+#sdtecndlfn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ufjlggamfq .gt_indent_2 {
+#sdtecndlfn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ufjlggamfq .gt_indent_3 {
+#sdtecndlfn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ufjlggamfq .gt_indent_4 {
+#sdtecndlfn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ufjlggamfq .gt_indent_5 {
+#sdtecndlfn .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ufjlggamfq .katex-display {
+#sdtecndlfn .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ufjlggamfq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#sdtecndlfn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 7%">
 <col style="width: 7%">
@@ -2838,10 +2951,10 @@ extracted summary, due to `include.implicit.gaps = FALSE`.</code></pre>
 </colgroup>
 <thead>
 <tr class="gt_heading header">
-<th colspan="14" class="gt_heading gt_title gt_font_normal">Summary of available and missing data</th>
+<td colspan="14" class="gt_heading gt_title gt_font_normal">Summary of available and missing data</td>
 </tr>
 <tr class="gt_heading even">
-<th colspan="14" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Variable: melanopic EDI</th>
+<td colspan="14" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Variable: melanopic EDI</td>
 </tr>
 <tr class="gt_col_headings gt_spanner_row header">
 <th data-quarto-table-cell-role="th" scope="col"></th>
@@ -2888,7 +3001,7 @@ Gaps
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td id="grand_summary_stub_1" class="gt_row gt_left gt_stub gt_grand_summary_row gt_last_grand_summary_row_top" data-quarto-table-cell-role="th" scope="row" style="background-color: #E5E5E5"><strong>Overall</strong></td>
+<th id="grand_summary_stub_1" class="gt_row gt_left gt_stub gt_grand_summary_row gt_last_grand_summary_row_top" data-quarto-table-cell-role="th" scope="row" style="background-color: #E5E5E5"><strong>Overall</strong></th>
 <td class="gt_row gt_center gt_grand_summary_row gt_last_grand_summary_row_top" headers="grand_summary_stub_1 available_data" style="background-color: #E5E5E5">1w 5d</td>
 <td class="gt_row gt_right gt_grand_summary_row gt_last_grand_summary_row_top" headers="grand_summary_stub_1 available_data_pct" style="background-color: #E5E5E5">100.0%<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>3</sup></span></td>
 <td class="gt_row gt_right gt_grand_summary_row gt_last_grand_summary_row_top" headers="grand_summary_stub_1 available_data_n" style="background-color: #E5E5E5">69,120</td>
@@ -2904,10 +3017,10 @@ Gaps
 <td class="gt_row gt_right gt_grand_summary_row gt_last_grand_summary_row_top" headers="grand_summary_stub_1 missing_data_n" style="background-color: #E5E5E5">0</td>
 </tr>
 <tr class="gt_group_heading_row even">
-<td colspan="14" id="Environment" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Environment</td>
+<th colspan="14" id="Environment" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Environment</th>
 </tr>
 <tr class="gt_row_group_first odd">
-<td id="stub_1_1" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row"></td>
+<th id="stub_1_1" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row"></th>
 <td class="gt_row gt_center" headers="Environment stub_1_1 available_data">6d</td>
 <td class="gt_row gt_right" headers="Environment stub_1_1 available_data_pct">100.0%</td>
 <td class="gt_row gt_right" headers="Environment stub_1_1 available_data_n">17,280</td>
@@ -2923,10 +3036,10 @@ Gaps
 <td class="gt_row gt_right" headers="Environment stub_1_1 missing_data_n">0</td>
 </tr>
 <tr class="gt_group_heading_row even">
-<td colspan="14" id="Participant" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Participant</td>
+<th colspan="14" id="Participant" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Participant</th>
 </tr>
 <tr class="gt_row_group_first odd">
-<td id="stub_1_2" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row"></td>
+<th id="stub_1_2" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row"></th>
 <td class="gt_row gt_center" headers="Participant stub_1_2 available_data">6d</td>
 <td class="gt_row gt_right" headers="Participant stub_1_2 available_data_pct">100.0%</td>
 <td class="gt_row gt_right" headers="Participant stub_1_2 available_data_n">51,840</td>
@@ -2996,8 +3109,8 @@ Note
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <div class="cell-container"><div class="cell-decorator"><pre>In [11]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">aggregate_Date</span>() <span class="sc">|&gt;</span> <span class="fu">gg_doubleplot</span>() <span class="sc">+</span> </span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">aggregate_Date</span>() <span class="sc">|&gt;</span> <span class="fu">gg_doubleplot</span>() <span class="sc">+</span> </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="">
 <figure class="figure">
@@ -3009,8 +3122,8 @@ Note
 </div>
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
 <div class="cell-container"><div class="cell-decorator"><pre>In [12]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">aggregate_Date</span>(<span class="at">unit =</span> <span class="st">"30 secs"</span>) <span class="sc">|&gt;</span> <span class="fu">gg_doubleplot</span>() <span class="sc">+</span> </span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">aggregate_Date</span>(<span class="at">unit =</span> <span class="st">"30 secs"</span>) <span class="sc">|&gt;</span> <span class="fu">gg_doubleplot</span>() <span class="sc">+</span> </span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="">
 <figure class="figure">
@@ -3022,8 +3135,8 @@ Note
 </div>
 <div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
 <div class="cell-container"><div class="cell-decorator"><pre>In [13]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">aggregate_Date</span>(<span class="at">unit =</span> <span class="st">"1 min"</span>) <span class="sc">|&gt;</span> <span class="fu">gg_doubleplot</span>() <span class="sc">+</span> </span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">aggregate_Date</span>(<span class="at">unit =</span> <span class="st">"1 min"</span>) <span class="sc">|&gt;</span> <span class="fu">gg_doubleplot</span>() <span class="sc">+</span> </span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="">
 <figure class="figure">
@@ -3035,8 +3148,8 @@ Note
 </div>
 <div id="tabset-3-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-4-tab">
 <div class="cell-container"><div class="cell-decorator"><pre>In [14]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">aggregate_Date</span>(<span class="at">unit =</span> <span class="st">"5 min"</span>) <span class="sc">|&gt;</span> <span class="fu">gg_doubleplot</span>() <span class="sc">+</span> </span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">aggregate_Date</span>(<span class="at">unit =</span> <span class="st">"5 min"</span>) <span class="sc">|&gt;</span> <span class="fu">gg_doubleplot</span>() <span class="sc">+</span> </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="">
 <figure class="figure">
@@ -3048,8 +3161,8 @@ Note
 </div>
 <div id="tabset-3-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-5-tab">
 <div class="cell-container"><div class="cell-decorator"><pre>In [15]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">aggregate_Date</span>(<span class="at">unit =</span> <span class="st">"15 min"</span>) <span class="sc">|&gt;</span> <span class="fu">gg_doubleplot</span>() <span class="sc">+</span> </span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">aggregate_Date</span>(<span class="at">unit =</span> <span class="st">"15 min"</span>) <span class="sc">|&gt;</span> <span class="fu">gg_doubleplot</span>() <span class="sc">+</span> </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="">
 <figure class="figure">
@@ -3061,8 +3174,8 @@ Note
 </div>
 <div id="tabset-3-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-6-tab">
 <div class="cell-container"><div class="cell-decorator"><pre>In [16]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">aggregate_Date</span>(<span class="at">unit =</span> <span class="st">"30 min"</span>) <span class="sc">|&gt;</span> <span class="fu">gg_doubleplot</span>() <span class="sc">+</span> </span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">aggregate_Date</span>(<span class="at">unit =</span> <span class="st">"30 min"</span>) <span class="sc">|&gt;</span> <span class="fu">gg_doubleplot</span>() <span class="sc">+</span> </span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="">
 <figure class="figure">
@@ -3074,8 +3187,8 @@ Note
 </div>
 <div id="tabset-3-7" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-7-tab">
 <div class="cell-container"><div class="cell-decorator"><pre>In [17]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">aggregate_Date</span>(<span class="at">unit =</span> <span class="st">"1 hour"</span>) <span class="sc">|&gt;</span> <span class="fu">gg_doubleplot</span>() <span class="sc">+</span> </span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">aggregate_Date</span>(<span class="at">unit =</span> <span class="st">"1 hour"</span>) <span class="sc">|&gt;</span> <span class="fu">gg_doubleplot</span>() <span class="sc">+</span> </span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="">
 <figure class="figure">
@@ -3087,8 +3200,8 @@ Note
 </div>
 <div id="tabset-3-8" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-8-tab">
 <div class="cell-container"><div class="cell-decorator"><pre>In [18]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">aggregate_Date</span>(<span class="at">unit =</span> <span class="st">"2 hour"</span>) <span class="sc">|&gt;</span> <span class="fu">gg_doubleplot</span>() <span class="sc">+</span> </span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">aggregate_Date</span>(<span class="at">unit =</span> <span class="st">"2 hour"</span>) <span class="sc">|&gt;</span> <span class="fu">gg_doubleplot</span>() <span class="sc">+</span> </span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="">
 <figure class="figure">
@@ -3100,8 +3213,8 @@ Note
 </div>
 <div id="tabset-3-9" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-9-tab">
 <div class="cell-container"><div class="cell-decorator"><pre>In [19]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">aggregate_Date</span>(<span class="at">unit =</span> <span class="st">"6 hour"</span>) <span class="sc">|&gt;</span> <span class="fu">gg_doubleplot</span>() <span class="sc">+</span> </span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">aggregate_Date</span>(<span class="at">unit =</span> <span class="st">"6 hour"</span>) <span class="sc">|&gt;</span> <span class="fu">gg_doubleplot</span>() <span class="sc">+</span> </span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="">
 <figure class="figure">
@@ -3123,7 +3236,7 @@ Note
 <div class="tab-content">
 <div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <div class="cell-container"><div class="cell-decorator"><pre>In [20]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">gg_heatmap</span>(<span class="at">doubleplot =</span> <span class="st">"next"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">gg_heatmap</span>(<span class="at">doubleplot =</span> <span class="st">"next"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="">
 <figure class="figure">
@@ -3136,7 +3249,7 @@ Note
 </div>
 <div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
 <div class="cell-container"><div class="cell-decorator"><pre>In [21]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">gg_day</span>(<span class="at">geom =</span> <span class="st">"line"</span>, <span class="at">aes_col =</span> Id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">gg_day</span>(<span class="at">geom =</span> <span class="st">"line"</span>, <span class="at">aes_col =</span> Id)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="">
 <figure class="figure">
@@ -3149,7 +3262,7 @@ Note
 </div>
 <div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
 <div class="cell-container"><div class="cell-decorator"><pre>In [22]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">gg_days</span>(<span class="at">aes_col =</span> Id) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">gg_days</span>(<span class="at">aes_col =</span> Id) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="">
 <figure class="figure">
@@ -3162,7 +3275,7 @@ Note
 </div>
 <div id="tabset-4-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-4-tab">
 <div class="cell-container"><div class="cell-decorator"><pre>In [23]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">aggregate_Date</span>() <span class="sc">|&gt;</span> <span class="fu">gg_doubleplot</span>(<span class="at">aes_fill =</span> Id) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> <span class="fu">aggregate_Date</span>() <span class="sc">|&gt;</span> <span class="fu">gg_doubleplot</span>(<span class="at">aes_fill =</span> Id) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="">
 <figure class="figure">
@@ -3175,7 +3288,7 @@ Note
 </div>
 <div id="tabset-4-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-5-tab">
 <div class="cell-container"><div class="cell-decorator"><pre>In [24]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> </span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aggregate_Date</span>(</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">unit =</span> <span class="st">"30 min"</span>,</span>
 <span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">numeric.handler =</span> median,</span>
@@ -3193,7 +3306,7 @@ Note
 <span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span> MEDI, <span class="at">group =</span> Id)) <span class="sc">+</span></span>
 <span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Id) <span class="sc">+</span></span>
 <span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>, <span class="at">color =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.spacing =</span> <span class="fu">unit</span>(<span class="dv">3</span>, <span class="st">"lines"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.spacing =</span> <span class="fu">unit</span>(<span class="dv">3</span>, <span class="st">"lines"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="">
 <figure class="figure">
@@ -3207,10 +3320,10 @@ Note
 </div>
 <div id="tabset-4-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-6-tab">
 <div class="cell-container"><div class="cell-decorator"><pre>In [25]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cut_Datetime</span>(<span class="at">unit =</span> <span class="st">"1 hour"</span>, <span class="at">type =</span> <span class="st">"floor"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_Time_col</span>(Datetime.rounded, <span class="at">Time.colname =</span> Time.rounded) <span class="sc">|&gt;</span></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gg_day</span>(<span class="at">geom =</span> <span class="st">"boxplot"</span>, <span class="at">aes_fill =</span> Id, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">aes_col =</span> Id, <span class="at">group =</span> <span class="fu">interaction</span>(Id, Time.rounded), <span class="at">facetting =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gg_day</span>(<span class="at">geom =</span> <span class="st">"boxplot"</span>, <span class="at">aes_fill =</span> Id, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">aes_col =</span> Id, <span class="at">group =</span> <span class="fu">interaction</span>(Id, Time.rounded), <span class="at">facetting =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="">
 <figure class="figure">
@@ -3223,7 +3336,7 @@ Note
 </div>
 <div id="tabset-4-7" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-7-tab">
 <div class="cell-container"><div class="cell-decorator"><pre>In [26]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>MEDI, <span class="at">fill =</span> Id)) <span class="sc">+</span></span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">30</span>, <span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">after_stat</span>(ncount))) <span class="sc">+</span></span>
 <span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  ggsci<span class="sc">::</span><span class="fu">scale_fill_jco</span>() <span class="sc">+</span></span>
@@ -3232,7 +3345,7 @@ Note
 <span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> \(x) <span class="fu">label_parsed</span>(<span class="fu">ifelse</span>(x <span class="sc">==</span> <span class="dv">0</span>, <span class="dv">0</span>, <span class="fu">paste0</span>(<span class="st">"10^"</span>,<span class="fu">log10</span>(x))))) <span class="sc">+</span></span>
 <span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Id) <span class="sc">+</span></span>
 <span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Scaled count"</span>)<span class="sc">+</span></span>
-<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="">
 <figure class="figure">
@@ -3245,7 +3358,7 @@ Note
 </div>
 <div id="tabset-4-8" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-8-tab">
 <div class="cell-container"><div class="cell-decorator"><pre>In [27]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> </span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_Time_col</span>() <span class="sc">|&gt;</span> </span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">Brown_cut</span>(<span class="at">vector_labels =</span> <span class="fu">c</span>(<span class="st">"&lt;1lx"</span>, <span class="st">"1 - 10lx"</span>, <span class="st">"10 - 250lx"</span>, <span class="st">"&gt; 250lx"</span>)) <span class="sc">|&gt;</span> </span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span> Time, <span class="fu">after_stat</span>(count), <span class="at">fill =</span> <span class="fu">fct_rev</span>(state))) <span class="sc">+</span></span>
@@ -3259,7 +3372,7 @@ Note
 <span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_time</span>(<span class="at">format =</span> <span class="st">"%H:%M"</span>),</span>
 <span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>                          <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>),</span>
 <span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>                          <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">24</span><span class="sc">*</span><span class="dv">3600</span>))<span class="sc">+</span></span>
-<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.spacing =</span> <span class="fu">unit</span>(<span class="fl">2.5</span>, <span class="st">"lines"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.spacing =</span> <span class="fu">unit</span>(<span class="fl">2.5</span>, <span class="st">"lines"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="">
 <figure class="figure">
@@ -3286,13 +3399,13 @@ Note
 <p>Connecting time series data with context-specific data can provide valuable insights or be a necessary step towards metric calculation.</p>
 <p>One example to highlight are location-specific details, such as photoperiod. Photoperiod (Dusk, dawn, duration) is purely based on coordinates and datetimes and has high relevance for the availability of daylight and behavioral outcomes. As such it is a low-hanging fruit that should be part of any light-related field study.</p>
 <div class="cell-container"><div class="cell-decorator"><pre>In [28]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> </span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aggregate_Datetime</span>(<span class="st">"15 mins"</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_partial_data</span>(<span class="at">by.date =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gg_days</span>(<span class="at">geom =</span> <span class="st">"ribbon"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">aes_fill =</span> <span class="st">"ID"</span>, <span class="at">aes_col =</span> <span class="st">"ID"</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gg_photoperiod</span>(<span class="fu">c</span>(<span class="dv">47</span>, <span class="dv">9</span>)) <span class="sc">+</span></span>
 <span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>, <span class="at">color =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>, <span class="at">color =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>This dataset has irregular or singular data. Singular data will automatically be removed. If you are uncertain about irregular data, you can check them with `gap_finder`, `gap_table`, and `gg_gaps`.</code></pre>
 </div>
@@ -3303,31 +3416,31 @@ Note
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> </span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_Date_col</span>(<span class="at">group.by =</span> <span class="cn">TRUE</span>, <span class="at">as.wday =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="fu">duration_above_threshold</span>(MEDI, Datetime, <span class="at">threshold =</span> <span class="dv">10</span>, <span class="at">as.df =</span> <span class="cn">TRUE</span>), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Id) <span class="sc">|&gt;</span> </span>
 <span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize_numeric</span>() <span class="sc">|&gt;</span> </span>
 <span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> <span class="fu">tab_header</span>(<span class="fu">md</span>(<span class="st">"Time above 10 lx mel EDI **without** taking photoperiod into account"</span>))<span class="sc">|&gt;</span> </span>
-<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">table.width =</span> <span class="fu">px</span>(<span class="dv">600</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">table.width =</span> <span class="fu">px</span>(<span class="dv">600</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="kjnojoluyl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#kjnojoluyl table {
+<div id="mxzjxvarvs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mxzjxvarvs table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#kjnojoluyl thead, #kjnojoluyl tbody, #kjnojoluyl tfoot, #kjnojoluyl tr, #kjnojoluyl td, #kjnojoluyl th {
+#mxzjxvarvs thead, #mxzjxvarvs tbody, #mxzjxvarvs tfoot, #mxzjxvarvs tr, #mxzjxvarvs td, #mxzjxvarvs th {
   border-style: none;
 }
 
-#kjnojoluyl p {
+#mxzjxvarvs p {
   margin: 0;
   padding: 0;
 }
 
-#kjnojoluyl .gt_table {
+#mxzjxvarvs .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3353,12 +3466,12 @@ Note
   border-left-color: #D3D3D3;
 }
 
-#kjnojoluyl .gt_caption {
+#mxzjxvarvs .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#kjnojoluyl .gt_title {
+#mxzjxvarvs .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3370,7 +3483,7 @@ Note
   border-bottom-width: 0;
 }
 
-#kjnojoluyl .gt_subtitle {
+#mxzjxvarvs .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3382,7 +3495,7 @@ Note
   border-top-width: 0;
 }
 
-#kjnojoluyl .gt_heading {
+#mxzjxvarvs .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3394,13 +3507,13 @@ Note
   border-right-color: #D3D3D3;
 }
 
-#kjnojoluyl .gt_bottom_border {
+#mxzjxvarvs .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#kjnojoluyl .gt_col_headings {
+#mxzjxvarvs .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3415,7 +3528,7 @@ Note
   border-right-color: #D3D3D3;
 }
 
-#kjnojoluyl .gt_col_heading {
+#mxzjxvarvs .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3435,7 +3548,7 @@ Note
   overflow-x: hidden;
 }
 
-#kjnojoluyl .gt_column_spanner_outer {
+#mxzjxvarvs .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3447,15 +3560,15 @@ Note
   padding-right: 4px;
 }
 
-#kjnojoluyl .gt_column_spanner_outer:first-child {
+#mxzjxvarvs .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#kjnojoluyl .gt_column_spanner_outer:last-child {
+#mxzjxvarvs .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#kjnojoluyl .gt_column_spanner {
+#mxzjxvarvs .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3467,11 +3580,11 @@ Note
   width: 100%;
 }
 
-#kjnojoluyl .gt_spanner_row {
+#mxzjxvarvs .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#kjnojoluyl .gt_group_heading {
+#mxzjxvarvs .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3497,7 +3610,7 @@ Note
   text-align: left;
 }
 
-#kjnojoluyl .gt_empty_group_heading {
+#mxzjxvarvs .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3512,15 +3625,15 @@ Note
   vertical-align: middle;
 }
 
-#kjnojoluyl .gt_from_md > :first-child {
+#mxzjxvarvs .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#kjnojoluyl .gt_from_md > :last-child {
+#mxzjxvarvs .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#kjnojoluyl .gt_row {
+#mxzjxvarvs .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3539,7 +3652,7 @@ Note
   overflow-x: hidden;
 }
 
-#kjnojoluyl .gt_stub {
+#mxzjxvarvs .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3552,7 +3665,7 @@ Note
   padding-right: 5px;
 }
 
-#kjnojoluyl .gt_stub_row_group {
+#mxzjxvarvs .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3566,15 +3679,15 @@ Note
   vertical-align: top;
 }
 
-#kjnojoluyl .gt_row_group_first td {
+#mxzjxvarvs .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#kjnojoluyl .gt_row_group_first th {
+#mxzjxvarvs .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#kjnojoluyl .gt_summary_row {
+#mxzjxvarvs .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3584,16 +3697,16 @@ Note
   padding-right: 5px;
 }
 
-#kjnojoluyl .gt_first_summary_row {
+#mxzjxvarvs .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#kjnojoluyl .gt_first_summary_row.thick {
+#mxzjxvarvs .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#kjnojoluyl .gt_last_summary_row {
+#mxzjxvarvs .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3603,7 +3716,7 @@ Note
   border-bottom-color: #D3D3D3;
 }
 
-#kjnojoluyl .gt_grand_summary_row {
+#mxzjxvarvs .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3613,7 +3726,7 @@ Note
   padding-right: 5px;
 }
 
-#kjnojoluyl .gt_first_grand_summary_row {
+#mxzjxvarvs .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3623,7 +3736,7 @@ Note
   border-top-color: #D3D3D3;
 }
 
-#kjnojoluyl .gt_last_grand_summary_row_top {
+#mxzjxvarvs .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3633,11 +3746,11 @@ Note
   border-bottom-color: #D3D3D3;
 }
 
-#kjnojoluyl .gt_striped {
+#mxzjxvarvs .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#kjnojoluyl .gt_table_body {
+#mxzjxvarvs .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3646,7 +3759,7 @@ Note
   border-bottom-color: #D3D3D3;
 }
 
-#kjnojoluyl .gt_footnotes {
+#mxzjxvarvs .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3660,7 +3773,7 @@ Note
   border-right-color: #D3D3D3;
 }
 
-#kjnojoluyl .gt_footnote {
+#mxzjxvarvs .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3669,7 +3782,7 @@ Note
   padding-right: 5px;
 }
 
-#kjnojoluyl .gt_sourcenotes {
+#mxzjxvarvs .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3683,7 +3796,7 @@ Note
   border-right-color: #D3D3D3;
 }
 
-#kjnojoluyl .gt_sourcenote {
+#mxzjxvarvs .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3691,80 +3804,80 @@ Note
   padding-right: 5px;
 }
 
-#kjnojoluyl .gt_left {
+#mxzjxvarvs .gt_left {
   text-align: left;
 }
 
-#kjnojoluyl .gt_center {
+#mxzjxvarvs .gt_center {
   text-align: center;
 }
 
-#kjnojoluyl .gt_right {
+#mxzjxvarvs .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#kjnojoluyl .gt_font_normal {
+#mxzjxvarvs .gt_font_normal {
   font-weight: normal;
 }
 
-#kjnojoluyl .gt_font_bold {
+#mxzjxvarvs .gt_font_bold {
   font-weight: bold;
 }
 
-#kjnojoluyl .gt_font_italic {
+#mxzjxvarvs .gt_font_italic {
   font-style: italic;
 }
 
-#kjnojoluyl .gt_super {
+#mxzjxvarvs .gt_super {
   font-size: 65%;
 }
 
-#kjnojoluyl .gt_footnote_marks {
+#mxzjxvarvs .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#kjnojoluyl .gt_asterisk {
+#mxzjxvarvs .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#kjnojoluyl .gt_indent_1 {
+#mxzjxvarvs .gt_indent_1 {
   text-indent: 5px;
 }
 
-#kjnojoluyl .gt_indent_2 {
+#mxzjxvarvs .gt_indent_2 {
   text-indent: 10px;
 }
 
-#kjnojoluyl .gt_indent_3 {
+#mxzjxvarvs .gt_indent_3 {
   text-indent: 15px;
 }
 
-#kjnojoluyl .gt_indent_4 {
+#mxzjxvarvs .gt_indent_4 {
   text-indent: 20px;
 }
 
-#kjnojoluyl .gt_indent_5 {
+#mxzjxvarvs .gt_indent_5 {
   text-indent: 25px;
 }
 
-#kjnojoluyl .katex-display {
+#mxzjxvarvs .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#kjnojoluyl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#mxzjxvarvs div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading header">
-<th colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border">Time above 10 lx mel EDI <strong>without</strong> taking photoperiod into account</th>
+<td colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border">Time above 10 lx mel EDI <strong>without</strong> taking photoperiod into account</td>
 </tr>
 <tr class="gt_col_headings even">
 <th id="Id" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Id</th>
@@ -3788,7 +3901,7 @@ Note
 
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>sample.data.environment <span class="sc">|&gt;</span> </span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_photoperiod</span>(<span class="fu">c</span>(<span class="dv">47</span>, <span class="dv">9</span>)) <span class="sc">|&gt;</span> </span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_Date_col</span>(<span class="at">group.by =</span> <span class="cn">TRUE</span>, <span class="at">as.wday =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
 <span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(photoperiod.state, <span class="at">.add =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
@@ -3797,25 +3910,25 @@ Note
 <span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize_numeric</span>() <span class="sc">|&gt;</span> </span>
 <span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> <span class="fu">tab_header</span>(<span class="st">"Time above 10 lx mel EDI taking photoperiod into account"</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">table.width =</span> <span class="fu">px</span>(<span class="dv">600</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">photoperiod.state =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">photoperiod.state =</span> <span class="st">""</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="bgybjcvill" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#bgybjcvill table {
+<div id="dlrqqaivaj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dlrqqaivaj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bgybjcvill thead, #bgybjcvill tbody, #bgybjcvill tfoot, #bgybjcvill tr, #bgybjcvill td, #bgybjcvill th {
+#dlrqqaivaj thead, #dlrqqaivaj tbody, #dlrqqaivaj tfoot, #dlrqqaivaj tr, #dlrqqaivaj td, #dlrqqaivaj th {
   border-style: none;
 }
 
-#bgybjcvill p {
+#dlrqqaivaj p {
   margin: 0;
   padding: 0;
 }
 
-#bgybjcvill .gt_table {
+#dlrqqaivaj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3841,12 +3954,12 @@ Note
   border-left-color: #D3D3D3;
 }
 
-#bgybjcvill .gt_caption {
+#dlrqqaivaj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bgybjcvill .gt_title {
+#dlrqqaivaj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3858,7 +3971,7 @@ Note
   border-bottom-width: 0;
 }
 
-#bgybjcvill .gt_subtitle {
+#dlrqqaivaj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3870,7 +3983,7 @@ Note
   border-top-width: 0;
 }
 
-#bgybjcvill .gt_heading {
+#dlrqqaivaj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3882,13 +3995,13 @@ Note
   border-right-color: #D3D3D3;
 }
 
-#bgybjcvill .gt_bottom_border {
+#dlrqqaivaj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bgybjcvill .gt_col_headings {
+#dlrqqaivaj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3903,7 +4016,7 @@ Note
   border-right-color: #D3D3D3;
 }
 
-#bgybjcvill .gt_col_heading {
+#dlrqqaivaj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3923,7 +4036,7 @@ Note
   overflow-x: hidden;
 }
 
-#bgybjcvill .gt_column_spanner_outer {
+#dlrqqaivaj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3935,15 +4048,15 @@ Note
   padding-right: 4px;
 }
 
-#bgybjcvill .gt_column_spanner_outer:first-child {
+#dlrqqaivaj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bgybjcvill .gt_column_spanner_outer:last-child {
+#dlrqqaivaj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bgybjcvill .gt_column_spanner {
+#dlrqqaivaj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3955,11 +4068,11 @@ Note
   width: 100%;
 }
 
-#bgybjcvill .gt_spanner_row {
+#dlrqqaivaj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bgybjcvill .gt_group_heading {
+#dlrqqaivaj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3985,7 +4098,7 @@ Note
   text-align: left;
 }
 
-#bgybjcvill .gt_empty_group_heading {
+#dlrqqaivaj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4000,15 +4113,15 @@ Note
   vertical-align: middle;
 }
 
-#bgybjcvill .gt_from_md > :first-child {
+#dlrqqaivaj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bgybjcvill .gt_from_md > :last-child {
+#dlrqqaivaj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bgybjcvill .gt_row {
+#dlrqqaivaj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4027,7 +4140,7 @@ Note
   overflow-x: hidden;
 }
 
-#bgybjcvill .gt_stub {
+#dlrqqaivaj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4040,7 +4153,7 @@ Note
   padding-right: 5px;
 }
 
-#bgybjcvill .gt_stub_row_group {
+#dlrqqaivaj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4054,15 +4167,15 @@ Note
   vertical-align: top;
 }
 
-#bgybjcvill .gt_row_group_first td {
+#dlrqqaivaj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bgybjcvill .gt_row_group_first th {
+#dlrqqaivaj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bgybjcvill .gt_summary_row {
+#dlrqqaivaj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4072,16 +4185,16 @@ Note
   padding-right: 5px;
 }
 
-#bgybjcvill .gt_first_summary_row {
+#dlrqqaivaj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bgybjcvill .gt_first_summary_row.thick {
+#dlrqqaivaj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bgybjcvill .gt_last_summary_row {
+#dlrqqaivaj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4091,7 +4204,7 @@ Note
   border-bottom-color: #D3D3D3;
 }
 
-#bgybjcvill .gt_grand_summary_row {
+#dlrqqaivaj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4101,7 +4214,7 @@ Note
   padding-right: 5px;
 }
 
-#bgybjcvill .gt_first_grand_summary_row {
+#dlrqqaivaj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4111,7 +4224,7 @@ Note
   border-top-color: #D3D3D3;
 }
 
-#bgybjcvill .gt_last_grand_summary_row_top {
+#dlrqqaivaj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4121,11 +4234,11 @@ Note
   border-bottom-color: #D3D3D3;
 }
 
-#bgybjcvill .gt_striped {
+#dlrqqaivaj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bgybjcvill .gt_table_body {
+#dlrqqaivaj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4134,7 +4247,7 @@ Note
   border-bottom-color: #D3D3D3;
 }
 
-#bgybjcvill .gt_footnotes {
+#dlrqqaivaj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4148,7 +4261,7 @@ Note
   border-right-color: #D3D3D3;
 }
 
-#bgybjcvill .gt_footnote {
+#dlrqqaivaj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4157,7 +4270,7 @@ Note
   padding-right: 5px;
 }
 
-#bgybjcvill .gt_sourcenotes {
+#dlrqqaivaj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4171,7 +4284,7 @@ Note
   border-right-color: #D3D3D3;
 }
 
-#bgybjcvill .gt_sourcenote {
+#dlrqqaivaj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4179,80 +4292,80 @@ Note
   padding-right: 5px;
 }
 
-#bgybjcvill .gt_left {
+#dlrqqaivaj .gt_left {
   text-align: left;
 }
 
-#bgybjcvill .gt_center {
+#dlrqqaivaj .gt_center {
   text-align: center;
 }
 
-#bgybjcvill .gt_right {
+#dlrqqaivaj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bgybjcvill .gt_font_normal {
+#dlrqqaivaj .gt_font_normal {
   font-weight: normal;
 }
 
-#bgybjcvill .gt_font_bold {
+#dlrqqaivaj .gt_font_bold {
   font-weight: bold;
 }
 
-#bgybjcvill .gt_font_italic {
+#dlrqqaivaj .gt_font_italic {
   font-style: italic;
 }
 
-#bgybjcvill .gt_super {
+#dlrqqaivaj .gt_super {
   font-size: 65%;
 }
 
-#bgybjcvill .gt_footnote_marks {
+#dlrqqaivaj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bgybjcvill .gt_asterisk {
+#dlrqqaivaj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bgybjcvill .gt_indent_1 {
+#dlrqqaivaj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bgybjcvill .gt_indent_2 {
+#dlrqqaivaj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bgybjcvill .gt_indent_3 {
+#dlrqqaivaj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bgybjcvill .gt_indent_4 {
+#dlrqqaivaj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bgybjcvill .gt_indent_5 {
+#dlrqqaivaj .gt_indent_5 {
   text-indent: 25px;
 }
 
-#bgybjcvill .katex-display {
+#dlrqqaivaj .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#bgybjcvill div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#dlrqqaivaj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading header">
-<th colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border">Time above 10 lx mel EDI taking photoperiod into account</th>
+<td colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border">Time above 10 lx mel EDI taking photoperiod into account</td>
 </tr>
 <tr class="gt_col_headings even">
 <th id="photoperiod.state" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
@@ -4262,7 +4375,7 @@ Note
 </thead>
 <tbody class="gt_table_body">
 <tr class="gt_group_heading_row odd">
-<td colspan="3" id="Environment" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Environment</td>
+<th colspan="3" id="Environment" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Environment</th>
 </tr>
 <tr class="gt_row_group_first even">
 <td class="gt_row gt_left" headers="Environment  photoperiod.state">day</td>
@@ -4275,7 +4388,7 @@ Note
 <td class="gt_row gt_right" headers="Environment  episodes">6</td>
 </tr>
 <tr class="gt_group_heading_row even">
-<td colspan="3" id="Participant" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Participant</td>
+<th colspan="3" id="Participant" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Participant</th>
 </tr>
 <tr class="gt_row_group_first odd">
 <td class="gt_row gt_left" headers="Participant  photoperiod.state">day</td>
@@ -4557,13 +4670,14 @@ Zielinski, T., J. J. L. Hodge, and A. J. Millar. 2023. <span>“Keep It Simple: 
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
