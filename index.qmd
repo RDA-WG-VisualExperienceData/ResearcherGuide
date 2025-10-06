@@ -17,10 +17,10 @@ author:
     affiliation: "Optica Color Technical Group (USA)"
     orcid: "0000-0003-0182-4952"
   - name: "Pauline Kang"
-    affiliation: "University of New South Wales (Australia)
+    affiliation: "University of New South Wales (Australia)"
     orcid: "0000-0002-3969-2871"
   - name: "Raymond P. Najjar"
-    affiliation: "National University of Singapore; Singapore Eye Research Institute; Duke-NUS (Singapore)""
+    affiliation: "National University of Singapore; Singapore Eye Research Institute; Duke-NUS (Singapore)"
     orcid: "0000-0002-3770-2300"
   - name: "Aaron Nicholls"
     affiliation: "Meta Reality Labs Research (USA)"
