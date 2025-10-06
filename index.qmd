@@ -30,11 +30,11 @@ author:
     orcid: "0000-0001-8675-1478"
   - name: "Erik Page"
     affiliation: "Blue Iris Labs, Inc. (USA)"
+    orcid: "0009-0006-3688-0697"
   - name: "Manuel Spitschan"
     affiliation: "Technical University of Munich (Germany); Max Planck Institute for Biological Cybernetics (Germany); TUMCREATE Ltd. (Singapore)"
     orcid: "0000-0002-8572-9268"
     corresponding: true
-  - name: As the Research Data Alliance Working Group "Optical Radiation Exposure and Visual Experience Data" Working Group"
 bibliography: references.bib
 lightbox: true
 css: styles.css
