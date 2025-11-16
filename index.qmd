@@ -1,5 +1,6 @@
 ---
-title: "Researcher Guide: Wearable optical radiation and visual experience loggers"
+title: "Technical guide for wearable optical radiation dosimetry and visual experience assessment"
+subtitle: "Research Data Alliance Working Group Optical Radiation Exposure and Visual Experience Data"
 author:
   - name: "Johannes Zauner"
     affiliation: "Technical University of Munich (Germany)"
