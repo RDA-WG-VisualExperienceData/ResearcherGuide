@@ -38,7 +38,7 @@ format:
     css: styles.css
     toc: true
     comments:
-      hypothesis: true
+  #    hypothesis: true
     format:
     toc-location: left
     toc-depth: 3
