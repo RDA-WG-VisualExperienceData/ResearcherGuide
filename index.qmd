@@ -36,6 +36,7 @@ author:
     affiliation: "Technical University of Munich (Germany); Max Planck Institute for Biological Cybernetics (Germany); TUMCREATE Ltd. (Singapore)"
     orcid: "0000-0002-8572-9268"
     corresponding: true
+doi: 10.17617/6xca-cg59
 bibliography: references.bib
 lightbox: true
 css: styles.css
@@ -54,8 +55,6 @@ library(forcats)
 ```
 
 This site will shortly host the Research Data Alliance (RDA) Research Guide. The Research Guide is authored by the [Optical Radiation Exposure and Visual Experience Data Working Group](https://www.rd-alliance.org/groups/optical-radiation-exposure-and-visual-experience-data-wg/activity/). The site is built using [Quarto](https://quarto.org/docs/websites), a scientific and technical publishing system.
-
-DRAFT – NOT FOR DISTRIBUTION
 
 # Introduction
 
