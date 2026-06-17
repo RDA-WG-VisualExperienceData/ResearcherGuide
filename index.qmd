@@ -44,6 +44,13 @@ doi: 10.17617/6xca-cg59
 bibliography: references.bib
 lightbox: true
 css: styles.css
+format:
+  html:
+    toc: true
+  docx:
+    toc: true
+    filters:
+    - authors-block
 ---
 
 ```{r}
