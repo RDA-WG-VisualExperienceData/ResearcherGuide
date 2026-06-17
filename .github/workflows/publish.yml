@@ -30,7 +30,9 @@ jobs:
             libsqlite3-dev \
             libfontconfig1-dev \
             libharfbuzz-dev \
-            libfribidi-dev
+            libfribidi-dev \
+            nodejs \
+            libnode-dev
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
@@ -41,9 +43,7 @@ jobs:
       - name: Install R Dependencies
         uses: r-lib/actions/setup-renv@v2
         with:
-          cache-version: 1
-          version: pre-release
-          tinytex: true
+          cache-version: 2
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
