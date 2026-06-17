@@ -129,7 +129,11 @@ The goal of wearable optical radiation and visual experience loggers is to captu
 
 The International Standard CIE S 026/E:2018 [@CIE2018CIES026] prescribes the spectral sensitivities of the photoreceptors, and thereby also provides a key reference framework for quantifying light exposure with respect to human responses. Notably, the standard proposes the α-opic quantities, where "α" is a placeholder for the cones, rods or ipRGCs.
 
+The CIE S 026 takes into account prereceptoral filtering by the ocular media before light reaches the photoreceptors. Thus, these functions do not merely describe the spectrum emitted by a light source or the raw absorption spectra of the photopigments. Instead, they provide physiologically relevant spectral weighting functions for estimating stimulation at the level of the retinal photoreceptor systems. This is particularly important for short-wavelength light, where transmission through the ocular media, especially the crystalline lens, can strongly influence the amount of light reaching the retina.
+
 A common quantity in light measurements is photopic illuminance \[lux\]. Photopic illuminance is a quantity that weighs the long- and medium-wavelength sensitive cones and corresponds, roughly, to the psychophysical sensation of brightness. Photopic illuminance is not the same as the light quantity related to the ipRGCs, the melanopic equivalent equivalent daylight illuminance (melanopic EDI), and therefore needs to be measured independently.
+
+Historically, many light therapy studies, for example, reported light exposure primarily as photopic illuminance, for example as “10,000 lx at 30 cm”. While this information is useful, it is not sufficient for interpreting non-visual effects of light. Photopic illuminance describes light weighted by the V(λ) function, which represents visual sensitivity under bright-light conditions, but it does not describe the spectral power distribution of the light source or its potential effect on the different retinal photoreceptor systems. For studies investigating circadian, neuroendocrine, alerting or clinical effects of light, researchers should therefore report additional information, including the spectrum of the light source, the measurement geometry, the participant’s viewing conditions and photoreceptor-weighted quantities.
 
 ```{r}
 # Load data
@@ -153,6 +157,8 @@ ggplot(cie_long, aes(x = wavelength, y = sensitivity, color = photoreceptor)) +
 ```
 
 Wearable light loggers usually measure the quantities directly through a series of discrete sensor channels, or measure the spectrum of light and then calculate the relevant quantities (e.g. photopic illuminance, melanopic equivalent daylight illuminance). Importantly, it is not guaranteed that the actual spectral sensitivity of a channel in a device corresponds to the standardised spectral sensitivity of the photoreceptor. It is therefore worth either calibrating the spectral sensitivity, or prompting the manufacturer to do so.
+
+Standard lux meters should not be assumed to provide biologically meaningful light exposure metrics. Most ordinary lux meters measure only photopic illuminance. They usually do not provide spectral power distribution or α-opic quantities. Similarly, RGB-based sensors should not automatically be interpreted as representing photoreceptor-specific stimulation.
 
 #### Directional properties
 
@@ -327,6 +333,10 @@ It is important to clearly formulate the research question, hypotheses, procedur
 
 For any research, participant burden is a key consideration. The desired biological quantity of interest is the retinal irradiance, whih cannot be measured, as only the retina can 'measure' it. The next best geometrical consideration is the near-corneal plane, which places a burden on the participant under real-world conditions and may even modify their behaviour (e.g., selecting out of social situations). A core question therefore is to what extent near-corneal measurements are necessary for the research question at hand. A pilot study can bring clarity on the uncertainty introduce by the use of, e.g., wrist-mounted vs. chest-mounted light loggers. For some research questions, including those where distance information is important, some wearing locations are nonsensical. For example, a wrist-worn sensor will not be able to measure viewing distance.
 
+If a study aims to describe broad differences in daily light exposure, a less intrusive wearable device may be sufficient. However, if the aim is to detect small differences in exposure or to relate subtle variations in light exposure to physiological, behavioural or clinical outcomes, measurements should be as accurate as possible and taken as close to the eye as feasible. Eye-level or near-corneal measurements are therefore preferable in studies where precise estimation of retinal or corneal light exposure is required.
+
+More remote placements, such as wrist-worn sensors, can be useful because they are comfortable and easy to wear, but they may not accurately represent the light reaching the eye. Wrist-worn devices can be affected by sleeves, posture, arm movement, desk position and the orientation of the body relative to the light source. These limitations should be considered when selecting a device, interpreting the data and reporting study results.
+
 ### Measurement capabilities matched to use case
 
 Similar to how the research question, hypotheses, procedures, and methods need to be tightly aligned, the measurement capabilities of the wearable devices needs to be matched to the measurement context (indoors, outdoors). For example, a wearable devices might not be suited to measure light exposure below 10 lx. If the goal is to measure dynamics in nocturnal light exposure, the device would not produce robust information. Similarly, distance sensors operate differently in different conditions (depending on the sensor technology).
@@ -361,13 +371,28 @@ Participants should receive clear instructions on
 
 To ensure that participants understand the instructions clearly, it is recommended that a short comprehension check be included after the briefing. This can be done by asking participants to repeat key instructions in their own words or having participants demonstrate how to wear, remove, and charge the device correctly. A printed or digital instruction sheet can be supplied for reference.
 
+Visual instructions, short checklists and comprehension checks can reduce misuse. In clinical or applied studies, training should also include physicians, study nurses or other staff involved in device setup, participant instruction, troubleshooting and data retrieval. Standard operating procedures can help reduce operator errors and improve consistency across participants and study sites.
+
 Additionally, if there are any known problems with the devices (such as common mechanical failures), these should be communicated to the participants alongside mitigation strategies.
 
 ### Recurrent compliance checks
 
 Throughout a measurement protocol, it could be helpful to implement regular checks to remind participants of key steps involved in the measurement, including charging. In case there is online access to the data, such as through clouds, it is possible to monitor light exposure instantaneously and remotely. This can bring several benefits, including the possibility of corrective action should a participant not comply to the study procedures.
 
+Feedback mechanisms can improve data quality, but different types of feedback should be distinguished. Operational feedback, such as recording status, battery level, memory status or incorrect positioning, can help prevent data loss and improve compliance. In contrast, real-time feedback about light exposure itself, such as current illuminance, melanopic EDI or progress toward a daily light target, may alter participant behaviour. In observational studies, such exposure feedback should therefore be avoided, hidden from participants or explicitly justified in the study protocol.
+
 Compliance related to usability can be probed and measured using specific questionnaires [@Balajadia2023DigitBiomarkers; @Stefani2024ClockSleep].
+
+| Challenge | Potential consequence | Possible mitigation |
+|---|---|---|
+| Wrist-worn sensor covered by sleeves | Underestimation of light exposure | Provide clear wearing instructions. Consider eye-level placement where feasible. |
+| Spectacle-mounted sensor is uncomfortable or visible | Reduced compliance or altered behaviour | Use small, lightweight devices. Assess acceptability during piloting. Brief participants on how to respond to reactions while wearing the device. |
+| Device removed during work, sport or social activities | Systematic missing data | Use participant diaries, reminders or non-wear detection. |
+| Unclear recording or battery status | Data loss | Provide operational feedback and regular device checks. |
+| Real-time exposure feedback visible to participant | Behavioural reactivity | Hide exposure feedback or justify its use in the protocol. |
+| Variable background light during intervention | Misinterpretation of intervention dose | Measure and report background light separately. |
+| Missing or irregular timestamps | Biased duration or timing metrics | Define preprocessing rules for gaps, time zones and daylight-saving changes. |
+| Outliers or implausible values | Distorted exposure metrics | Predefine exclusion criteria and outlier handling. |
 
 ### Device settings
 
@@ -962,6 +987,10 @@ For transparency and to ensure that others can replicate and reproduce the measu
     -   Handling of partial or missing data
     -   Analysis routines and functions used
     -   Software and version used for analysis and open-source availability
+
+For light intervention studies, the light source and exposure conditions should be reported in sufficient detail to allow interpretation and replication of the intervention. This should include the manufacturer and model of the light source, spectral power distribution, photopic illuminance and relevant α-opic quantities, such as melanopic equivalent daylight illuminance, measured at the participant’s eye position. The measurement plane should be specified, for example vertical, corneal or gaze-directed, together with the distance and angle between the participant and the light source. Researchers should also describe the timing, duration and pattern of exposure, for example whether exposure was continuous or intermittent, as well as the participant’s activity during exposure, such as reading, working or looking toward the source.
+
+Background light should be measured and reported separately from the intervention source whenever possible. The biological effect of a light intervention is not determined only by the intervention device, but also by room lighting, daylight, previous light exposure and light exposure after the intervention. Reporting the background lighting conditions helps distinguish the intended intervention dose from the wider visual and photic environment in which the intervention took place.
 
 Future work may formalise these recommendations in the form of a consensus checklist.
 
