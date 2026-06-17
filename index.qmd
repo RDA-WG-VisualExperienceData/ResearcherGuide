@@ -32,6 +32,10 @@ author:
   - name: "Erik Page"
     affiliation: "Blue Iris Labs, Inc. (USA)"
     orcid: "0009-0006-3688-0697"
+  - given: Oliver
+    family: Stefani
+    affiliation: Lucerne University of Applied Sciences and Arts, Lucerne, CH
+    orcid: '0000-0003-0199-6500'
   - name: "Manuel Spitschan"
     affiliation: "Technical University of Munich (Germany); Max Planck Institute for Biological Cybernetics (Germany); TUMCREATE Ltd. (Singapore)"
     orcid: "0000-0002-8572-9268"
@@ -54,7 +58,7 @@ library(lubridate)
 library(forcats)
 ```
 
-This site will shortly host the Research Data Alliance (RDA) Research Guide. The Research Guide is authored by the [Optical Radiation Exposure and Visual Experience Data Working Group](https://www.rd-alliance.org/groups/optical-radiation-exposure-and-visual-experience-data-wg/activity/). The site is built using [Quarto](https://quarto.org/docs/websites), a scientific and technical publishing system.
+This site hosts the Research Data Alliance (RDA) Research Guide. The Research Guide is authored by the [Optical Radiation Exposure and Visual Experience Data Working Group](https://www.rd-alliance.org/groups/optical-radiation-exposure-and-visual-experience-data-wg/activity/). The site is built using [Quarto](https://quarto.org/docs/websites), a scientific and technical publishing system.
 
 # Introduction
 
@@ -995,3 +999,11 @@ Data should be made available transparently and openly. It is recommended that w
 The [FAIR principles](https://www.go-fair.org/fair-principles/) state that data should be **f**indable, **a**ccessible, **i**nteroperable and **r**eusable, to make them easier to share [@Wilkinson2016SciData]. Several points raised in this Researcher Guide are driven to ensure that visual experience and optical radiation data are FAIR, including standard file formats and documentation. Importantly, FAIR data guarantees that the collected data are used sustainably, and available well beyond the specific published research articles.
 
 Data can be published as part of the supplementary material of journals. An alternative option is to add them as data packages to specific repositories, such as [Zenodo](https://zenodo.org/) or [FigShare](https://figshare.org/).
+
+Software packages can be used to make datasets more accessible for analysis, both primary and secondary. One example is the [melidosData](https://melidosproject.github.io/melidosData/) R package, that facilitates quick access to data from the [MeLiDos field study](https://github.com/MeLiDosProject).
+
+## Funding
+
+This research guide has been partially funded by the project MeLiDos (22NRM05 MeLiDos), which has received funding from the European Partnership on Metrology, co-financed from the European Union’s Horizon Europe Research and Innovation Programme and by the Participating States. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or EURAMET. Neither the European Union nor the granting authority can be held responsible for them.
+
+![](assets/logo_banner2.png)
