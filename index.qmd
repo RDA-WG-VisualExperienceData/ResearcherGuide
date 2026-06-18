@@ -47,10 +47,6 @@ css: styles.css
 format:
   html:
     toc: true
-  docx:
-    toc: true
-    filters:
-    - authors-block
 ---
 
 ```{r}
