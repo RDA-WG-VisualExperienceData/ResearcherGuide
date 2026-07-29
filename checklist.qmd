@@ -1,0 +1,25 @@
+---
+title: "Field-study checklist"
+description: "A four-page checklist for wearable light measurement in field studies"
+toc: false
+page-layout: full
+body-classes: checklist-page
+---
+
+The **Wearable light measurement in field studies** checklist condenses the Researcher Guide into practical checks for study planning, device validation, field collection, interoperable data, analysis and reporting.
+
+::: {.checklist-actions}
+[Download the checklist (PDF)](output/pdf/light-dosimetry-field-trial-checklist.pdf){.btn .btn-primary download="light-dosimetry-field-trial-checklist.pdf"}
+
+[Open the PDF in a new tab](output/pdf/light-dosimetry-field-trial-checklist.pdf){.btn .btn-outline-primary target="_blank" rel="noopener"}
+:::
+
+::: {.callout-note appearance="simple" icon="false" title="License and attribution"}
+The checklist's original text and layout are licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). They may be shared and adapted for any purpose, including commercially, provided appropriate credit is given, the license is linked and changes are indicated. Third-party logos are excluded from this license and remain subject to their respective rights.
+
+**Suggested attribution:** RDA Optical Radiation Exposure and Visual Experience Data Working Group (2026), *Wearable light measurement in field studies*, version 1.2, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+:::
+
+<iframe class="checklist-pdf" src="output/pdf/light-dosimetry-field-trial-checklist.pdf#view=FitH" title="Wearable light measurement in field studies checklist"></iframe>
+
+If the preview is unavailable in your browser, [open or download the PDF directly](output/pdf/light-dosimetry-field-trial-checklist.pdf).

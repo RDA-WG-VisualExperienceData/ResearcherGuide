@@ -77,6 +77,8 @@ Starting in the 1980s [@Okudaira1983AmJPhysiol], technology to measure exposure 
 
 The scope of this Researcher Guide is to provide a guide to using wearable devices measuring the optical environment. It is a living document and will be updated and versioned.
 
+For a concise companion from study planning through reporting, use the [four-page field-study checklist](checklist.qmd).
+
 # Workflow
 
 Here, we consider the following workflow in a research project. We have built the researcher guide around each of these subsections.
@@ -995,7 +997,7 @@ For light intervention studies, the light source and exposure conditions should 
 
 Background light should be measured and reported separately from the intervention source whenever possible. The biological effect of a light intervention is not determined only by the intervention device, but also by room lighting, daylight, previous light exposure and light exposure after the intervention. Reporting the background lighting conditions helps distinguish the intended intervention dose from the wider visual and photic environment in which the intervention took place.
 
-Future work may formalise these recommendations in the form of a consensus checklist.
+The [field-study checklist](checklist.qmd) summarises the planning, collection, data-management, analysis and reporting checks in a printable four-page format.
 
 ### Discussion section
 

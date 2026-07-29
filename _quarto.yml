@@ -1,5 +1,9 @@
 project:
   type: manuscript
+  render:
+    - "*.qmd"
+  resources:
+    - output/pdf/light-dosimetry-field-trial-checklist.pdf
 
 website:
   title: "Researcher Guide"
@@ -19,6 +23,8 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: checklist.qmd
+        text: Field-study checklist
       - text: "About"
         href: about.qmd
       - text: "License"
